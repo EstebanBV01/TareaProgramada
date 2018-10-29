@@ -3,7 +3,7 @@ package tareaprogramada;
 
 /**
  *
- * @author Satellaizar
+ * @author Juan Carlos
  */
 public class MatrizJuego {
     
