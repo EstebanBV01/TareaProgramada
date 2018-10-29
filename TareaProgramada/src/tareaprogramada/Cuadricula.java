@@ -11,19 +11,19 @@ package tareaprogramada;
  * @version 28/10/2018
  */
 public abstract class Cuadricula extends TareaProgramada{
-    Celda[][] cuadricula;
+    Celda cuadricula;
     public Cuadricula(){
     //this("");
     }
-    public Cuadricula(Celda[][] cuadricula) {
+    public Cuadricula(Celda cuadricula) {
         this.cuadricula = cuadricula;
     }
 
-    public Celda[][] getCuadricula() {
+    public Celda  getCuadricula() {
         return cuadricula;
     }
 
-    public void setCuadricula(Celda[][] cuadricula) {
+    public void setCuadricula(Celda  cuadricula) {
         this.cuadricula = cuadricula;
     }
 
