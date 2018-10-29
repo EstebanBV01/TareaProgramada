@@ -3,8 +3,9 @@ package tareaprogramada;
 
 /**
  *
- * @author Juan Carlos
+ * @author Juan Carlos,EstebanBV
+ * @version 28/10/2018
  */
-public class MatrizJuego {
+public abstract class MatrizJuego extends TareaProgramada{
     
 }

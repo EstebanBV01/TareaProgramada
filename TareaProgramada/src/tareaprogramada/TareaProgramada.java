@@ -3,9 +3,10 @@ package tareaprogramada;
 
 /**
  *
- * @author Johan
+ * @author EstebanBV
+ * @version 28/10/2018
  */
-public class TareaProgramada {
+public abstract class TareaProgramada {
 
     /**
      * @param args the command line arguments
