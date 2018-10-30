@@ -1,6 +1,7 @@
 
-package tareaprogramada;
+package JuegoDeLaVida.InteraccionUs;
 
+import JuegoDeLaVida.Logico.LogicaDeNavegacion;
 import javax.swing.JOptionPane;
 
 /**
@@ -8,7 +9,7 @@ import javax.swing.JOptionPane;
  * @author EstebanBV
  * @version 28/10/2018
  */
-public abstract class TareaProgramada {
+public abstract class Main {
 
     /**
      * @param args the command line arguments

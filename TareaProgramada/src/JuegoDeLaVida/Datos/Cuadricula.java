@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tareaprogramada;
+package JuegoDeLaVida.Datos;
+
+import JuegoDeLaVida.InteraccionUs.Main;
 
 /**
  *
- * @author Juan Carlos,EstebanBV
+ * @author Juan Carlos,EstebanBV, Fernanda
  * @version 28/10/2018
  */
-public abstract class Cuadricula extends TareaProgramada{
+public abstract class Cuadricula extends Main{
     Celda cuadricula;
     public Cuadricula(){
     //this("");
