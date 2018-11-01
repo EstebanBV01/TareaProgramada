@@ -16,11 +16,9 @@ public abstract class Main {
      */
     public static void main(String[] args) {
        LogicaDeNavegacion juego=new LogicaDeNavegacion();
-      //int matrixSize=Integer.parseInt( JOptionPane.showInputDialog("digite el tamaño de la cuadricula"));
-       juego.setTam(7);
-       JOptionPane.showMessageDialog(null,juego.getTamaño());
-       //JOptionPane.showMessageDialog(null,juego.imprimirMatrix());
+        //juego.posiAleatorias(5);
         juego.iniciaJuego();
+        JOptionPane.showMessageDialog(null,juego.imprimirMatrix());
       JOptionPane.showMessageDialog(null,juego.getTamaño());
     
     

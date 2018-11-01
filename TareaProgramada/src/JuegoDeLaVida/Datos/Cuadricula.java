@@ -13,25 +13,25 @@ import JuegoDeLaVida.InteraccionUs.Main;
  * @version 28/10/2018
  */
 public abstract class Cuadricula extends Main{
-    Celda cuadricula;
+    Celda celda;
     public Cuadricula(){
-    //this("");
+    //this(0);
     }
-    public Cuadricula(Celda cuadricula) {
-        this.cuadricula = cuadricula;
+    public Cuadricula(Celda celda) {
+        this.celda = celda;
     }
 
     public Celda  getCuadricula() {
-        return cuadricula;
+        return celda;
     }
 
-    public void setCuadricula(Celda  cuadricula) {
-        this.cuadricula = cuadricula;
+    public void setCuadricula(Celda  celda) {
+        this.celda = celda;
     }
 
     @Override
     public String toString() {
-        return "Cuadricula{" + "cuadricula=" + cuadricula + '}';
+        return "Cuadricula{" + "cuadricula=" + celda+ '}';
     }
     
 }
