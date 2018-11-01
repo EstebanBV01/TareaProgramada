@@ -1,37 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package JuegoDeLaVida.Datos;
 
-import JuegoDeLaVida.InteraccionUs.Main;
+package JuegoDeLaVida.Datos;
 
 /**
  *
  * @author Juan Carlos,EstebanBV, Fernanda
  * @version 28/10/2018
  */
-public abstract class Cuadricula extends Main{
-    Celda celda;
-    public Cuadricula(){
-    //this(0);
-    }
-    public Cuadricula(Celda celda) {
-        this.celda = celda;
-    }
-
-    public Celda  getCuadricula() {
+public class Cuadricula{
+    private Celda[][] celda;
+    private static final int CELLS = 3;
+   
+    public Cuadricula(Celda[][] cells) {   
+        if (cells != null) {
+            this.celda = cells;
+        }else {
+            this.celda = new Celda[CELLS][CELLS];
+        }
+    } 
+    
+    public Celda[][] getCelda() {
         return celda;
     }
 
-    public void setCuadricula(Celda  celda) {
+    public void setCelda(Celda[][] celda) {
         this.celda = celda;
     }
 
     @Override
     public String toString() {
-        return "Cuadricula{" + "cuadricula=" + celda+ '}';
+        return "Cuadricula{" + "celda=" + celda + '}';
     }
+    
+    
+    
     
 }

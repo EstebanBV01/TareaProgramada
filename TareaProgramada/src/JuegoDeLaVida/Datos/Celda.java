@@ -7,28 +7,30 @@ package JuegoDeLaVida.Datos;
 
 /**
  *
- * @author Johan
+ * @author Esteban, Fernanda, Juan Carlos
  */
 public class Celda {
-   private int estado;
-    public Celda(){
-        this(0);
-    }
-    public Celda(int estado) {
-        this.estado = estado;
+
+    boolean celdas;
+    
+    public Celda () {
+        this(false);   
     }
 
-    public int getEstado() {
-        return estado;
+    public Celda(boolean celdas) {
+       this.celdas = celdas;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public boolean isCeldas() {
+        return celdas;
+    }
+
+    public void setCeldas(boolean celdas) {
+        this.celdas = celdas;
     }
 
     @Override
     public String toString() {
-        return "Celda{" + "estado=" + estado + '}';
+        return "Celda{" + "celdas=" + celdas + '}';
     }
-   
 }
