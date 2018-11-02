@@ -5,10 +5,24 @@
  */
 package JuegoDeLaVida.InteraccionUs;
 
+import JuegoDeLaVida.Logico.LogicaDeNavegacion;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author usuario
  */
 public class ManejoInterfazGraf {
-    
+    public static final int QUESTION_MESSAGE=0;
+       JOptionPane pane=new JOptionPane();
+        ImageIcon icon = new ImageIcon("logo1.png");
+        LogicaDeNavegacion logica=new LogicaDeNavegacion();
+    public void startMenu(){
+        int cantCells=Integer.parseInt( JOptionPane.showInputDialog("seleccione cantidad de celdas"));
+        logica.posiAleatorias(cantCells);
+        JOptionPane.showConfirmDialog(pane, pane, "prueba1", QUESTION_MESSAGE);
+        
+        int a=JOptionPane.showConfirmDialog(pane, icon, "", QUESTION_MESSAGE, QUESTION_MESSAGE, icon);    
+    }
 }

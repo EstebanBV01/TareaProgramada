@@ -16,11 +16,8 @@ public abstract class Main {
      */
     public static void main(String[] args) {
        LogicaDeNavegacion juego=new LogicaDeNavegacion();
-        //juego.posiAleatorias(5);
-        juego.iniciaJuego();
-        JOptionPane.showMessageDialog(null,juego.imprimirMatrix());
-      JOptionPane.showMessageDialog(null,juego.getTamaño());
-    
+       ManejoInterfazGraf interfaz=new ManejoInterfazGraf();
+        interfaz.startMenu();
     
     
     }
