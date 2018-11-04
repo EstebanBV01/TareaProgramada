@@ -10,27 +10,35 @@ package JuegoDeLaVida.Datos;
  * @author Esteban, Fernanda, Juan Carlos
  */
 public class Celda {
-
-    String celdas;
-    
-    public Celda () {
-        this("");   
+    private String viva="X";
+    private String muerta="O";
+     public Celda(String viva,String muerta){
+            this.viva=viva;
+            this.muerta=muerta;
+    }
+      public Celda () {
+        this("","");   
+    }
+    public String getViva() {
+        return viva;
     }
 
-    public Celda(String celdas) {
-       this.celdas = celdas;
+    public String getMuerta() {
+        return muerta;
     }
 
-    public String isCeldas() {
-        return celdas;
+    public void setViva(String viva) {
+        this.viva = viva;
     }
 
-    public void setCeldas(String celdas) {
-        this.celdas = celdas;
+    public void setMuerta(String muerta) {
+        this.muerta = muerta;
     }
 
     @Override
     public String toString() {
-        return "Celda{" + "celdas=" + celdas + '}';
+        return "Celda{" + "viva=" + viva + ", muerta=" + muerta + '}';
     }
+    
+
 }

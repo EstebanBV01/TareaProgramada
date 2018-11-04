@@ -19,13 +19,11 @@ public class ManejoInterfazGraf {
         ImageIcon icon = new ImageIcon("logo1.png");
         LogicaDeNavegacion logica=new LogicaDeNavegacion();
     public void startMenu(){
-       // int matrixSize=Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
-        //logica.matrixSize(matrixSize);
+        int matrixSize=Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
+        logica.setSize(matrixSize);
+         logica.stringMatrix();
         int cantCells=Integer.parseInt( JOptionPane.showInputDialog("seleccione cantidad de celdas"));
-        
         logica.posiAleatorias(cantCells);
-        JOptionPane.showConfirmDialog(pane, pane, "prueba1", QUESTION_MESSAGE);
-        
-        int a=JOptionPane.showConfirmDialog(pane, icon, "", QUESTION_MESSAGE, QUESTION_MESSAGE, icon);    
+            
     }
 }
