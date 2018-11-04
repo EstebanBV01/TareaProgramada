@@ -11,21 +11,21 @@ package JuegoDeLaVida.Datos;
  */
 public class Celda {
 
-    boolean celdas;
+    String celdas;
     
     public Celda () {
-        this(false);   
+        this("");   
     }
 
-    public Celda(boolean celdas) {
+    public Celda(String celdas) {
        this.celdas = celdas;
     }
 
-    public boolean isCeldas() {
+    public String isCeldas() {
         return celdas;
     }
 
-    public void setCeldas(boolean celdas) {
+    public void setCeldas(String celdas) {
         this.celdas = celdas;
     }
 

@@ -9,7 +9,6 @@ package JuegoDeLaVida.Datos;
 public class Cuadricula{
     private Celda[][] celda;
     private static final int CELLS = 3;
-   
     public Cuadricula(Celda[][] cells) {   
         if (cells != null) {
             this.celda = cells;
