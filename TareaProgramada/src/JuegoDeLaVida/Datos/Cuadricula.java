@@ -28,4 +28,11 @@ public class Cuadricula{
     
     // Algunos metodos logicos, lineas, sustitucion de posiciones van aqui 
 
+    public void setElement (int element) {
+        for (int f = 0; f < celda.length; f++) {
+            for (int c = 0; c < celda.length; c++) {
+                //Aqui falta la parte para sustuir, 
+            }
+        }
+    }
 }
