@@ -26,6 +26,6 @@ public class Cuadricula{
         return "[Cuadricula]" + "celda: " + celda;
     }
     
-    
+    // Algunos metodos logicos, lineas, sustitucion de posiciones van aqui 
 
 }

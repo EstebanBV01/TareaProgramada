@@ -17,6 +17,8 @@ public class LogicaDeNavegacion {
     private Cuadricula[][] cells;
     private int size = 2;
     Celda viva = new Celda("X","");
+    
+    
     Cuadricula viva2 = new Cuadricula(viva);
      public void setSize(int size) {
         this.size = size;
