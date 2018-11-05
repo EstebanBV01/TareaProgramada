@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
  */
 public class LogicaDeNavegacion {
     private Cuadricula[][] cells;
-    private int size=2;
-    Celda viva=new Celda("X","");
-    Cuadricula viva2=new Cuadricula(viva);
+    private int size = 2;
+    Celda viva = new Celda("X","");
+    Cuadricula viva2 = new Cuadricula(viva);
      public void setSize(int size) {
         this.size = size;
     }
@@ -25,15 +25,15 @@ public class LogicaDeNavegacion {
         this.cells = cells;
     }
     public LogicaDeNavegacion(){
-        cells=new Cuadricula[size][size];
+        cells = new Cuadricula[size][size];
     }
     public void stringMatrix(){
-        String cadena="";
+        String cadena = "";
         for (int f = 0; f < cells.length; f++) {
             for (int c = 0; c <cells.length; c++) {
-                cadena+=cells[f][c]+" | ";
+                cadena += cells[f][c]+" | ";
             }
-            cadena+="\n";
+            cadena += "\n";
             
         }
         System.out.println(cadena+"\n");
@@ -42,7 +42,7 @@ public class LogicaDeNavegacion {
     //metodos comunes
     
     public Cuadricula[][] posiAleatorias(int cantDeCeldas){
-        int aleatorio=0,aleatorio2=0;
+        int aleatorio =0 ,aleatorio2 =0 ;
          int max = 2; 
         int min = 0; 
         int range = max - min + 1;
