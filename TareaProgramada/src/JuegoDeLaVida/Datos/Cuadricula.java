@@ -11,12 +11,20 @@ import javax.swing.JOptionPane;
 public class Cuadricula{
     private Celda[][] celda;
   //  private Cuadricula[][] cells;
-    private Cuadricula viva;
+    private Celda viva;
     private final static int SIZE = 2;  
     private static final int TAMA = 5;
     
-    public Cuadricula(Celda[][] cells) {   
+    public Cuadricula() {   
+        Celda[][] celda = new Celda[TAMA][TAMA]; 
+    } 
+    
+    public Cuadricula(int cant) {   
+        if (cant != 0) {
+            Celda[][] celda = new Celda[cant][cant];
+        }else if (cant == 0) {
             Celda[][] celda = new Celda[TAMA][TAMA];
+        }
     } 
     
     public void setCelda(Celda[][] celda){
@@ -44,37 +52,38 @@ public class Cuadricula{
 
     public void stringMatrix(){
         String cadena = "";
-        for (int f = 0; f < cells.length; f++) {
-            for (int c = 0; c <cells.length; c++) {
-                cadena += cells[f][c]+" | ";
+        for (int f = 0; f < celda.length; f++) {
+            for (int c = 0; c <celda.length; c++) {
+                cadena += celda[f][c]+" | ";
             }
             cadena += "\n";
         }
         System.out.println(cadena+"\n");
     }
     public int matrixSize(){
-    return cells.length;
+    return celda.length;
     }
     //metodos comunes
     
-    public Cuadricula[][] posiAleatorias(int cantDeCeldas){
+    public Celda[][] posiAleatorias(int cantDeCeldas){
         int aleatorio = 0 ,aleatorio2 = 0 ;
-        int max = cells.length-1; 
+        int max = celda.length-1; 
         int min = 0; 
         int range = max - min + 1;
         for (int i = 0; i < cantDeCeldas; i++) {
            aleatorio  = (int)(Math.random() * range) + min;
            aleatorio2 = (int)(Math.random() * range) + min;
-                this.cells[aleatorio][aleatorio2]=viva; 
+                this.celda[aleatorio][aleatorio2] = viva; 
         }
-        return this.cells;
+        return this.celda;
     }
     public void setSize(int size){
            Cuadricula[][] vector2 = new Cuadricula[size][size];
-            for (int i = 0; i < cells.length; i++) {
-                vector2[i]= this.cells[i];
+            for (int i = 0; i < celda.length; i++) {
+                vector2[i]= this.celda[i][i];
+                
         }
-            vector2 = cells;
+            vector2 = celda;
     }
     public void rule1(){
         boolean desicion;
