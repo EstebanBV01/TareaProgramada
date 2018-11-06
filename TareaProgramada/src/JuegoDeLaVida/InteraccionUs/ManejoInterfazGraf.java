@@ -21,6 +21,7 @@ public class ManejoInterfazGraf {
     public void startMenu(){
         int matrixSize=Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
         logica.setSize(matrixSize);
+         System.out.println(logica.matrixSize());
          logica.stringMatrix();
         int cantCells=Integer.parseInt( JOptionPane.showInputDialog("seleccione cantidad de celdas"));
         logica.posiAleatorias(cantCells);

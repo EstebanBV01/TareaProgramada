@@ -15,9 +15,10 @@ public abstract class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       LogicaDeNavegacion juego=new LogicaDeNavegacion();
+       LogicaDeNavegacion logica=new LogicaDeNavegacion();
        ManejoInterfazGraf interfaz=new ManejoInterfazGraf();
         interfaz.startMenu();
+       
     
     
     }

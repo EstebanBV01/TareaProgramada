@@ -10,28 +10,28 @@ package JuegoDeLaVida.Datos;
  * @author Esteban, Fernanda, Juan Carlos
  */
 public class Celda {
-    private String viva="X";
-    private String muerta="O";
-     public Celda(String viva,String muerta){
+    private int viva=1;
+    private int muerta=0;
+     public Celda(int viva,int muerta){
             this.viva=viva;
             this.muerta=muerta;
     }
       public Celda () {
-        this("","");   
+        this(0,0);   
     }
-    public String getViva() {
+    public int getViva() {
         return viva;
     }
 
-    public String getMuerta() {
+    public int getMuerta() {
         return muerta;
     }
 
-    public void setViva(String viva) {
+    public void setViva(int viva) {
         this.viva = viva;
     }
 
-    public void setMuerta(String muerta) {
+    public void setMuerta(int muerta) {
         this.muerta = muerta;
     }
 
