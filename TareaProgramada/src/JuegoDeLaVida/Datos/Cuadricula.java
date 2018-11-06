@@ -78,12 +78,14 @@ public class Cuadricula{
         return this.celda;
     }
     public void setSize(int size){
-           Cuadricula[][] vector2 = new Cuadricula[size][size];
-            for (int i = 0; i < celda.length; i++) {
-                vector2[i]= this.celda[i][i];
+           Celda[][] vector2 = new Celda[size][size];
+            for (int f = 0; f < celda.length; f++) {
+                for (int c = 0; c < celda.length; c++){
+                vector2[f][c]= this.celda[f][c];
+                }
                 
         }
-            vector2 = celda;
+            this.celda=vector2;
     }
     public void rule1(){
         boolean desicion;
