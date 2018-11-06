@@ -10,9 +10,10 @@ package JuegoDeLaVida.Datos;
  * @author Esteban, Fernanda, Juan Carlos
  */
 public class Celda {
-    private int viva=1;
-    private int muerta=0;
-     public Celda(int viva,int muerta){
+    private int viva = 1;
+    private int muerta = 0;
+    
+     public Celda( int viva, int muerta){
             this.viva=viva;
             this.muerta=muerta;
     }

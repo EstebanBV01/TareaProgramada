@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class LogicaDeNavegacion {
     private Cuadricula[][] cells;
     private Cuadricula viva;
-    private final static int SIZE= 2;   
+    private final static int SIZE = 2;   
     public LogicaDeNavegacion(Cuadricula[][] cells) {
         this.cells = cells;
     }
@@ -30,7 +30,6 @@ public class LogicaDeNavegacion {
                 cadena += cells[f][c]+" | ";
             }
             cadena += "\n";
-            
         }
         System.out.println(cadena+"\n");
     }
@@ -40,8 +39,8 @@ public class LogicaDeNavegacion {
     //metodos comunes
     
     public Cuadricula[][] posiAleatorias(int cantDeCeldas){
-        int aleatorio =0 ,aleatorio2 =0 ;
-         int max = cells.length-1; 
+        int aleatorio = 0 ,aleatorio2 = 0 ;
+        int max = cells.length-1; 
         int min = 0; 
         int range = max - min + 1;
         for (int i = 0; i < cantDeCeldas; i++) {
@@ -52,11 +51,11 @@ public class LogicaDeNavegacion {
         return this.cells;
     }
     public void setSize(int size){
-           Cuadricula[][] vector2=new Cuadricula[size][size];
+           Cuadricula[][] vector2 = new Cuadricula[size][size];
             for (int i = 0; i < cells.length; i++) {
-                vector2[i]=this.cells[i];
+                vector2[i]= this.cells[i];
         }
-            vector2=cells;
+            vector2 = cells;
     }
     public void rule1(){
         boolean desicion;

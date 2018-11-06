@@ -18,6 +18,7 @@ public abstract class Main {
        LogicaDeNavegacion logica=new LogicaDeNavegacion();
        ManejoInterfazGraf interfaz=new ManejoInterfazGraf();
         interfaz.startMenu();
+        logica.stringMatrix();
        
     
     

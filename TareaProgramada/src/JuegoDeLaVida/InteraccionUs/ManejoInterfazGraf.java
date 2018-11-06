@@ -15,16 +15,16 @@ import javax.swing.JOptionPane;
  */
 public class ManejoInterfazGraf {
     public static final int QUESTION_MESSAGE=0;
-       JOptionPane pane=new JOptionPane();
+       JOptionPane pane = new JOptionPane();
         ImageIcon icon = new ImageIcon("logo1.png");
-        LogicaDeNavegacion logica=new LogicaDeNavegacion();
+        LogicaDeNavegacion logica = new LogicaDeNavegacion();
+        
     public void startMenu(){
-        int matrixSize=Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
+        int matrixSize = Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
         logica.setSize(matrixSize);
          System.out.println(logica.matrixSize());
          logica.stringMatrix();
-        int cantCells=Integer.parseInt( JOptionPane.showInputDialog("seleccione cantidad de celdas"));
-        logica.posiAleatorias(cantCells);
-            
+        int cantCells = Integer.parseInt( JOptionPane.showInputDialog("seleccione cantidad de celdas"));
+        logica.posiAleatorias(cantCells);         
     }
 }
