@@ -17,6 +17,10 @@ public class Celda {
             this.viva=viva;
             this.muerta=muerta;
     }
+      public Celda( int viva){
+            this.viva=viva;
+            //this.muerta=muerta;
+    }
       public Celda () {
         this(0,0);   
     }

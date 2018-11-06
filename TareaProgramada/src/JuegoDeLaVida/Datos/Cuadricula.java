@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
 public class Cuadricula{
     private Celda[][] celda;
   //  private Cuadricula[][] cells;
-    private Celda viva;
+    private Celda viva=new Celda(1);
     private final static int SIZE = 2;  
-    private static final int TAMA = 5;
+    private static final int TAMA = 3;
     
     public Cuadricula() {   
         Celda[][] celda = new Celda[TAMA][TAMA]; 
