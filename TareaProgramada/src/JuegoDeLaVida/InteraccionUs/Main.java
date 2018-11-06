@@ -19,7 +19,6 @@ public abstract class Main {
         Cuadricula logica= new Cuadricula();
        ManejoInterfazGraf interfaz=new ManejoInterfazGraf();
         interfaz.startMenu();
-        logica.stringMatrix();
        
     
     
