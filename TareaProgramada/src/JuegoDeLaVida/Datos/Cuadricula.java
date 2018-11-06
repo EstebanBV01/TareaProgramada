@@ -60,9 +60,9 @@ public class Cuadricula{
         }
         System.out.println(cadena+"\n");
     }
-    public int matrixSize(){
-    return celda.length;
-    }
+    //public int matrixSize(){
+    //return celda.length;
+    //}
     //metodos comunes
     
     public Celda[][] posiAleatorias(int cantDeCeldas){
@@ -77,10 +77,10 @@ public class Cuadricula{
         }
         return this.celda;
     }
-    public void setSize(int size){
-           Celda[][] vector2 = new Celda[size][size];
-            for (int f = 0; f < celda.length; f++) {
-                for (int c = 0; c < celda.length; c++){
+    private void setSize(){
+           Celda[][] vector2 = new Celda[7][7];
+            for (int f = 0; f < celda.length-1; f++) {
+                for (int c = 0; c < celda.length-1; c++){
                 vector2[f][c]= this.celda[f][c];
                 }
                 
