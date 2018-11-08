@@ -9,21 +9,26 @@ import javax.swing.JOptionPane;
  * @version 28/10/2018
  */
 public class Cuadricula {
-    private Celda[][] celda;
-    private Celda viva;
+    Celda estado = new Celda(0, 1);
+    private Celda[][] celda = new Celda[TAMA][TAMA];
     private static final int TAMA = 3;
     
     public Cuadricula() {   
         Celda[][] celda = new Celda[TAMA][TAMA]; 
+        
     } 
     
-    /*public Cuadricula(Celda[][] celdas) {   
-        if (celdas != null) {
-            Celda[][] celda = new Celda[cant][cant];
-        }else if (cant == 0) {
-            Celda[][] celda = new Celda[TAMA][TAMA];
+    public Cuadricula(int cantDeCeldas) {   
+        int aleatorio = 0 ,aleatorio2 = 0 ;
+        int max = celda.length-1; 
+        int min = 0; 
+        int range = max - min + 1;
+        for (int i = 0; i < cantDeCeldas; i++) {
+           aleatorio  = (int)(Math.random() * range) + min;
+           aleatorio2 = (int)(Math.random() * range) + min;
+                this.celda[aleatorio][aleatorio2] = estado.getViva(); 
         }
-    } */
+    }
     
     public void setCelda(Celda[][] celda){
         this.celda = celda;
