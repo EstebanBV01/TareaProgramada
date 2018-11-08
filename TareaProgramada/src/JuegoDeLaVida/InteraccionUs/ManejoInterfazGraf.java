@@ -20,6 +20,7 @@ public class ManejoInterfazGraf {
         ImageIcon icon = new ImageIcon("logo1.png");
         Cuadricula logica = new Cuadricula();
         
+        
     public void startMenu(){
         int matrixSize = Integer.parseInt( JOptionPane.showInputDialog("seleccione el tamaño de la matriz"));
 //        logica.setSize(matrixSize);

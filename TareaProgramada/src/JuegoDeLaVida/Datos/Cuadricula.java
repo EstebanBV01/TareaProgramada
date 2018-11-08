@@ -8,24 +8,22 @@ import javax.swing.JOptionPane;
  * @author EstebanBV, Fernanda, Juan Carlos
  * @version 28/10/2018
  */
-public class Cuadricula{
+public class Cuadricula {
     private Celda[][] celda;
-  //  private Cuadricula[][] cells;
-    private Celda viva=new Celda(1);
-    private final static int SIZE = 2;  
+    private Celda viva;
     private static final int TAMA = 3;
     
     public Cuadricula() {   
         Celda[][] celda = new Celda[TAMA][TAMA]; 
     } 
     
-    public Cuadricula(int cant) {   
-        if (cant != 0) {
+    /*public Cuadricula(Celda[][] celdas) {   
+        if (celdas != null) {
             Celda[][] celda = new Celda[cant][cant];
         }else if (cant == 0) {
             Celda[][] celda = new Celda[TAMA][TAMA];
         }
-    } 
+    } */
     
     public void setCelda(Celda[][] celda){
         this.celda = celda;
@@ -60,9 +58,7 @@ public class Cuadricula{
         }
         System.out.println(cadena+"\n");
     }
-    //public int matrixSize(){
-    //return celda.length;
-    //}
+    
     //metodos comunes
     
     public Celda[][] posiAleatorias(int cantDeCeldas){
@@ -77,22 +73,18 @@ public class Cuadricula{
         }
         return this.celda;
     }
-    private void setSize(){
-           Celda[][] vector2 = new Celda[7][7];
-            for (int f = 0; f < celda.length-1; f++) {
-                for (int c = 0; c < celda.length-1; c++){
-                vector2[f][c]= this.celda[f][c];
-                }
-                
-        }
-            this.celda=vector2;
+    public void setSize(int tama){
+           Celda[][] matriz2 = new Celda[tama][tama];
+            for (int f = 0; f < celda.length; f++) {
+                for (int c = 0; c < celda.length; c++){
+                    matriz2[f][c] = celda[f][c];
+                } 
+            }
+            this.celda=matriz2;
     }
-    public void rule1(){
-        boolean desicion;
-        do {            
-            
-            desicion=Boolean.parseBoolean(JOptionPane.showInputDialog("desea continuar true/false"));
-            
-        }while (desicion==true);
+    
+    public int getSize() {
+        return celda.length;
     }
+    
 }

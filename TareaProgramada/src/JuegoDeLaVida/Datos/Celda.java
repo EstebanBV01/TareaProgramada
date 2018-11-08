@@ -13,16 +13,16 @@ public class Celda {
     private int viva = 1;
     private int muerta = 0;
     
-     public Celda( int viva, int muerta){
+     public Celda(int viva, int muerta){
             this.viva=viva;
             this.muerta=muerta;
     }
-      public Celda( int viva){
+      public Celda(int viva){
             this.viva=viva;
             //this.muerta=muerta;
     }
       public Celda () {
-        this(0,0);   
+        this(1, 0);   
     }
     public int getViva() {
         return viva;
@@ -43,6 +43,15 @@ public class Celda {
     @Override
     public String toString() {
         return "Celda{" + "viva=" + viva + ", muerta=" + muerta + '}';
+    }
+    
+    public int getEstado (int estado) {
+        if (estado == 1) {
+            estado = this.viva;
+        }else if (estado == 0) {
+            estado = this.muerta;
+        }
+        return estado;
     }
     
 

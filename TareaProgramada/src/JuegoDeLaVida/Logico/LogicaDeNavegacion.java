@@ -15,32 +15,73 @@ import javax.swing.JOptionPane;
  */
 public class LogicaDeNavegacion {
     
-    private Celda viva;
-    private Celda muerta;
-    Cuadricula logica = new Cuadricula(0);
-   
+    Celda celda;
+    int[][] logica = new int[5][5];
+    
+    public LogicaDeNavegacion (int cantDeCeldas){
+        int aleatorio = 0 ,aleatorio2 = 0 ;
+        int max = logica.length-1; 
+        int min = 0; 
+        int range = max - min + 1;
+        for (int i = 0; i <= cantDeCeldas; i++) {
+           aleatorio  = (int)(Math.random() * range) + min;
+           aleatorio2 = (int)(Math.random() * range) + min;
+                this.logica[aleatorio][aleatorio2] = 1; 
+        }
+    }
+     public void stringMatrix(){
+        String cadena = "";
+        for (int f = 0; f < logica.length; f++) {
+            for (int c = 0; c <logica.length; c++) {
+                cadena += logica[f][c]+" | ";
+            }
+            cadena += "\n";
+        }
+        System.out.println(cadena+"\n");
+    }
+    
+    public int[][] regla () {
+        int cont = 0;
+        //while (cont < logica.length) {       
+            for (int f = 0; f<logica.length; f++) {
+                for (int c = 0; c<logica.length; c++) {
+                    if (logica[f][c] == 1);
+                    for (int i = f; i <f+1; i++) {
+                        for (int j = c; j < c+1; j++) {
+                            if (logica[i][j]==1) {
+                                System.out.println("encontro" + j +","+ i);
+                            }
+                        }
+                    }            
+                }
+               
+            }
+            
+            cont++;
+        //}
+        return logica;
+    }
+
      public void estado () {
-        for (int f = 0; f < logica.matrixSize(); f++) {
-            for (int c = 0; c < logica.matrixSize(); c++) {
-                if (logica.[f][c] == viva) {
+        for (int f = 0; f < logica.length; f++) {
+            for (int c = 0; c < logica.length; c++) {
+                if (logica[f][c] == 1) {
                     
                 }
             }
         }
     }
 
-     public Celda[][] posiAleatorias(int cantDeCeldas){
+    public int[][] posiAleatorias(int cantDeCeldas){
         int aleatorio = 0 ,aleatorio2 = 0 ;
-        int max = celda.length-1; 
+        int max = logica.length-1; 
         int min = 0; 
         int range = max - min + 1;
         for (int i = 0; i < cantDeCeldas; i++) {
            aleatorio  = (int)(Math.random() * range) + min;
            aleatorio2 = (int)(Math.random() * range) + min;
-                this.celda[aleatorio][aleatorio2] = viva; 
+                this.logica[aleatorio][aleatorio2] = 1; 
         }
-        return this.celda;
+        return this.logica;
     }
-    
-  
 }
