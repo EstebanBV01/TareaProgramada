@@ -21,8 +21,10 @@ public class Cuadricula {
 
     public void random(int cantDeCeldas) {
         for(int i=0;i<cantDeCeldas;i++){
-        int numero = (int) (Math.random() * juego.length) + 1;
-        int numero2 = (int) (Math.random() * juego.length) + 1;
+//        int numero = (int) (Math.random() * juego.length) + 1;
+//        int numero2 = (int) (Math.random() * juego.length) + 1;
+       int numero = (int) (Math.random() * (juego.length -1));
+       int numero2 = (int) (Math.random() * (juego.length -1));
         System.out.println(numero);
         System.out.println(numero2);
             this.juego[numero][numero2]=c;

@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 public class LogicaDeNavegacion {
     
  public void stringMatrix(Celda[][] nueva){
+     
         String cadena = "";
         for (int f = 0; f < nueva.length; f++) {
             for (int c = 0; c < nueva.length; c++) {

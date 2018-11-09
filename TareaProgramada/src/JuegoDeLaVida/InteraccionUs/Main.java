@@ -8,7 +8,7 @@ package JuegoDeLaVida.InteraccionUs;
  * @author EstebanBV
  * @version 28/10/2018
  */
-public abstract class Main {
+public class Main {
 
     /**
      * @param args the command line arguments

@@ -25,7 +25,7 @@ public class Reglas {
          return matrizC;
     }**/
  
-    public void createAleatorias (int cant, Celda[][] nueva) {
+    public void Encuentra (Celda[][] nueva) {
        for (int f = 0; f < nueva.length; f++) {
            for (int c = 0; c < nueva.length; c++) {
                 if (nueva[f][c].getEstado() == true);

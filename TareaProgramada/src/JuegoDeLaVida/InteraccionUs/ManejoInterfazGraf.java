@@ -26,7 +26,6 @@ public class ManejoInterfazGraf {
             logic.stringMatrix(cuadri.getMatriz());
             
             
-            
         }
 
         
