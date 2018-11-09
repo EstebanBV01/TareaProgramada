@@ -1,41 +1,44 @@
-
 package JuegoDeLaVida.Datos;
+
 /**
  *
  * @author EstebanBV, Fernanda, Juan Carlos
  * @version 28/10/2018
  */
 public class Cuadricula {
-    Celda[][] juego;
-    private static final int TAMA = 3;
 
-    public Cuadricula() {
-        Celda[][] celda = new Celda[TAMA][TAMA]; 
+    
+    Celda[][] juego;
+    public int SIZE=3;
+    Celda c=new Celda(true);
+   
+    public Cuadricula(){
+         this.juego = new Celda[SIZE][SIZE];
     }
-    
-    
-    
-    public Cuadricula(Celda[][] cant) {   
-        if (cant == null) {
-            Celda[][] celda = new Celda[TAMA][TAMA]; 
-        }else {
-            Celda[][] celda = cant;
-        }  
-    } 
-    
-    public void random(int cantDeCeldas) {   
-        int aleatorio = 0 ,aleatorio2 = 0 ;
-        int max = juego.length-1; 
-        int min = 0; 
-        int range = max - min + 1;
-        for (int i = 0; i < cantDeCeldas; i++) {
-           aleatorio  = (int)(Math.random() * range) + min;
-           aleatorio2 = (int)(Math.random() * range) + min;
-                this.juego[aleatorio][aleatorio2].setEstado(true); 
+    public Cuadricula(int cant) {
+        this.juego = new Celda[cant][cant];
+    }
+
+    public void random(int cantDeCeldas) {
+        for(int i=0;i<cantDeCeldas;i++){
+        int numero = (int) (Math.random() * juego.length) + 1;
+        int numero2 = (int) (Math.random() * juego.length) + 1;
+        System.out.println(numero);
+        System.out.println(numero2);
+            this.juego[numero][numero2]=c;
         }
-    }
+        }
     
+
     public int getSize() {
         return juego.length;
+    }
+
+    public Celda[][] getMatriz() {
+        return juego;
+    }
+
+    public void setMatriz(Celda[][] newCelda) {
+        this.juego = newCelda;
     }
 }
