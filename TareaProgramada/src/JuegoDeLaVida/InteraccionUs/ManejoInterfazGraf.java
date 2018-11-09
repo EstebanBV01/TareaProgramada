@@ -16,7 +16,6 @@ public class ManejoInterfazGraf {
         ImageIcon icon = new ImageIcon("logo1.png");
         Reglas reglasGame = new Reglas();
         LogicaDeNavegacion logic = new LogicaDeNavegacion();
-//        Cuadricula[][] cuad= new Cuadricula[][]{};
         
         public void startGame () {
             int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
@@ -24,9 +23,8 @@ public class ManejoInterfazGraf {
             int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
             cuadri.random(celdasAle);
             logic.stringMatrix(cuadri.getMatriz());
-            reglasGame.Encuentra(cuadri.getMatriz());
-            
-            
+            reglasGame.Rules(cuadri.getMatriz());
+            logic.stringMatrix(cuadri.getMatriz());
         }
 
         

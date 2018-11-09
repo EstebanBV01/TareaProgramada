@@ -25,18 +25,90 @@ public class Reglas {
          return matrizC;
     }**/
  
-    public void Encuentra (Celda[][] nueva) {
-       for (int f = 0; f < nueva.length; f++) {
-           for (int c = 0; c < nueva.length; c++) {
-                if (nueva[f][c].getEstado() == true);
-                    for (int i = f; i <f+1; i++) {
-                        for (int j = c; j < c+1; j++) {
-                            if (nueva[f][c].getEstado() == true) {
-                                JOptionPane.showMessageDialog(null,"encontro: " + j +","+ i);
-                            }
-                        }
+    public void Rules (Celda[][] nueva) {
+        int Cont;
+        for (int X = 0; X < nueva.length; X++) {
+            for (int Y = 0; Y < nueva[X].length; Y++) { 
+                Cont = 0;
+                if(X == 0)
+                {
+                    if(Y == 0)
+                    {
+                        if (nueva[X + 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X][Y + 1].getEstado() == true) Cont++;
+                    }else if (Y == nueva[X].length  -1) {
+                        if (nueva[X][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
+                    }else {
+                        if (nueva[X][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
+                        if (nueva[X][Y + 1].getEstado() == true) Cont++;
+                    } 
+                } else if(X == nueva.length -1) {
+                    if(Y == 0){
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X][Y + 1].getEstado() == true) Cont ++;
+                    }else if (Y == nueva[X].length  -1) {
+                        if (nueva[X][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                    }else {
+                        if (nueva[X][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y - 1].getEstado() == true) Cont++;
+                        if (nueva[X][Y - 1].getEstado() == true) Cont++;
                     }
-            }
-       }
+                } else {
+                    if (Y == 0) {
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
+                        if (nueva[X + 1][Y].getEstado() == true) Cont++;
+                    } else if (Y == nueva[X].length) {
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X + 1][Y - 1].getEstado() == true) Cont++;
+                        if (nueva[X + 1][Y].getEstado() == true) Cont++;
+                    } else {
+                        if (nueva[X - 1][Y - 1].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y].getEstado() == true) Cont ++;
+                        if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
+                        if (nueva[X][Y + 1].getEstado() == true) Cont++;
+                        if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
+                        if (nueva[X + 1][Y].getEstado() == true) Cont++;
+                        if (nueva[X + 1][Y - 1].getEstado() == true) Cont++;
+                        if (nueva[X][Y - 1].getEstado() == true) Cont++;
+                    }
+                }
+                
+                if(Cont == 2 || Cont == 3) nueva[X][Y].setEstado(true);
+                if(Cont < 2 || Cont > 3) nueva[X][Y].setEstado(false);
+                
+            } 
+        }
     }
+//    public void Encuentra (Celda[][] nueva) {
+//       for (int f = 0; f < nueva.length; f++) {
+//           for (int c = 0; c < nueva.length; c++) {
+//                if (nueva[f][c].getEstado() == true);
+////                    for (int i = f; i <f+1; i++) {
+////                        for (int j = c; j < c+1; j++) {
+////                            if (nueva[f][c].getEstado() == true) {
+//                                
+//                            }
+//                        }
+////                    }
+////            }
+////       }
+//    }
+    
+    
 }
