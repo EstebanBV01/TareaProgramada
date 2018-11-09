@@ -1,5 +1,7 @@
 package JuegoDeLaVida.Datos;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author EstebanBV, Fernanda, Juan Carlos
@@ -27,18 +29,23 @@ public class Cuadricula {
         
     }
 
-    public void random(int cantDeCeldas) {
-        for(int i=0;i<cantDeCeldas;i++){
-//        int numero = (int) (Math.random() * juego.length) + 1;
-//        int numero2 = (int) (Math.random() * juego.length) + 1;
-       int numero = (int) (Math.random() * (juego.length -1));
-       int numero2 = (int) (Math.random() * (juego.length -1));
-        System.out.println(numero);
-        System.out.println(numero2);
+   public void random(int cantDeCeldas) {
+       for(int i=0;i<=cantDeCeldas;i++){
+        int numero = (int) (Math.random() * (juego.length -1));
+        int numero2 = (int) (Math.random() * (juego.length -1));
             this.juego[numero][numero2]=c;
         }
-        }
-    
+    }
+      public void setPositions(Celda[][] matriz){
+        int fila,col=0;   
+        boolean desicion=true;
+        do {         
+            fila=Integer.parseInt(JOptionPane.showInputDialog("digite la fila que desee"));
+            col=Integer.parseInt(JOptionPane.showInputDialog("digite la columna que desee"));
+            matriz[fila][col]=c;
+            desicion=Boolean.parseBoolean(JOptionPane.showInputDialog("desea añadir otra?"));
+        } while (desicion==true);  
+    }
 
     public int getSize() {
         return juego.length;

@@ -95,6 +95,29 @@ public class Reglas {
             } 
         }
     }
+      public void encuentraVivos(Celda[][] nueva) {
+        int cont=0;
+        for (int f = 0; f < nueva.length; f++) {
+            for (int c = 0; c < nueva.length; c++) {
+                if (nueva[f][c].getEstado() == true){
+                        cont++;
+                        System.out.println("num"+cont+"_("+f+","+c+")");
+                }
+            }
+       }
+    }
+       //parametro:matrix
+    //llena la matrix de celdas "muertas"
+    //no retorna
+    public void fillMatrix(Celda[][]nueva){
+         int cont=0;
+        for (int fila = 0; fila < nueva.length; fila++) {
+            for (int col=0 ; col <nueva.length; col++) { 
+                System.out.println("se esta llenando con celdas muertas");
+                nueva[fila][col].setEstado(false);
+            }
+        }
+    }    
 //    public void Encuentra (Celda[][] nueva) {
 //       for (int f = 0; f < nueva.length; f++) {
 //           for (int c = 0; c < nueva.length; c++) {
