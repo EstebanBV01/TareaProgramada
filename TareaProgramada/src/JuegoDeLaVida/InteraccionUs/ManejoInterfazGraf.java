@@ -24,6 +24,7 @@ public class ManejoInterfazGraf {
             int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
             cuadri.random(celdasAle);
             logic.stringMatrix(cuadri.getMatriz());
+            reglasGame.Encuentra(cuadri.getMatriz());
             
             
         }
