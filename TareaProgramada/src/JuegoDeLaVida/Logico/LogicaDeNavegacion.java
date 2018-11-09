@@ -29,16 +29,7 @@ public class LogicaDeNavegacion {
                 this.logica[aleatorio][aleatorio2] = 1; 
         }
     }
-     public void stringMatrix(){
-        String cadena = "";
-        for (int f = 0; f < logica.length; f++) {
-            for (int c = 0; c <logica.length; c++) {
-                cadena += logica[f][c]+" | ";
-            }
-            cadena += "\n";
-        }
-        JOptionPane.showMessageDialog(null, cadena+"\n");
-    }
+    
     
     public int[][] regla () {
         int cont = 0;
