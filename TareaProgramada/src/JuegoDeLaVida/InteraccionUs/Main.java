@@ -21,7 +21,7 @@ public abstract class Main {
         ImageIcon icontest = new ImageIcon("logo1.jpg");
         int[] parte = {1,2,3,4,5,6};
         //Cuadricula logica= new Cuadricula();
-       ManejoInterfazGraf interfaz=new ManejoInterfazGraf();
+       Cuadricula interfaz=new Cuadricula();
        int cant = Integer.parseInt(JOptionPane.showInputDialog(null,"Datos"));
         //(JOptionPane.showInputDialog(null, "Normal Message", "Title", JOptionPane.WARNING_MESSAGE, icontest, new Object[] { "3", "4", "5", "6", "7", "0" }, args));
        

@@ -26,7 +26,7 @@ public class Cuadricula {
         for (int i = 0; i < cantDeCeldas; i++) {
            aleatorio  = (int)(Math.random() * range) + min;
            aleatorio2 = (int)(Math.random() * range) + min;
-                this.celda[aleatorio][aleatorio2] = estado.getViva(); 
+                this.celda[aleatorio][aleatorio2] = null; 
         }
     }
     
@@ -74,7 +74,7 @@ public class Cuadricula {
         for (int i = 0; i < cantDeCeldas; i++) {
            aleatorio  = (int)(Math.random() * range) + min;
            aleatorio2 = (int)(Math.random() * range) + min;
-                this.celda[aleatorio][aleatorio2] = viva; 
+                this.celda[aleatorio][aleatorio2] = estado; 
         }
         return this.celda;
     }

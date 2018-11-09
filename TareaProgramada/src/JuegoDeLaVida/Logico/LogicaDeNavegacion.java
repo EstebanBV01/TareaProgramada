@@ -37,7 +37,7 @@ public class LogicaDeNavegacion {
             }
             cadena += "\n";
         }
-        System.out.println(cadena+"\n");
+        JOptionPane.showMessageDialog(null, cadena+"\n");
     }
     
     public int[][] regla () {
