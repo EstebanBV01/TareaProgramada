@@ -20,7 +20,17 @@ public class LogicaDeNavegacion {
         String cadena = "";
         for (int f = 0; f < nueva.length; f++) {
             for (int c = 0; c < nueva.length; c++) {
-                cadena += nueva[f][c]+" | ";
+               
+                if(nueva[f][c].getEstado() == true )
+                {
+//                    cadena += nueva[f][c]+" | ";
+                    cadena += "⬛" +" | ";
+                }
+                else
+                {
+                    cadena += "□" +" | ";
+                }
+                
             }
             cadena += "\n";
         }

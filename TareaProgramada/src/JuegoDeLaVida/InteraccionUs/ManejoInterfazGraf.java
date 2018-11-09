@@ -16,7 +16,7 @@ public class ManejoInterfazGraf {
         ImageIcon icon = new ImageIcon("logo1.png");
         Reglas reglasGame = new Reglas();
         LogicaDeNavegacion logic = new LogicaDeNavegacion();
-        Cuadricula[][] cuad= new Cuadricula[][]{};
+//        Cuadricula[][] cuad= new Cuadricula[][]{};
         
         public void startGame () {
             int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
