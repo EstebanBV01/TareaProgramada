@@ -9,9 +9,11 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author usuario
+ * @author Esteban BV, Fernanda AA, Juan Carlos VA
  */
 public class ManejoInterfazGraf {
+        int count = 0;
+        ImageIcon icontest = new ImageIcon("logo1.jpg");
         Reglas reglasGame = new Reglas();
         LogicaDeNavegacion logic = new LogicaDeNavegacion();
         boolean decision=true;
@@ -21,6 +23,7 @@ public class ManejoInterfazGraf {
             int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
             Cuadricula cuadri = new Cuadricula(cant);
             reglasGame.fillMatrix(cuadri.getMatriz());
+            
             int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
             cuadri.random(celdasAle);
 
@@ -29,15 +32,14 @@ public class ManejoInterfazGraf {
             int col=Integer.parseInt(JOptionPane.showInputDialog("Digite La Columna Que Desea"));
                 cuadri.setPositions(fila, col);
                 logic.stringMatrix(cuadri.getMatriz());
-                decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));
-                
+                decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));               
             } while (decision == true); 
-                reglasGame.Rules(cuadri.getMatriz());
+            do {
+                logic.stringMatrix(cuadri.getMatriz());
                 reglasGame.encuentraVivos(cuadri.getMatriz());
-            
-        }
-
-        
-         
+                count += 1;
+            } while (count == 20);
+  
+        }  
     }
 

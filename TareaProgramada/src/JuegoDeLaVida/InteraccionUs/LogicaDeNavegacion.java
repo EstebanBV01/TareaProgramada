@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author estebanbv
+ * @author Esteban BV, Fernanda AA, Juan Carlos VA
  */
 public class LogicaDeNavegacion {
     
@@ -23,7 +23,6 @@ public class LogicaDeNavegacion {
                
                 if(nueva[f][c].getEstado() == true )
                 {
-//                    cadena += nueva[f][c]+" | ";
                     cadena += "⬛" +" | ";
                 }
                 else

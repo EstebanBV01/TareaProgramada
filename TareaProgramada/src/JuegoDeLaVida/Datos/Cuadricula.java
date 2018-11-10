@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author EstebanBV, Fernanda, Juan Carlos
+ * @author Esteban BV, Fernanda AA, Juan Carlos VA
  * @version 28/10/2018
  */
 public class Cuadricula {
@@ -12,7 +12,7 @@ public class Cuadricula {
     
     Celda[][] juego;
     public int SIZE=3;
-    Celda c=new Celda(true);
+    Celda c = new Celda(true);
      Celda CeldaMuerta = new Celda(false);
    
     public Cuadricula(){
@@ -33,13 +33,12 @@ public class Cuadricula {
        for(int i=0;i<=cantDeCeldas;i++){
         int numero = (int) (Math.random() * (juego.length -1));
         int numero2 = (int) (Math.random() * (juego.length -1));
-            this.juego[numero][numero2]=c;
+            this.juego[numero][numero2] = c;
         }
     }
-      public void setPositions(int X, int Y){
-        int fila,col=0;   
+      public void setPositions(int X, int Y) {
         boolean decision=true;
-            juego[X][Y]=c;
+            juego[X][Y]= c;
  }
 
     public int getSize() {

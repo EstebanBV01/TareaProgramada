@@ -25,15 +25,22 @@ public class Reglas {
          return matrizC;
     }**/
  
+    /**
+     * 
+     * @param nueva de tipo Matriz
+     * Metodo para la validacion de celdas vecinas
+     * No 
+     */
     public void Rules (Celda[][] nueva) {
         int Cont;
         for (int X = 0; X < nueva.length; X++) {
             for (int Y = 0; Y < nueva[X].length; Y++) { 
                 Cont = 0;
-                if(X == 0)
-                {
-                    if(Y == 0)
-                    {
+                
+                if(X == 0) {
+
+                    if(Y == 0) {
+                    
                         if (nueva[X + 1][Y].getEstado() == true) Cont ++;
                         if (nueva[X + 1][Y + 1].getEstado() == true) Cont ++;
                         if (nueva[X][Y + 1].getEstado() == true) Cont++;
@@ -48,7 +55,8 @@ public class Reglas {
                         if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
                         if (nueva[X][Y + 1].getEstado() == true) Cont++;
                     } 
-                } else if(X == nueva.length -1) {
+                    
+                }else if(X == nueva.length -1) {
                     if(Y == 0){
                         if (nueva[X - 1][Y].getEstado() == true) Cont ++;
                         if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
@@ -64,20 +72,21 @@ public class Reglas {
                         if (nueva[X - 1][Y - 1].getEstado() == true) Cont++;
                         if (nueva[X][Y - 1].getEstado() == true) Cont++;
                     }
-                } else {
+                    
+                }else {
                     if (Y == 0) {
                         if (nueva[X - 1][Y].getEstado() == true) Cont ++;
                         if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
                         if (nueva[X][Y + 1].getEstado() == true) Cont ++;
                         if (nueva[X + 1][Y + 1].getEstado() == true) Cont++;
                         if (nueva[X + 1][Y].getEstado() == true) Cont++;
-                    } else if (Y == nueva[X].length) {
+                    }else if (Y == nueva[X].length) {
                         if (nueva[X - 1][Y].getEstado() == true) Cont ++;
                         if (nueva[X - 1][Y - 1].getEstado() == true) Cont ++;
                         if (nueva[X][Y - 1].getEstado() == true) Cont ++;
                         if (nueva[X + 1][Y - 1].getEstado() == true) Cont++;
                         if (nueva[X + 1][Y].getEstado() == true) Cont++;
-                    } else {
+                    }else {
                         if (nueva[X - 1][Y - 1].getEstado() == true) Cont ++;
                         if (nueva[X - 1][Y].getEstado() == true) Cont ++;
                         if (nueva[X - 1][Y + 1].getEstado() == true) Cont ++;
@@ -106,9 +115,11 @@ public class Reglas {
             }
        }
     }
-       //parametro:matrix
-    //llena la matrix de celdas "muertas"
-    //no retorna
+     /**
+      * @param nueva de tipo matriz
+      * Llena la matrix de celdas "muertas"
+      * No retorna
+      */
     public void fillMatrix(Celda[][]nueva){
          int cont=0;
         for (int fila = 0; fila < nueva.length; fila++) {

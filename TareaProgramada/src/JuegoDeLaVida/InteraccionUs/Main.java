@@ -5,7 +5,7 @@ package JuegoDeLaVida.InteraccionUs;
 
 /**
  *
- * @author EstebanBV
+ * @author Esteban BV, Fernanda AA, Juan Carlos VA
  * @version 28/10/2018
  */
 public class Main {

@@ -3,7 +3,7 @@ package JuegoDeLaVida.Datos;
 
 /**
  *
- * @author Esteban, Fernanda, Juan Carlos
+ * @author Esteban BV, Fernanda AA, Juan Carlos VA
  */
 public class Celda {
     private boolean estado;
