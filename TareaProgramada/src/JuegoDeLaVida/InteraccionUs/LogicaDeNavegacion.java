@@ -35,4 +35,5 @@ public class LogicaDeNavegacion {
         }
         JOptionPane.showMessageDialog(null,cadena+"\n");
        }
+       
 }

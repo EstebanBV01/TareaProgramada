@@ -17,29 +17,35 @@ public class ManejoInterfazGraf {
         Reglas reglasGame = new Reglas();
         LogicaDeNavegacion logic = new LogicaDeNavegacion();
         boolean decision=true;
-        public void startGame () {
-            
-           //int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
-           int valor = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Tamaño De El Juego", "Juego De La Vida", JOptionPane.INFORMATION_MESSAGE, icontest, new Integer[] {8,9,10,11,12,13,14,15,16,17,18,19,20}, null));
-            Cuadricula cuadri = new Cuadricula(valor);
+        int opcion=0;
+        public void startGame () {           
+           int valor = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
+           //int valor = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Tamaño De El Juego", "Juego De La Vida", JOptionPane.INFORMATION_MESSAGE, icontest, new Integer[] {8,9,10,11,12,13,14,15,16,17,18,19,20}, null));
+           Cuadricula cuadri = new Cuadricula(valor);
             reglasGame.fillMatrix(cuadri.getMatriz());
-            
-            int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
-            cuadri.random(celdasAle);
-
-            do {
-                 int fila=Integer.parseInt(JOptionPane.showInputDialog("Digite La Fila Que Desea"));
-            int col=Integer.parseInt(JOptionPane.showInputDialog("Digite La Columna Que Desea"));
-                cuadri.setPositions(fila, col);
-                logic.stringMatrix(cuadri.getMatriz());
-                decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));               
-            } while (decision == true); 
-            while (count <= 20) {
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "digite 1 para asignar posiciones aleatorias\n"
+                                                                + "digite 2 para asignarlas manualmente"));
+            switch(opcion){
+                case 1:
+                    int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
+                    cuadri.random(celdasAle);
+                break;
+                case 2:
+                    do {
+                        int fila=Integer.parseInt(JOptionPane.showInputDialog("Digite La Fila Que Desea"));
+                        int col=Integer.parseInt(JOptionPane.showInputDialog("Digite La Columna Que Desea"));
+                        cuadri.setPositions(fila, col);
+                        logic.stringMatrix(cuadri.getMatriz());
+                        decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));               
+                    } while (decision == true);
+                break;
+            }  
+                while (count <= 20) {
                 logic.stringMatrix(cuadri.getMatriz());
                 reglasGame.encuentraVivos(cuadri.getMatriz());
                 //reglasGame.Rules(cuadri.getMatriz());
                 count += 1;
-            } 
+                } 
         }  
     }
 
