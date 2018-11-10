@@ -36,16 +36,11 @@ public class Cuadricula {
             this.juego[numero][numero2]=c;
         }
     }
-      public void setPositions(Celda[][] matriz){
+      public void setPositions(int X, int Y){
         int fila,col=0;   
-        boolean desicion=true;
-        do {         
-            fila=Integer.parseInt(JOptionPane.showInputDialog("digite la fila que desee"));
-            col=Integer.parseInt(JOptionPane.showInputDialog("digite la columna que desee"));
-            matriz[fila][col]=c;
-            desicion=Boolean.parseBoolean(JOptionPane.showInputDialog("desea añadir otra?"));
-        } while (desicion==true);  
-    }
+        boolean decision=true;
+            juego[X][Y]=c;
+ }
 
     public int getSize() {
         return juego.length;
