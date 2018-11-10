@@ -4,6 +4,7 @@ package JuegoDeLaVida.InteraccionUs;
 import JuegoDeLaVida.Datos.Celda;
 import JuegoDeLaVida.Datos.Cuadricula;
 import JuegoDeLaVida.Logico.Reglas;
+import com.sun.tracing.dtrace.ArgsAttributes;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -12,16 +13,18 @@ import javax.swing.JOptionPane;
  * @author Esteban BV, Fernanda AA, Juan Carlos VA
  */
 public class ManejoInterfazGraf {
-        int count = 0;
+        int count = 1;
         ImageIcon icontest = new ImageIcon("logo1.jpg");
         Reglas reglasGame = new Reglas();
         LogicaDeNavegacion logic = new LogicaDeNavegacion();
         boolean decision=true;
+        //int[] canti = {8,9,10,11,12,13,14,15,16,17,18,19,20};
         public void startGame () {
             
             
-            int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
-            Cuadricula cuadri = new Cuadricula(cant);
+           //int cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego"));
+           int valor = Integer.parseInt((String) JOptionPane.showInputDialog(null, "Tamaño De El Juego", "Juego De La Vida", JOptionPane.INFORMATION_MESSAGE, icontest, new Object[] {8,9,10,11,12,13,14,15,16,17,18,19,20}, null));
+            Cuadricula cuadri = new Cuadricula(valor);
             reglasGame.fillMatrix(cuadri.getMatriz());
             
             int celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
@@ -34,11 +37,12 @@ public class ManejoInterfazGraf {
                 logic.stringMatrix(cuadri.getMatriz());
                 decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));               
             } while (decision == true); 
-            do {
+            while (count <= 20) {
                 logic.stringMatrix(cuadri.getMatriz());
                 reglasGame.encuentraVivos(cuadri.getMatriz());
+                //reglasGame.Rules(cuadri.getMatriz());
                 count += 1;
-            } while (count == 20);
+            } 
   
         }  
     }
