@@ -29,7 +29,8 @@ public class ManejoInterfazGraf {
         int valor=0;
         Object [] colores ={"si","no"}; 
         Cuadricula[][] vector=new Cuadricula[21][21];
-        public void startGame () {           
+        public void startGame () {
+            JOptionPane.showMessageDialog(null, "Bienvenido al juego de la vida\nAutores:\nMaria Fernanda Alvarado Astorga\nJuan Carlos Valverde Araya\nEsteban Barrantes Vargas ");
           do{  
             valor = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego...>8 y <20"));
             }while(valor<8||valor>20);
