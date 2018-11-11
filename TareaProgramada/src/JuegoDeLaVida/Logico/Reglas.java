@@ -19,8 +19,8 @@ public class Reglas {
     public Celda[][] Rules (Celda[][] nueva) {
         int Cont;
         Celda[][] temp = new Celda[nueva.length][nueva.length];
-        Celda CeldaVida = new Celda(true);
-        Celda CeldaMuerta = new Celda(false);
+        Celda celdaVida = new Celda(true);
+        Celda celdaMuerta = new Celda(false);
         
         for (int X = 0; X < nueva.length; X++) {
             for (int Y = 0; Y < nueva[X].length; Y++) { 
@@ -87,8 +87,8 @@ public class Reglas {
                         if (nueva[X][Y - 1].getEstado() == true) Cont++;
                     }
                 }
-                if(Cont == 2 || Cont == 3) temp[X][Y] = CeldaVida;
-                if(Cont < 2 || Cont > 3) temp[X][Y] = CeldaMuerta;
+                if(Cont == 2 || Cont == 3) temp[X][Y] = celdaVida;
+                if(Cont < 2 || Cont > 3) temp[X][Y] = celdaMuerta;
             } 
         }
         return temp;
@@ -117,7 +117,7 @@ public class Reglas {
       * Llena la matrix de celdas "muertas"
       * No retorna
       */
-    public void fillMatrix(Celda[][]nueva){
+    public void fillMatrix(Celda[][] nueva){
          int cont=0;
         for (int fila = 0; fila < nueva.length; fila++) {
             for (int col=0 ; col <nueva.length; col++) { 

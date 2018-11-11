@@ -8,10 +8,10 @@ package JuegoDeLaVida.Datos;
 public class Cuadricula {
 
     
-    Celda[][] juego;
-    public int SIZE=3;
-    Celda c = new Celda(true);
-    Celda CeldaMuerta = new Celda(false);
+    private Celda[][] juego;
+    private int SIZE=3;
+    Celda celdaVida = new Celda(true);
+    Celda celdaMuerta = new Celda(false);
    
      /**
       * Contructor para iniciar el tamaño de la matriz de forma predeterminada
@@ -29,7 +29,7 @@ public class Cuadricula {
         
           for (int f = 0; f < juego.length; f++) {
             for (int c = 0; c < juego.length; c++) {
-                this.juego[f][c]=CeldaMuerta;
+                this.juego[f][c] = celdaMuerta;
             }
         }
     }
@@ -42,7 +42,7 @@ public class Cuadricula {
        for(int i=0;i<=cantDeCeldas;i++){
         int numero = (int) (Math.random() * (juego.length -1));
         int numero2 = (int) (Math.random() * (juego.length -1));
-            this.juego[numero][numero2] = c;
+            this.juego[numero][numero2] = celdaVida;
         }
     }
    
@@ -53,7 +53,7 @@ public class Cuadricula {
      */
     public void setPositions(int X, int Y) {
         boolean decision=true;
-            juego[X][Y]= c;
+            juego[X][Y]= celdaVida;
     }
 
     /**
