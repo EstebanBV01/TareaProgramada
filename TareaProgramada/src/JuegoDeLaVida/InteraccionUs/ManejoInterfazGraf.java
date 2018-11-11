@@ -25,7 +25,7 @@ public class ManejoInterfazGraf {
         private int opcion = 0;
         private int celdasAle=0;
         private int valor=0;
-        private ImageIcon icontest = new ImageIcon("logo1.jpg");
+        private ImageIcon icontest = new ImageIcon("logo1.png");
         private Reglas reglasGame = new Reglas();
         private LogicaDeNavegacion logic = new LogicaDeNavegacion();
         private Object [] colores ={"si","no"}; 
@@ -33,9 +33,9 @@ public class ManejoInterfazGraf {
         
         
         public void startGame () {
-            JOptionPane.showMessageDialog(null, "Bienvenido Al Juego De La Vida\nAutores:\nMaria Fernanda Alvarado Astorga\nJuan Carlos Valverde Araya\nEsteban Barrantes Vargas ");
+             JOptionPane.showMessageDialog(null,  "Bienvenido Al Juego De La Vida\nAutores:\nMaria Fernanda Alvarado Astorga\nJuan Carlos Valverde Araya\nEsteban Barrantes Vargas ", "Juego De La Vida", JOptionPane.INFORMATION_MESSAGE, icontest);
             do{  
-            valor = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego...>8 y <20"));
+            valor = Integer.parseInt(JOptionPane.showInputDialog(null, "Tamaño Juego...> 8 y < 20"));
             }while(valor<8||valor>20);
             Cuadricula cuadri = new Cuadricula(valor);
             reglasGame.fillMatrix(cuadri.getMatriz());
@@ -52,7 +52,7 @@ public class ManejoInterfazGraf {
                         int col=Integer.parseInt(JOptionPane.showInputDialog("Digite La Columna Que Desea"));
                         cuadri.setPositions(fila, col);
                         logic.stringMatrix(cuadri.getMatriz());
-                        decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea añadir otra? \n[true] Para Si! \n[false] Para No!"));               
+                        decision = Boolean.parseBoolean(JOptionPane.showInputDialog("Desea Añadir Otra Celda? \n[true] Para Si! \n[false] Para No!"));               
                     }while (decision == true);
                 break;
             }  
