@@ -97,8 +97,9 @@ public class Reglas {
     /**
      * Metodo que encuentra celdas viva y las señala
      * @param nueva Recibe un vector de celdas
+     * @return retorana el numero de celdas true
      */
-    public void encuentraVivos(Celda[][] nueva) {
+    public int encuentraVivos(Celda[][] nueva) {
         int cont=0;
         for (int f = 0; f < nueva.length; f++) {
             for (int c = 0; c < nueva.length; c++) {
@@ -108,6 +109,7 @@ public class Reglas {
                 }
             }
         }
+        return cont;
     }
     
      /**
