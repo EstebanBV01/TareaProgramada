@@ -25,11 +25,11 @@ public class ManejoInterfazGraf {
         private int opcion = 0;
         private int celdasAle=0;
         private int valor=0;
-        private ImageIcon icontest = new ImageIcon("logo1.png");
-        private Reglas reglasGame = new Reglas();
-        private LogicaDeNavegacion logic = new LogicaDeNavegacion();
-        private Object [] colores ={"si","no"}; 
-        private Cuadricula[][] vector = new Cuadricula[21][21];
+        ImageIcon icontest = new ImageIcon("logo1.png");
+        Reglas reglasGame = new Reglas();
+        LogicaDeNavegacion logic = new LogicaDeNavegacion();
+        Object [] colores ={"si","no"}; 
+        Cuadricula[][] vector = new Cuadricula[21][21];
         
         
         public void startGame () {
@@ -39,8 +39,8 @@ public class ManejoInterfazGraf {
             }while(valor<8||valor>20);
             Cuadricula cuadri = new Cuadricula(valor);
             reglasGame.fillMatrix(cuadri.getMatriz());
-            int opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "digite 1 para asignar posiciones aleatorias\n"
-                                                                            + "digite 2 para asignarlas manualmente"));
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite 1 Para Asignar Posiciones Aleatorias\n"
+                                                                            + "Digite 2 Para Asignarlas Manualmente"));
             switch(opcion){
                 case 1:
                      celdasAle = Integer.parseInt(JOptionPane.showInputDialog(null, "Espacios Aleatorios"));
