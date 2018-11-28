@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DataBase;
+import javax.swing.JButton;
 
 /**
  *
- * @author Satellaizar
+ * @author Esteban
  */
-public class Cuadro {
+public class Cuadro extends JButton{
     
+    private CharElement element;
+    
+    public Cuadro(CharElement element) {
+        super(element.toString());
+    }
+    
+    public CharElement getCharElement() {
+        return this.element;
+    }
 }
