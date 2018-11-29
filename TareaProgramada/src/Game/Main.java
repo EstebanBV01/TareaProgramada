@@ -1,5 +1,7 @@
 package Game;
 
+import InterfazGrafica.Index;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,7 +18,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //prueba de push 27-11-18 9:40pm
+        //prueba de push 27-11-18 9:40pm 
+        
+        Index index = new Index();
+        index.setVisible(true);
     }
     
 }

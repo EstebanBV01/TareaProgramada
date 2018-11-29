@@ -22,6 +22,10 @@ public class User {
         this.password = password;
     }
 
+    public User() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getNickname() {
         return nickname;
     }
@@ -41,6 +45,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "nickname=" + nickname + ", password=" + password + '}';
+    }
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
