@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package InterfazGrafica;
 
+package InterfazGrafica;
+import java.io.*;
 /**
  *
  * @author Satellaizar
  */
-public class Levels extends javax.swing.JDialog {
+public class Levels extends javax.swing.JDialog  {
 
     /**
      * Creates new form Levels
@@ -149,7 +150,9 @@ public class Levels extends javax.swing.JDialog {
     }//GEN-LAST:event_btHardActionPerformed
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
-        // TODO add your handling code here:
+        Easy easy=new Easy(this,true);
+        dispose();//creo que hace falta?
+        easy.setVisible(true);
     }//GEN-LAST:event_btEasyActionPerformed
 
     private void btMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMediumActionPerformed

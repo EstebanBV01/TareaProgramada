@@ -11,8 +11,6 @@ import java.io.*;
  * @author juanka,fernanda,esteban
  */
 public class Word implements Serializable {
-    public Word[] wordVector;
-    private int counter;
 ///////////////
     private int wordNumber;
     private String vertHoriz;
@@ -58,24 +56,12 @@ public class Word implements Serializable {
         this.description=descri;
         this.word=word;
     }
-     /**
-      * constructor recibe un vector
-      * @param wordVector 
-      */
-    public Word(Word[] wordVector) {
-        this.wordVector = wordVector;
-    }
     /*
     constructor sin parametros
     */
     public Word(){
     this(0, 0,0,"","","",0, 0);
-  }
-
-    public String getWordObj(int index) {
-        return word;
-    }
-    
+  }    
     @Override
     public String toString() {
         return "Word{"+word + ", wordNumber=" + wordNumber + ", vertHoriz=" + vertHoriz + ", filaSalida=" + filaSalida + ", filaLLegada=" + filaLLegada + ", coluSalida=" + coluSalida + ", coluLlegada=" + coluLlegada+ '}';
@@ -83,18 +69,5 @@ public class Word implements Serializable {
     public String toFileString(){
         return "/"+filaSalida+"-"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
     
-    }
-    //////////7
-    public Word getWord(int index) {
-        return wordVector[index];
-    }
-   public int getSize(){return wordVector.length;
-   }
-     public String getListString() {
-        String text = "";
-        for (int i = 0; i < wordVector.length; i++) {
-            text += wordVector[i] + "\n";
-        }
-        return text;
     }
 }

@@ -1,8 +1,11 @@
 package Game;
 
 import Crucigramas.Word;
+import Crucigramas.WordList;
 import DataBase.User;
 import DataBase.UserInformation;
+import FileManager.ReaderManager;
+import FileManager.WriterManager;
 import FileManagerBi.ReaderManagerBinary;
 import FileManagerBi.WriterManagerBinary;
 import InterfazGrafica.Index;
@@ -14,7 +17,7 @@ import InterfazGrafica.Index;
  */
 import java.io.*;
 public class Main {
-public final static Word WORD_MANAGER = new Word();
+public final static WordList WORD_MANAGER = new WordList();
 public static UserInformation User_Mananger = new UserInformation();//prueba el profe dijo que no//talvez no deberia ser "final"
     /**
      * @param args the command line arguments
@@ -59,7 +62,9 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             //ex.printStackTrace();
         }
         
-        
+        /**
+         * escritura binaria para el usuario
+         */
         WriterManagerBinary writer = new WriterManagerBinary();
         try {
             writer.open("UserFiles/UserInfo.ser");
@@ -72,49 +77,43 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        WriterManager writer = new WriterManager();
-//        try {
-//            writer.open("UserFiles/UserInfo.ser");  //probar el parametro apend en new FileWriter(fileName, true)
-//            writer.writeAll();
-//            writer.close(); //importante cerrar el archivo
-//            System.out.println("Escritura exitosa");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
-    
-        
-        
-        
-//        WriterManager writer = new WriterManager();
-//        try {
-//            writer.open("UserFiles/UserInfo.ser");  //probar el parametro apend en new FileWriter(fileName, true)
-//            writer.writeAll();
-//            writer.close(); //importante cerrar el archivo 
-//            System.out.println("Escritura exitosa");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
+        ////
+        ////
+        ///prueba de lectura escritura de TEXT
+        ////
+        Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
+        WORD_MANAGER.addWord(w1);
+        WORD_MANAGER.addWord(w1);
+        System.out.println("counterWord"+WORD_MANAGER.getCounter());
+            System.out.println(WORD_MANAGER.getListString());
+        ReaderManager readerTxt = new ReaderManager();
+        try {
+            reader.open("wordFile.txt");
+            System.out.println(readerTxt.read());
+            System.out.println(readerTxt.read());
+            System.out.println(readerTxt.read());
+            System.out.println(readerTxt.read());
+            reader.close(); //importante cerrar el archivo
+            System.out.println("Lectura exitosa");
+        } catch (IOException ex) {
+            System.err.println("error de archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
+
+        WriterManager writerTxt = new WriterManager();
+        try {
+            writerTxt.open("wordFile.txt");  //probar el parametro apend en new FileWriter(fileName, true)
+            writerTxt.writeAll();
+            writerTxt.close(); //importante cerrar el archivo 
+            System.out.println("Escritura exitosa");
+        } catch (IOException ex) {
+            System.err.println("error de archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
     }
-    
+
 }
+    
+

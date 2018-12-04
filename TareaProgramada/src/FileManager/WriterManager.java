@@ -23,7 +23,7 @@ public class WriterManager {
     }
 
     public void writeAll() throws IOException {
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < Main.WORD_MANAGER.getSize(); i++) {
             write(Main.WORD_MANAGER.getWord(i));
         }
     }
