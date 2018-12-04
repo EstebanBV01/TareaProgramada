@@ -4,39 +4,81 @@
  * and open the template in the editor.
  */
 package DataBase;
+import DataBase.User;
 
 /**
  *
  * @author Johan
  */
 public class UserInformation {
-    User[] userInfo;
-    static final int SIZE=3;
+    int count = 0;
+    User[] userlist;
+    static final int SIZE=4;
 
     public UserInformation(User[] userInfo) {
-        this.userInfo = userInfo;
+        this.userlist = userInfo;
     }
+    
     public UserInformation(){
-        userInfo=new User[SIZE];
+        userlist=new User[SIZE];
     }
+    
     public User[] getUserInfo() {
-        return userInfo;
+        return userlist;
     }
     /**
      * 
      * @return retorna el tmaño del vector 
      */
     public  int getLength() {
-        return userInfo.length;
+        return userlist.length;
     }
 
-    public void setUserInfo(User[] userInfo) {
-        this.userInfo = userInfo;
+    public void setUserlist(User[] userInfo) {
+        this.userlist = userInfo;
     }
     public void vecString(){
-        for (User user : userInfo) {
+        for (User user : userlist) {
             System.out.println(" "+user+" ");
         }
+    }
+    public String getListString() {
+        String text = "";
+        for (int i = 0; i < count; i++) {
+            text += userlist[i] + "\n";
+        }
+        return text;
+    }
+    
+    public void bigger() {
+        User[] vec = new User[count + 1];
+        for (int i = 0; i < vec.length; i++) {
+            vec[i] = userlist[i];
+        }
+        userlist = vec;
+    }
+    
+    public void addUser (User user) {
+        if (userlist.length-1 != count) {
+            if (user != null) {
+                userlist[count] = user;
+                count++;
+            }
+        }else {
+            this.bigger();
+            if (user != null) {
+                userlist[count] = user;
+                count++;
+            }
+        }
+    }
+
+    public void addProduct(User product) {
+        userlist[count++] = product;
+    }
+    
+    public User getUser (int index) {
+        return userlist[index];
     }
     
 }

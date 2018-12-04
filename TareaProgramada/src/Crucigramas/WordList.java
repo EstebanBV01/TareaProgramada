@@ -68,7 +68,7 @@ public class WordList {
     public int getSize(){return wordList.length;}
     @Override
     public String toString() {
-        return "WordList{" + "wordList=" + wordList + ", counter=" + counter + '}';
+        return "wordList: " + wordList + ", counter: " + counter;
     }
     
 }

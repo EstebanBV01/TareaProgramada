@@ -3,6 +3,7 @@ package FileManagerBi;
 
 
 import DataBase.User;
+import Game.Main;
 import java.io.FileOutputStream;
 import java.io.*;
 import java.io.ObjectOutputStream;
@@ -23,29 +24,16 @@ public class WriterManagerBinary {
         writer.writeObject(user);
     }
     
+    public void writeAll() throws IOException {
+        for (int i = 0; i < Main.User_Mananger.getLength() ; i++) {
+           write(Main.User_Mananger.getUser(i));
+        }
+    }
+    
     public void close() throws IOException {
         writer.close();
     }
     
 }
 
-//import java.io.FileOutputStream;
-//import java.io.IOException;
-//import java.io.ObjectOutputStream;
-//
-//public class WriterManager {
-//
-//    private ObjectOutputStream writer;
-//
-//    public void open(String fileName) throws IOException {
-//        writer = new ObjectOutputStream(new FileOutputStream(fileName));
-//    }
-//
-//    public void write(Person person) throws IOException {
-//        writer.writeObject(person);
-//    }
-//
-//    public void close() throws IOException {
-//        writer.close();
-//    }
-//}
+

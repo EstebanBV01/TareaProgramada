@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package Crucigramas;
+import java.io.*;
 
 /**
  *
  * @author juanka,fernanda,esteban
  */
-public class Word {
+public class Word implements Serializable {
     public Word[] wordVector;
     private int counter;
 ///////////////

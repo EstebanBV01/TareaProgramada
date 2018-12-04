@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package DataBase;
+import java.io.*;
 
 /**
  *
  * @author Johan
  */
-public class User {
+public class User implements Serializable { 
     private String nickname;
     private String password;
 /**
@@ -41,10 +42,10 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+   
 
-    @Override
     public String toString() {
-        return "User{" + "nickname=" + nickname + ", password=" + password + '}';
+        return "Nickname: " + nickname + ", Password: " + password;
     }
 
     public void setVisible(boolean b) {
