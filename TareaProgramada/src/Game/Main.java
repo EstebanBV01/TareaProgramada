@@ -17,7 +17,7 @@ import InterfazGrafica.Index;
  */
 import java.io.*;
 public class Main {
-public final static WordList WORD_MANAGER = new WordList();
+public static WordList WORD_MANAGER = new WordList();
 public static UserInformation User_Mananger = new UserInformation();//prueba el profe dijo que no//talvez no deberia ser "final"
     /**
      * @param args the command line arguments
@@ -77,6 +77,8 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
+        System.out.println("----------------------\n"
+                + "-----------------------------");
         ////
         ////
         ///prueba de lectura escritura de TEXT
@@ -84,8 +86,9 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
         Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
         WORD_MANAGER.addWord(w1);
         WORD_MANAGER.addWord(w1);
-        System.out.println("counterWord"+WORD_MANAGER.getCounter());
-            System.out.println(WORD_MANAGER.getListString());
+        System.out.println("counterWord="+WORD_MANAGER.getCounter());
+        System.out.println(WORD_MANAGER.getListString());
+            
         ReaderManager readerTxt = new ReaderManager();
         try {
             reader.open("wordFile.txt");
@@ -94,7 +97,7 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             reader.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa");
+            System.out.println("Lectura exitosa de texto");
         } catch (IOException ex) {
             System.err.println("error de archivo");
             System.err.println(ex.getMessage());
