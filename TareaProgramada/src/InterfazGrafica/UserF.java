@@ -6,7 +6,8 @@
 
 package InterfazGrafica;
 
-import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiante
@@ -17,7 +18,6 @@ public class UserF extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);
-       
     }
 
     /**
@@ -29,13 +29,17 @@ public class UserF extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         lbIndication = new javax.swing.JLabel();
         lbUser = new javax.swing.JLabel();
         lbPassword = new javax.swing.JLabel();
         tfUser = new javax.swing.JTextField();
         btBack = new javax.swing.JButton();
-        tfPassword = new javax.swing.JTextField();
-        btSignIn = new javax.swing.JButton();
+        btNoRegis = new javax.swing.JButton();
+        pfPassword = new javax.swing.JPasswordField();
+        btLogin = new javax.swing.JButton();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -59,55 +63,63 @@ public class UserF extends javax.swing.JDialog {
             }
         });
 
-        btSignIn.setText("Sign In");
-        btSignIn.addActionListener(new java.awt.event.ActionListener() {
+        btNoRegis.setText("Entrar Sin Registrarse");
+        btNoRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSignInActionPerformed(evt);
+                btNoRegisActionPerformed(evt);
             }
         });
+
+        btLogin.setText("Registrarse");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbUser)
+                    .addComponent(lbPassword)
+                    .addComponent(tfUser)
+                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(134, 134, 134))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbUser)
-                            .addComponent(lbPassword)
-                            .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(35, 35, 35)
+                        .addComponent(lbIndication))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(lbIndication)))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addGap(118, 118, 118)
+                        .addComponent(btNoRegis)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btBack)
+                .addGap(0, 97, Short.MAX_VALUE)
+                .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btSignIn)
-                .addGap(120, 120, 120))
+                .addComponent(btLogin)
+                .addGap(94, 94, 94))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbIndication, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(40, 40, 40)
                 .addComponent(lbUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbPassword)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btBack)
-                    .addComponent(btSignIn))
-                .addGap(59, 59, 59))
+                    .addComponent(btLogin)
+                    .addComponent(btBack))
+                .addGap(29, 29, 29)
+                .addComponent(btNoRegis)
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,18 +133,22 @@ public class UserF extends javax.swing.JDialog {
         dispose();
     }//GEN-LAST:event_btBackActionPerformed
 
-    private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
-    Difficult dific = new Difficult(this,true);
-    dific.setVisible(true);
-    }//GEN-LAST:event_btSignInActionPerformed
+    private void btNoRegisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoRegisActionPerformed
+        Levels levels = new Levels(this, true);
+        JOptionPane.showMessageDialog(this, "¡A Ingresado Sin Registrarse!");
+        levels.setVisible(true);
+        
+    }//GEN-LAST:event_btNoRegisActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBack;
-    private javax.swing.JButton btSignIn;
+    private javax.swing.JButton btLogin;
+    private javax.swing.JButton btNoRegis;
+    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JLabel lbIndication;
     private javax.swing.JLabel lbPassword;
     private javax.swing.JLabel lbUser;
-    private javax.swing.JTextField tfPassword;
+    private javax.swing.JPasswordField pfPassword;
     private javax.swing.JTextField tfUser;
     // End of variables declaration//GEN-END:variables
 }
