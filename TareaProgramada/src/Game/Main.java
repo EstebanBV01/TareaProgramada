@@ -15,7 +15,7 @@ import InterfazGrafica.Index;
 import java.io.*;
 public class Main {
 public final static Word WORD_MANAGER = new Word();
-public final static UserInformation User_Mananger=new UserInformation();//prueba el profe dijo que no//talvez no deberia ser "final"
+public static UserInformation User_Mananger = new UserInformation();//prueba el profe dijo que no//talvez no deberia ser "final"
     /**
      * @param args the command line arguments
      */

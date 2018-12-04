@@ -6,6 +6,9 @@
 
 package InterfazGrafica;
 
+import FileManagerBi.ReaderManagerBinary;
+import FileManagerBi.WriterManagerBinary;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -158,7 +161,42 @@ public class UserF extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfUserActionPerformed
-
+        
+        
+        ReaderManagerBinary reader = new ReaderManagerBinary();
+        try {
+            reader.open("UserFiles/UserInfo.ser");
+            System.out.println(reader.read());
+            System.out.println(reader.read());
+            System.out.println(reader.read());
+            System.out.println(reader.read());
+            reader.close(); //importante cerrar el archivo
+            System.out.println("Lectura exitosa");
+        } catch (IOException ex) {
+            System.err.println("error de archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("error de casteo de objeto del archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
+        
+        
+        WriterManagerBinary writer = new WriterManagerBinary();
+        try {
+            writer.open("UserFiles/UserInfo.ser");
+            writer.writeAll();
+            //writer.write(user1);
+            writer.close();
+            System.err.println("Escritura Exitosa");
+        }catch (IOException ex) {
+            System.err.println("error de archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+            
+            
+        }
     }//GEN-LAST:event_tfUserActionPerformed
 
     private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
@@ -173,7 +211,7 @@ public class UserF extends javax.swing.JDialog {
     }//GEN-LAST:event_btNoRegisActionPerformed
 
     private void btLogin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogin1ActionPerformed
-        // TODO add your handling code here:
+        tfUser.getText();
     }//GEN-LAST:event_btLogin1ActionPerformed
 
     private void btInstructionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInstructionsActionPerformed
