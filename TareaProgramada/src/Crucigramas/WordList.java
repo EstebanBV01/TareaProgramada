@@ -7,10 +7,16 @@ package Crucigramas;
 
 /**
  *
- * @author Johan
+ * @author 
  */
 public class WordList {
-
+/*
+    
+        ESTA CLASE DIGAMOS QUE NO ESTA EN USO PERO NO LA BORREN AUN 
+    
+    
+    
+    */
     private Word[] wordList;
     private int counter;
 

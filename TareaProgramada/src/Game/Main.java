@@ -17,21 +17,21 @@ import InterfazGrafica.Index;
  */
 import java.io.*;
 public class Main {
-public final static WordList LIST_MANAGER = new WordList();
+public final static Word WORD_MANAGER = new Word();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-//        WriterManager writer=new WriterManager();
-//        writer.write("crucigramasNvl-1.txt");
-//        WordList[] list=new WordList[9];
-        Word w1=new Word(0, "v", 0, 6, 0, 0,"pruebaLAFC");
+        Word w1=new Word(0, 0, 0,"V","laPalabra", "laDescripcion");
         Index index = new Index();
         index.setVisible(true);
-//        for (int i = 0; i < 10; i++) {
-//            LIST_MANAGER.addWord(list[i].getWordList());
-//        }
+        Word[] vec={w1,w1,w1};
+        Word word=new Word(vec);
+        System.out.println(word.getListString());
+        System.out.println("** "+vec[1].toFileString());
+        
+        
+        
         WriterManager writer = new WriterManager();
         try {
             writer.open("crucigrama-Nvl-1.txt");  //probar el parametro apend en new FileWriter(fileName, true)

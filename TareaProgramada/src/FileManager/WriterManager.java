@@ -24,7 +24,7 @@ public class WriterManager {
 
     public void writeAll() throws IOException {
         for (int i = 0; i < 1; i++) {
-            write(Main.LIST_MANAGER.getWord(i));
+            write(Main.WORD_MANAGER.getWord(i));
         }
     }
 
