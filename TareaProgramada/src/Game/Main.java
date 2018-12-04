@@ -34,7 +34,7 @@ public final static Word WORD_MANAGER = new Word();
         
         WriterManager writer = new WriterManager();
         try {
-            writer.open("crucigrama-Nvl-1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
+            writer.open("UserFiles/UserInfo.ser");  //probar el parametro apend en new FileWriter(fileName, true)
             writer.writeAll();
             writer.close(); //importante cerrar el archivo 
             System.out.println("Escritura exitosa");
