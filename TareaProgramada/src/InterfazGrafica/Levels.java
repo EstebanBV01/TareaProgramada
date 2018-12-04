@@ -38,6 +38,7 @@ public class Levels extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         btBack.setText("Atras");
+        btBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBackActionPerformed(evt);
@@ -48,6 +49,7 @@ public class Levels extends javax.swing.JDialog {
         lbInstructions.setText("Escoja Un Nivel De Dificultad");
 
         btVhard.setText("Muy Difícil");
+        btVhard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btVhard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btVhardActionPerformed(evt);
@@ -55,6 +57,7 @@ public class Levels extends javax.swing.JDialog {
         });
 
         btHard.setText("Difícil");
+        btHard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btHard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btHardActionPerformed(evt);
@@ -62,6 +65,7 @@ public class Levels extends javax.swing.JDialog {
         });
 
         btEasy.setText("Fácil");
+        btEasy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btEasy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEasyActionPerformed(evt);
@@ -69,6 +73,7 @@ public class Levels extends javax.swing.JDialog {
         });
 
         btMedium.setText("Medio");
+        btMedium.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btMedium.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btMediumActionPerformed(evt);

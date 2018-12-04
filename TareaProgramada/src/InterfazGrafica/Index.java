@@ -37,7 +37,7 @@ public class Index extends javax.swing.JFrame {
         jLabel1.setText("Bienvedido al crucigrama");
 
         btContinue.setText("Continuar");
-        btContinue.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        btContinue.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btContinue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btContinueActionPerformed(evt);

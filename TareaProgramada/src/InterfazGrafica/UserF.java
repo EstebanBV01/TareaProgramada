@@ -50,6 +50,7 @@ public class UserF extends javax.swing.JDialog {
 
         lbPassword.setText("Contraseña");
 
+        tfUser.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         tfUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUserActionPerformed(evt);
@@ -57,6 +58,7 @@ public class UserF extends javax.swing.JDialog {
         });
 
         btBack.setText("Volver");
+        btBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btBackActionPerformed(evt);
@@ -64,6 +66,7 @@ public class UserF extends javax.swing.JDialog {
         });
 
         btNoRegis.setText("Entrar Sin Registrarse");
+        btNoRegis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btNoRegis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btNoRegisActionPerformed(evt);
@@ -71,6 +74,7 @@ public class UserF extends javax.swing.JDialog {
         });
 
         btLogin.setText("Registrarse");
+        btLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
