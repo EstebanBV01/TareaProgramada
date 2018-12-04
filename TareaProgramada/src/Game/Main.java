@@ -5,13 +5,8 @@ import DataBase.User;
 import DataBase.UserInformation;
 import FileManagerBi.ReaderManagerBinary;
 import FileManagerBi.WriterManagerBinary;
+import InterfazGrafica.Index;
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -25,13 +20,9 @@ public final static UserInformation User_Mananger=new UserInformation();//prueba
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-//        Word w1=new Word(0, 0, 0,"V","laPalabra", "laDescripcion");
-//        Index index = new Index();
-//        index.setVisible(true);
-//        Word[] vec={w1,w1,w1};
-//        Word word=new Word(vec);
-//        System.out.println(word.getListString());
-//        System.out.println("** "+vec[1].toFileString());
+        Index index = new Index();
+        index.setVisible(true);
+
         
         
         
@@ -46,7 +37,9 @@ public final static UserInformation User_Mananger=new UserInformation();//prueba
         System.out.println("****"+User_Mananger.getListString());
         
         
-        
+        /**
+         * Impresion binaria de archivos de la lista de usuarios
+         */
         ReaderManagerBinary reader = new ReaderManagerBinary();
         try {
             reader.open("UserFiles/UserInfo.ser");
@@ -94,20 +87,6 @@ public final static UserInformation User_Mananger=new UserInformation();//prueba
         
         
         
-////        WriterManager writer = new WriterManager();
-//        try {
-//            writer.open("personFile.ser");
-//            writer.write(person1);
-//            writer.write(person2);
-//            writer.write(person3);
-//            writer.write(person4);
-//            writer.close(); //importante cerrar el archivo 
-//            System.out.println("Escritura exitosa");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo");
-//            System.err.println(ex.getMessage());
-//            ex.printStackTrace();
-//        }
         
         
 //        WriterManager writer = new WriterManager();
