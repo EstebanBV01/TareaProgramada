@@ -79,6 +79,11 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
         }
         System.out.println("----------------------\n"
                 + "-----------------------------");
+        
+        
+        
+        
+        
         ////
         ////
         ///prueba de lectura escritura de TEXT
