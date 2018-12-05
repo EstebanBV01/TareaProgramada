@@ -23,7 +23,7 @@ public class WriterManager {
     }
 
     public void writeAll() throws IOException {
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < Main.WORD_MANAGER.getLength(); i++) {
             write(Main.WORD_MANAGER.getWord(i));
         }
     }
@@ -31,27 +31,5 @@ public class WriterManager {
     public void close() throws IOException {
         writer.close();
     }
-    
-    
-    
-    //necesito castear el objeto tipo Word a tipo String
-//    public void write(String word){
-//        
-//        File file;
-//        FileWriter fwriter;
-//        BufferedWriter bufWriter;
-//        PrintWriter printWriter;
-//        try{
-//            file=new File(word);
-//            fwriter=new FileWriter(file);
-//            bufWriter=new BufferedWriter(fwriter);
-//            printWriter=new PrintWriter(bufWriter);
-//            for (int i = 0; i < 1; i++) {
-//                printWriter.write(i);
-//            }            
-//            printWriter.close();
-//            bufWriter.close();
-//        }catch(Exception e){JOptionPane.showConfirmDialog(null, "su error fue: "+e);};
-//    }
 
 }

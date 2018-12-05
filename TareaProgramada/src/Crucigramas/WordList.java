@@ -10,59 +10,79 @@ package Crucigramas;
  * @author fernanda,juan_carlos.esteban
  */
 public class WordList {
+   int count = 0;
+    Word[] wordlist;
+    static final int SIZE=4;
 
-    private Word[] wordList;
-    private int counter;
-
-    public WordList(Word[] wordList, int counter) {
-        this.wordList = wordList;
-        this.counter = counter;
+    public WordList(Word[] userInfo) {
+        this.wordlist = userInfo;
     }
-    public WordList(){
-        wordList=new Word[5];
-    }
-    public void biggerVector(){
-        Word[] vec=new Word[counter+1];
-        for (int i = 0; i < vec.length; i++) {
-            vec[i]=wordList[i];
-        }
-        wordList=vec;
     
+    public WordList(){
+        wordlist=new Word[SIZE];
     }
-    public void addWord(Word word) {
-        if (wordList.length-1 != counter) {
-            if (word != null) {
-                wordList[counter] = word;
-                counter ++;
-            }
-        }else{
-            this.biggerVector();
-            if (word != null) {
-                wordList[counter] = word;
-                counter++;
-            }
+    
+    public Word[] getWordInfo() {
+        return wordlist;
+    }
+    /**
+     * 
+     * @return retorna el tmaño del vector 
+     */
+    public  int getLength() {
+        return wordlist.length;
+    }
+
+    public void setWordlist(Word[] wordInfo) {
+        this.wordlist = wordInfo;
+    }
+    public void vecString(){
+        for (Word word : wordlist) {
+            System.out.println(" "+word+" ");
         }
     }
-     public String getListString() {
+    public String getListString() {
         String text = "";
-        for (int i = 0; i < counter; i++) {
-            text += wordList[i] + "\n";
+        for (int i = 0; i < count; i++) {
+            text += wordlist[i] + "\n";
         }
         return text;
     }
-    public Word[] getWordList() {
-        return wordList;
+    
+    public void bigger() {
+        Word[] vec = new Word[wordlist.length+1];
+        for (int i = 0; i < vec.length-1; i++) {
+            vec[i]=wordlist[i];
+        }
+        wordlist = vec;
     }
-    public Word getWord(int index) {
-        return wordList[index];
+    private void bigger2() {
+        Word[] vec = new Word[wordlist.length + 2];
+        System.arraycopy(wordlist, 0, vec, 0, wordlist.length);
+        wordlist = vec;
     }
-    public int getCounter() {
-        return counter;
+    public void addWord (Word word) {
+        if(word!=null){
+            if (count>=wordlist.length) {
+             this.bigger();
+                wordlist[count] = word;
+                count++;
+            
+            }else {
+                if (word != null) {
+                    wordlist[count] = word;
+                    count++;
+                }
+            }
+        }
     }
-    public int getSize(){return wordList.length;}
-    @Override
-    public String toString() {
-        return "wordList: " + wordList + ", counter: " + counter;
+
+    public void addProduct(Word product) {
+        wordlist[count++] = product;
+    }
+    
+    public Word getWord (int index) {
+        return wordlist[index];
     }
     
 }

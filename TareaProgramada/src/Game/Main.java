@@ -91,13 +91,19 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
         Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
         WORD_MANAGER.addWord(w1);
         WORD_MANAGER.addWord(w1);
-        System.out.println("counterWord="+WORD_MANAGER.getCounter());
+        WORD_MANAGER.addWord(w1);
+        WORD_MANAGER.addWord(w1);
+        WORD_MANAGER.addWord(w1);
+        WORD_MANAGER.addWord(w1);
+        
+      
+        System.out.println("counterWord="+WORD_MANAGER.getLength());
         System.out.println(WORD_MANAGER.getListString());
             
         ReaderManager readerTxt = new ReaderManager();
         try {
             reader.open("wordFile.txt");
-            System.out.println(readerTxt.read());
+            System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
