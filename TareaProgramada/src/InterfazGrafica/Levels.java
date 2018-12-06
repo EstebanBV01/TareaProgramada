@@ -150,7 +150,7 @@ public class Levels extends javax.swing.JDialog  {
     }//GEN-LAST:event_btHardActionPerformed
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
-        Easy easy=new Easy(this,true);
+        Crossword easy=new Crossword(this,true);
         //dispose();//creo que hace falta?
         easy.setVisible(true);
     }//GEN-LAST:event_btEasyActionPerformed

@@ -56,6 +56,15 @@ public class Word implements Serializable {
         this.description=descri;
         this.word=word;
     }
+     /**
+      * 
+      * @param fiilaSalida
+      * @param filaCol 
+      */
+     public Word(int fiilaSalida,int filalleg){
+     this.filaSalida=filaSalida;
+     this.coluLlegada=filalleg;
+     }
     /*
     constructor sin parametros
     */

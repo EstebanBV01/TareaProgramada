@@ -12,22 +12,26 @@ import FileManager.WriterManager;
 import java.awt.GridLayout;
 import java.io.*;
 import Game.Main;
+import java.awt.LayoutManager;
 /**
  *
  * @author usuario
  */
 
 
-public class Easy extends javax.swing.JDialog {
-
+public class Crossword extends javax.swing.JDialog {
+    //una prueba de referencia a reader
+ReaderManager readerTxt = new ReaderManager();
+WriterManager writerTxt = new WriterManager();
     /**
      * Creates new form Easy
      * constructor easy modificado con jaavax.swing
      */
-    public Easy(javax.swing.JDialog parent, boolean modal) {
+    public Crossword(javax.swing.JDialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);
+        initPanel();
     }
 
     /**
@@ -43,7 +47,7 @@ public class Easy extends javax.swing.JDialog {
         btTesting = new javax.swing.JButton();
         btClue = new javax.swing.JButton();
         lbTitulo = new javax.swing.JLabel();
-        panelGLayout = new javax.swing.JPanel();
+        jpCross = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -65,7 +69,16 @@ public class Easy extends javax.swing.JDialog {
 
         lbTitulo.setText("Nivel Fácil");
 
-        panelGLayout.setLayout(new java.awt.GridLayout());
+        javax.swing.GroupLayout jpCrossLayout = new javax.swing.GroupLayout(jpCross);
+        jpCross.setLayout(jpCrossLayout);
+        jpCrossLayout.setHorizontalGroup(
+            jpCrossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 225, Short.MAX_VALUE)
+        );
+        jpCrossLayout.setVerticalGroup(
+            jpCrossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 247, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -79,14 +92,13 @@ public class Easy extends javax.swing.JDialog {
                         .addComponent(lbTitulo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btTesting)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 25, Short.MAX_VALUE)
-                .addComponent(panelGLayout, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jpCross, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btTesting)))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,8 +107,8 @@ public class Easy extends javax.swing.JDialog {
                     .addComponent(btClue)
                     .addComponent(lbTitulo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelGLayout, javax.swing.GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jpCross, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btBack)
                     .addComponent(btTesting))
@@ -119,9 +131,10 @@ public class Easy extends javax.swing.JDialog {
     private javax.swing.JButton btBack;
     private javax.swing.JButton btClue;
     private javax.swing.JButton btTesting;
+    private javax.swing.JPanel jpCross;
     private javax.swing.JLabel lbTitulo;
-    private javax.swing.JPanel panelGLayout;
     // End of variables declaration//GEN-END:variables
+    
     
     /**
      * metodo  generador dinamico de matrices
@@ -130,50 +143,44 @@ public class Easy extends javax.swing.JDialog {
      */
     private void initPanel() {
         int cols = 2;
-        int rows = (Main.WORD_MANAGER.getLength() % 2 == 0)//get length es solo una prueba
-                ? Main.WORD_MANAGER.getLength() % 2
-                : Main.WORD_MANAGER.getLength() % 2 + 1;
+        int rows = (5);
+        
         GridLayout grid = new GridLayout(rows, cols);
         //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
 
         for (int i = 0; i < Main.WORD_MANAGER.getWordCount(); i++) {
             GridField newGridField = new GridField(Main.WORD_MANAGER.getWord(i));
-            panelGLayout.add(newGridField);
-            newGridField.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    if (evt.getSource() == newGridField) {
-//                        product = newGridButtom.getProduct();
-//                        Icon icon = new ImageIcon(getClass().getResource(
-//                                "/img/" + product.getImageName()));
-//                        lbImage.setIcon(icon);
-                    }
-                }
-            });
+            //
+ //           newGridField.addActionListener(new java.awt.event.ActionListener() {
+//                public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                    if (evt.getSource() == newGridField) {
+////                        product = newGridButtom.getProduct();
+////                        Icon icon = new ImageIcon(getClass().getResource(
+////                                "/img/" + product.getImageName()));
+////                        lbImage.setIcon(icon);
+//                    }
+//                }
+//            });
         }
     }
     
     
-        ////
-        ////
-        ///prueba de lectura escritura de TEXT
-        ////
-    
-    private void ReaderWriter(){
-        Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
-        
-        Main.WORD_MANAGER.addWord(w1);
-        
-      
-        System.out.println("counterWord="+Main.WORD_MANAGER.getLength());
-        System.out.println(Main.WORD_MANAGER.getListString());
+     /**
+      * metodo para leer palaras
+      * @param sin parametros
+      * @return no retorna
+      */
+    private void readWords(){
             
-        ReaderManager readerTxt = new ReaderManager();
+        //ReaderManager readerTxt = new ReaderManager();
         try {
             readerTxt.open("CrossWordFiles/Easy/1.txt");
+            //
             System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
+            //
             readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de texto en reader");
         } catch (IOException ex) {
@@ -181,8 +188,22 @@ public class Easy extends javax.swing.JDialog {
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
-
-        WriterManager writerTxt = new WriterManager();
+    }
+    /**
+     * metodo para añadir palabras no retorna
+     */
+    public void writeWords(){
+            Word matrSize=new Word(5, 5);
+            Word w1=new Word(0,0, 0, "V", "la palabrea", "la descripcion");
+            Word w2=new Word(0,1,1,"V","otraPalabra","suDescipcion");
+            Main.WORD_MANAGER.addWord(matrSize);
+            Main.WORD_MANAGER.addWord(w1);
+            Main.WORD_MANAGER.addWord(w2);
+            //
+            System.out.println("counterWord="+Main.WORD_MANAGER.getLength());
+            System.out.println(Main.WORD_MANAGER.getListString());
+            //
+            
         try {
             writerTxt.open("CrossWordFiles/Easy/1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
             writerTxt.writeAll();
@@ -193,5 +214,8 @@ public class Easy extends javax.swing.JDialog {
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
+    
+    
+    
     }
 }

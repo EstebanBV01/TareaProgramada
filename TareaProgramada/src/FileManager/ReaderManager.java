@@ -6,6 +6,7 @@
 package FileManager;
 
 import Crucigramas.Word;
+import Game.Main;
 import java.io.*;
 
 /**
@@ -33,6 +34,11 @@ public class ReaderManager {
         }
         return word1;
     }
+//    public void readAll() throws IOException {
+//        for (int i = 0; i < Main.WORD_MANAGER.getLength(); i++) {
+//            read(Main.WORD_MANAGER.getWord(i));
+//        }
+//    }
 
     public void close() throws IOException {
         reader.close();
