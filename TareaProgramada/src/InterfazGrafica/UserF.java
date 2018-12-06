@@ -167,6 +167,10 @@ public class UserF extends javax.swing.JDialog {
     private void btNoSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoSignActionPerformed
         Levels levels = new Levels(this, true);
         JOptionPane.showMessageDialog(this, "¡A Ingresado Sin Registrarse!");
+        JOptionPane.showMessageDialog(this, "Las Instruccion Son Las Siguientes:\n"
+                            + "Seguiendo las pistas debera de introducir la palabra donde se le asigna\n"
+                            + "Debera de Completar todas las palabras para comprobar y asi ver su resultado","Instrucciones\n"
+                                    + "Precione '?' para obtener una pista, (Estas tiene un limite dependiendo del nivel)", JOptionPane.INFORMATION_MESSAGE);
         levels.setVisible(true);
         
     }//GEN-LAST:event_btNoSignActionPerformed
@@ -182,8 +186,12 @@ public class UserF extends javax.swing.JDialog {
 
                 reader.open("UserFiles/UserInfo.ser");
                 if (reader.read().getPassword().equals(pfPassword.getText())) {
-                    JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");
+                    JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");                 
                     Levels levels = new Levels(this, true);
+                    JOptionPane.showMessageDialog(this, "Las Instruccion Son Las Siguientes:\n"
+                            + "Seguiendo las pistas debera de introducir la palabra donde se le asigna\n"
+                            + "Debera de Completar todas las palabras para comprobar y asi ver su resultado","Instrucciones\n"
+                                    + "Precione '?' para obtener una pista, (Estas tiene un limite dependiendo del nivel)", JOptionPane.INFORMATION_MESSAGE);
                     levels.setVisible(true);
                     reader.close(); //importante cerrar el archivo
                 }else {

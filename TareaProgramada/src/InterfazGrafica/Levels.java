@@ -22,6 +22,7 @@ public class Levels extends javax.swing.JDialog  {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);
+        
     }
 
     
@@ -36,7 +37,6 @@ public class Levels extends javax.swing.JDialog  {
         btHard = new javax.swing.JButton();
         btEasy = new javax.swing.JButton();
         btMedium = new javax.swing.JButton();
-        btInstruc = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -108,13 +108,6 @@ public class Levels extends javax.swing.JDialog  {
                     .addComponent(btVhard, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
-        btInstruc.setText("?");
-        btInstruc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInstrucActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,11 +116,8 @@ public class Levels extends javax.swing.JDialog  {
                 .addComponent(lbInstructions)
                 .addGap(55, 55, 55))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btInstruc))
+                .addGap(44, 44, 44)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(btBack)
@@ -141,8 +131,7 @@ public class Levels extends javax.swing.JDialog  {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btBack)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(btInstruc, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,18 +159,12 @@ public class Levels extends javax.swing.JDialog  {
         // TODO add your handling code here:
     }//GEN-LAST:event_btMediumActionPerformed
 
-    private void btInstrucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInstrucActionPerformed
-        JOptionPane.showMessageDialog(this, "************\n"
-                                          + "+++++++++++++", "Instrucciones", WIDTH);
-    }//GEN-LAST:event_btInstrucActionPerformed
-
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btBack;
     private javax.swing.JButton btEasy;
     private javax.swing.JButton btHard;
-    private javax.swing.JButton btInstruc;
     private javax.swing.JButton btMedium;
     private javax.swing.JButton btVhard;
     private javax.swing.JPanel jPanel1;
