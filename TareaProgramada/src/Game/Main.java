@@ -51,9 +51,9 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             System.out.println(reader.read());
             System.out.println(reader.read());
             reader.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa");
+            System.out.println("Lectura exitosa bianria en reader");
         } catch (IOException ex) {
-            System.err.println("error de archivo");
+            System.err.println("error de archivo binario en reader");
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         } catch (ClassNotFoundException ex) {
@@ -71,20 +71,15 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             writer.writeAll();
             //writer.write(user1);
             writer.close();
-            System.err.println("Escritura Exitosa");
+            System.out.println("Escritura Exitosa binaria en writer");
         }catch (IOException ex) {
-            System.err.println("error de archivo");
+            System.err.println("error de archivo binario en writer");
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
         System.out.println("----------------------\n"
                 + "-----------------------------");
-        
-        
-        
-        
-        
-        ////
+       ////
         ////
         ///prueba de lectura escritura de TEXT
         ////
@@ -102,27 +97,27 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             
         ReaderManager readerTxt = new ReaderManager();
         try {
-            reader.open("wordFile.txt");
+            reader.open("CrossWordFiles/Easy/1.txt");
             System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             reader.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa de texto");
+            System.out.println("Lectura exitosa de texto en reader");
         } catch (IOException ex) {
-            System.err.println("error de archivo");
+            System.err.println("error de archivo texto en reader");
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
 
         WriterManager writerTxt = new WriterManager();
         try {
-            writerTxt.open("wordFile.txt");  //probar el parametro apend en new FileWriter(fileName, true)
+            writerTxt.open("CrossWordFiles/Easy/1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
             writerTxt.writeAll();
             writerTxt.close(); //importante cerrar el archivo 
-            System.out.println("Escritura exitosa");
+            System.out.println("Escritura exitosa texto en writer");
         } catch (IOException ex) {
-            System.err.println("error de archivo");
+            System.err.println("error de archivo texto en writer");
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }

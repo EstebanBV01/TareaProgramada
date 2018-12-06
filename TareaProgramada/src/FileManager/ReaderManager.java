@@ -28,7 +28,7 @@ public class ReaderManager {
             datos = line.split("-");
             //////
             word1=new Word(Integer.parseInt(datos[0])
-                    , Integer.parseInt(datos[0]), Integer.parseInt(datos[0]),datos[3],datos[4], datos[5]);
+                    , Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);
             
             ///
         }

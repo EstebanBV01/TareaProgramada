@@ -162,7 +162,7 @@ public class Levels extends javax.swing.JDialog  {
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
         Easy easy=new Easy(this,true);
-        dispose();//creo que hace falta?
+        //dispose();//creo que hace falta?
         easy.setVisible(true);
     }//GEN-LAST:event_btEasyActionPerformed
 
