@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package InterfazGrafica;
+import Crucigramas.GridField;
 import Crucigramas.Word;
+import Crucigramas.WordList;//talvez no sea necesatrio
 import FileManager.ReaderManager;
 import FileManager.WriterManager;
 import java.awt.GridLayout;
@@ -126,29 +128,29 @@ public class Easy extends javax.swing.JDialog {
      * @return no retorna
      * @param sin parametros
      */
-//    private void initPanel() {
-//        int cols = 2;
-//        int rows = (dishList.getProductCounter() % 2 == 0)
-//                ? dishList.getProductCounter() % 2
-//                : dishList.getProductCounter() % 2 + 1;
-//        GridLayout grid = new GridLayout(rows, cols);
-//        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
-//
-//        for (int i = 0; i < dishList.getProductCounter(); i++) {
-//            GridButtom newGridButtom = new GridButtom(dishList.getProduct(i));
-//            pnDishes.add(newGridButtom);
-//            newGridButtom.addActionListener(new java.awt.event.ActionListener() {
-//                public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                    if (evt.getSource() == newGridButtom) {
+    private void initPanel() {
+        int cols = 2;
+        int rows = (Main.WORD_MANAGER.getLength() % 2 == 0)//get length es solo una prueba
+                ? Main.WORD_MANAGER.getLength() % 2
+                : Main.WORD_MANAGER.getLength() % 2 + 1;
+        GridLayout grid = new GridLayout(rows, cols);
+        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
+
+        for (int i = 0; i < Main.WORD_MANAGER.getWordCount(); i++) {
+            GridField newGridField = new GridField(Main.WORD_MANAGER.getWord(i));
+            panelGLayout.add(newGridField);
+            newGridField.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    if (evt.getSource() == newGridField) {
 //                        product = newGridButtom.getProduct();
 //                        Icon icon = new ImageIcon(getClass().getResource(
 //                                "/img/" + product.getImageName()));
 //                        lbImage.setIcon(icon);
-//                    }
-//                }
-//            });
-//        }
-//    }
+                    }
+                }
+            });
+        }
+    }
     
     
         ////

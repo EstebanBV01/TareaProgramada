@@ -10,10 +10,15 @@ package Crucigramas;
  * @author fernanda,juan_carlos.esteban
  */
 public class WordList {
-   int count = 0;
+    int count = 0;
     Word[] wordlist;
     static final int SIZE=4;
-
+    
+    private Word newWord;
+    public WordList(Word word){
+    this.newWord=word;
+    }
+    
     public WordList(Word[] userInfo) {
         this.wordlist = userInfo;
     }
@@ -80,7 +85,7 @@ public class WordList {
     public void addProduct(Word product) {
         wordlist[count++] = product;
     }
-    
+    public int getWordCount(){return count;}
     public Word getWord (int index) {
         return wordlist[index];
     }
