@@ -33,17 +33,23 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               <Component id="lbUser" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="lbPassword" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btNoSign" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btSignIn" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lbIndication" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="pfPassword" min="-2" pref="151" max="-2" attributes="0"/>
                           <Component id="tfUser" min="-2" pref="151" max="-2" attributes="0"/>
@@ -54,13 +60,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="btNoSign" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btSignIn" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="lbIndication" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="157" max="-2" attributes="0"/>
+                      <Component id="lbPassword" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="31" max="32767" attributes="0"/>
@@ -72,7 +74,7 @@
           <Group type="102" attributes="0">
               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
               <Component id="lbIndication" min="-2" pref="24" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="lbUser" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="tfUser" min="-2" max="-2" attributes="0"/>
@@ -85,7 +87,7 @@
                   <Component id="btBack" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btLogIn" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btNoSign" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btSignIn" alignment="3" min="-2" max="-2" attributes="0"/>

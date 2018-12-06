@@ -10,16 +10,16 @@ import DataBase.User;
  *
  * @author Johan
  */
-public class UserInformation {
+public class UserList {
     int count = 0;
     User[] userlist;
     static final int SIZE=4;
 
-    public UserInformation(User[] userInfo) {
+    public UserList(User[] userInfo) {
         this.userlist = userInfo;
     }
     
-    public UserInformation(){
+    public UserList(){
         userlist=new User[SIZE];
     }
     
@@ -73,9 +73,6 @@ public class UserInformation {
         }
     }
 
-    public void addProduct(User product) {
-        userlist[count++] = product;
-    }
     
     public User getUser (int index) {
         return userlist[index];

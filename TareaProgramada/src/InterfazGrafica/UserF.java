@@ -7,9 +7,10 @@
 package InterfazGrafica;
 
 import DataBase.User;
-import DataBase.UserInformation;
+import DataBase.UserList;
 import FileManagerBi.ReaderManagerBinary;
 import FileManagerBi.WriterManagerBinary;
+import Game.Main;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -18,9 +19,9 @@ import javax.swing.JOptionPane;
  * @author Estudiante
  */
 public class UserF extends javax.swing.JDialog {
-    public static UserInformation User_Mananger;
     ReaderManagerBinary reader = new ReaderManagerBinary();
     WriterManagerBinary writer = new WriterManagerBinary();
+    public static int count = 0;
     
     public UserF(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -105,15 +106,19 @@ public class UserF extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lbUser)
-                .addGap(173, 173, 173))
+                .addGap(172, 172, 172))
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(lbPassword))
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btNoSign)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btSignIn))
+                            .addComponent(lbIndication)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
+                        .addGap(121, 121, 121)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,12 +126,9 @@ public class UserF extends javax.swing.JDialog {
                                 .addComponent(btBack)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btLogIn))))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btNoSign)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btSignIn))
-                        .addComponent(lbIndication)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(lbPassword)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,7 +136,7 @@ public class UserF extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(lbIndication, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addComponent(lbUser)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -146,7 +148,7 @@ public class UserF extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btBack)
                     .addComponent(btLogIn))
-                .addGap(42, 42, 42)
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btNoSign)
                     .addComponent(btSignIn))
@@ -186,6 +188,7 @@ public class UserF extends javax.swing.JDialog {
 
                 reader.open("UserFiles/UserInfo.ser");
                 if (reader.read().getPassword().equals(pfPassword.getText())) {
+                    reader.close(); 
                     JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");                 
                     Levels levels = new Levels(this, true);
                     JOptionPane.showMessageDialog(this, "Las Instruccion Son Las Siguientes:\n"
@@ -193,7 +196,7 @@ public class UserF extends javax.swing.JDialog {
                             + "Debera de Completar todas las palabras para comprobar y asi ver su resultado","Instrucciones\n"
                                     + "Precione '?' para obtener una pista, (Estas tiene un limite dependiendo del nivel)", JOptionPane.INFORMATION_MESSAGE);
                     levels.setVisible(true);
-                    reader.close(); //importante cerrar el archivo
+                    //importante cerrar el archivo
                 }else {
                 JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
                 }
@@ -242,16 +245,9 @@ public class UserF extends javax.swing.JDialog {
     private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
         
         User newUser = new User(tfUser.getText(), pfPassword.getText());
-        try {
-            writer.open("UserFiles/UserInfo.ser");
-            writer.write(newUser);
-            writer.close();
-            System.out.println("Escritura Exitosa binaria en writer");
-        }catch (Exception e) {
-            System.err.println("error de archivo binario en writer");
-            System.err.println(e.getMessage());
-            //ex.printStackTrace();
-        }
+       for (int i = 0; i < Main.User_Mananger.getLength()-1; i++) {
+           Main.User_Mananger.addUser(newUser);
+       }
     }//GEN-LAST:event_btSignInActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

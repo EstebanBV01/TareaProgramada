@@ -3,7 +3,7 @@ package Game;
 import Crucigramas.Word;
 import Crucigramas.WordList;
 import DataBase.User;
-import DataBase.UserInformation;
+import DataBase.UserList;
 import FileManager.ReaderManager;
 import FileManager.WriterManager;
 import FileManagerBi.ReaderManagerBinary;
@@ -18,7 +18,7 @@ import InterfazGrafica.Index;
 import java.io.*;
 public class Main {
 public static WordList WORD_MANAGER = new WordList();
-public static UserInformation User_Mananger = new UserInformation();//prueba el profe dijo que no//talvez no deberia ser "final"
+public static UserList User_Mananger = new UserList();//prueba el profe dijo que no//talvez no deberia ser "final"
     /**
      * @param args the command line arguments
      */

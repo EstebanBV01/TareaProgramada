@@ -72,9 +72,9 @@ public class Index extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(80, 80, 80)
+                        .addGap(103, 103, 103)
                         .addComponent(btContinue, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
