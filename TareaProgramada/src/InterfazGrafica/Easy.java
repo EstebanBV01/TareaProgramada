@@ -149,7 +149,9 @@ public class Easy extends javax.swing.JDialog {
 //            });
 //        }
 //    }
-    ////
+    
+    
+        ////
         ////
         ///prueba de lectura escritura de TEXT
         ////

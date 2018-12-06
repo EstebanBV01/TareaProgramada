@@ -25,10 +25,9 @@ public class ReaderManager {
         String datos[];
         if (line != null) {
            // word1 = new Word();
-            datos = line.split("-");
+            datos = line.split("/");
             //////
-            word1=new Word(Integer.parseInt(datos[0])
-                    , Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);
+            word1=new Word(Integer.parseInt(datos[0]),Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);
             
             ///
         }

@@ -67,7 +67,7 @@ public class Word implements Serializable {
         return "Word{"+word + ", wordNumber=" + wordNumber + ", vertHoriz=" + vertHoriz + ", filaSalida=" + filaSalida + ", filaLLegada=" + filaLLegada + ", coluSalida=" + coluSalida + ", coluLlegada=" + coluLlegada+ '}';
     }
     public String toFileString(){
-        return "/"+filaSalida+"-"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
+        return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
     
     }
 }
