@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
 public class UserF extends javax.swing.JDialog {
     ReaderManagerBinary reader = new ReaderManagerBinary();
     WriterManagerBinary writer = new WriterManagerBinary();
-    public static int count = 0;
     
     public UserF(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -179,6 +178,8 @@ public class UserF extends javax.swing.JDialog {
 
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
         
+
+        
         //Metodo para logearse
 
         try {
@@ -244,10 +245,33 @@ public class UserF extends javax.swing.JDialog {
 
     private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
         
+        //        try {
+//            writer.open("UserFiles/UserInfo.ser");
+//            writer.writeAll();
+//            writer.close();
+//            System.out.println("Escritura Exitosa binaria en writer");
+//        }catch (IOException ex) {
+//            System.err.println("error de archivo binario en writer");
+//            System.err.println(ex.getMessage());
+////          //ex.printStackTrace();
+//        }
+        
         User newUser = new User(tfUser.getText(), pfPassword.getText());
-       for (int i = 0; i < Main.User_Mananger.getLength()-1; i++) {
-           Main.User_Mananger.addUser(newUser);
-       }
+
+        Main.User_Mananger.addNewUser(newUser);
+        Main.User_Mananger.vecString();
+//        for (int i = 0; i < Main.WORD_MANAGER.getLength(); i++) {
+//            if (tfUser.getText().equals(Main.User_Mananger.getUser(i).getNickname())) {
+//                JOptionPane.showMessageDialog(this, "Usuario Existente");
+//                if (tfUser.getText().length() > 6 && tfUser.getText().length() < 3) {
+//                    JOptionPane.showMessageDialog(this, "Caracteres Insuficientes");
+//                }
+//            }else {
+//                Main.User_Mananger.addNewUser(newUser);
+//                
+//            }
+//        }
+        
     }//GEN-LAST:event_btSignInActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

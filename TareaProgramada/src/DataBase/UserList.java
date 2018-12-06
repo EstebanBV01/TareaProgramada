@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package DataBase;
+import Crucigramas.Word;
 import DataBase.User;
 
 /**
@@ -23,7 +24,11 @@ public class UserList {
         userlist=new User[SIZE];
     }
     
-    public User[] getUserInfo() {
+    public User getUser(int index) {
+        return userlist[index];
+    }
+    
+    public User[] getUserList() {
         return userlist;
     }
     /**
@@ -51,31 +56,29 @@ public class UserList {
     }
     
     public void bigger() {
-        User[] vec = new User[count + 1];
+        User[] vec = new User[userlist.length*2];
         for (int i = 0; i < vec.length; i++) {
             vec[i] = userlist[i];
         }
         userlist = vec;
     }
     
-    public void addUser (User user) {
-        if (userlist.length-1 != count) {
-            if (user != null) {
-                userlist[count] = user;
+    
+    public void addNewUser (User newUser) {
+        if(newUser != null) {
+            if (userlist.length <= count) {
+                this.bigger();
+                userlist[count] = newUser;
+                count++;
+                
+            }else {
+                userlist[count] = newUser;
                 count++;
             }
-        }else {
-            this.bigger();
-            if (user != null) {
-                userlist[count] = user;
-                count++;
-            }
+            
+        }else {            
+            userlist[count] = newUser;
+            count++;
         }
-    }
-
-    
-    public User getUser (int index) {
-        return userlist[index];
-    }
-    
+    } 
 }
