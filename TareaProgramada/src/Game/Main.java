@@ -43,40 +43,40 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
         /**
          * Impresion binaria de archivos de la lista de usuarios
          */
-        ReaderManagerBinary reader = new ReaderManagerBinary();
-        try {
-            reader.open("UserFiles/UserInfo.ser");
-            System.out.println(reader.read());
-            System.out.println(reader.read());
-            System.out.println(reader.read());
-            System.out.println(reader.read());
-            reader.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa bianria en reader");
-        } catch (IOException ex) {
-            System.err.println("error de archivo binario en reader");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
-            System.err.println("error de casteo de objeto del archivo");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        }
+//        ReaderManagerBinary reader = new ReaderManagerBinary();
+//        try {
+//            reader.open("UserFiles/UserInfo.ser");
+//            System.out.println(reader.read());
+//            System.out.println(reader.read());
+//            System.out.println(reader.read());
+//            System.out.println(reader.read());
+//            reader.close(); //importante cerrar el archivo
+//            System.out.println("Lectura exitosa bianria en reader");
+//        } catch (IOException ex) {
+//            System.err.println("error de archivo binario en reader");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        } catch (ClassNotFoundException ex) {
+//            System.err.println("error de casteo de objeto del archivo");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        }
         
         /**
          * escritura binaria para el usuario
          */
-        WriterManagerBinary writer = new WriterManagerBinary();
-        try {
-            writer.open("UserFiles/UserInfo.ser");
-            writer.writeAll();
-            //writer.write(user1);
-            writer.close();
-            System.out.println("Escritura Exitosa binaria en writer");
-        }catch (IOException ex) {
-            System.err.println("error de archivo binario en writer");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        }
+//        WriterManagerBinary writer = new WriterManagerBinary();
+//        try {
+//            writer.open("UserFiles/UserInfo.ser");
+//            writer.writeAll();
+//            //writer.write(user1);
+//            writer.close();
+//            System.out.println("Escritura Exitosa binaria en writer");
+//        }catch (IOException ex) {
+//            System.err.println("error de archivo binario en writer");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        }
         System.out.println("----------------------\n"
                 + "-----------------------------");
        ////
@@ -97,12 +97,12 @@ public static UserInformation User_Mananger = new UserInformation();//prueba el 
             
         ReaderManager readerTxt = new ReaderManager();
         try {
-            reader.open("CrossWordFiles/Easy/1.txt");
+            readerTxt.open("CrossWordFiles/Easy/1.txt");
             System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
-            reader.close(); //importante cerrar el archivo
+            readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de texto en reader");
         } catch (IOException ex) {
             System.err.println("error de archivo texto en reader");

@@ -5,8 +5,6 @@
  */
 package DataBase;
 import java.io.*;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 
 /**
  *
@@ -23,14 +21,6 @@ public class User implements Serializable {
     public User(String nickname, String password) {
         this.nickname = nickname;
         this.password = password;
-    }
-
-    public User() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public User(JTextField tfUser, JPasswordField pfPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getNickname() {

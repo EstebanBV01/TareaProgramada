@@ -19,6 +19,8 @@ import javax.swing.JOptionPane;
  */
 public class UserF extends javax.swing.JDialog {
     public static UserInformation User_Mananger;
+    ReaderManagerBinary reader = new ReaderManagerBinary();
+    WriterManagerBinary writer = new WriterManagerBinary();
     
     public UserF(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -38,8 +40,8 @@ public class UserF extends javax.swing.JDialog {
         btBack = new javax.swing.JButton();
         btNoSign = new javax.swing.JButton();
         pfPassword = new javax.swing.JPasswordField();
-        btSignIn = new javax.swing.JButton();
         btLogIn = new javax.swing.JButton();
+        btSignIn = new javax.swing.JButton();
 
         jPasswordField1.setText("jPasswordField1");
 
@@ -81,19 +83,18 @@ public class UserF extends javax.swing.JDialog {
             }
         });
 
-        btSignIn.setText("Registrarse");
-        btSignIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btSignIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSignInActionPerformed(evt);
-            }
-        });
-
         btLogIn.setText("Log In");
         btLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btLogIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btLogInActionPerformed(evt);
+            }
+        });
+
+        btSignIn.setText("Registrarse");
+        btSignIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSignInActionPerformed(evt);
             }
         });
 
@@ -107,11 +108,10 @@ public class UserF extends javax.swing.JDialog {
                 .addGap(173, 173, 173))
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(lbPassword))
-                    .addComponent(lbIndication)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -121,10 +121,12 @@ public class UserF extends javax.swing.JDialog {
                                 .addComponent(btBack)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btLogIn))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btNoSign)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btSignIn)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btNoSign)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btSignIn))
+                        .addComponent(lbIndication)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -172,29 +174,57 @@ public class UserF extends javax.swing.JDialog {
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
         
         //Metodo para logearse
+
+        try {
+            reader.open("UserFiles/UserInfo.ser");
+            if (reader.read().getNickname().equals(tfUser.getText())) {
+                reader.close(); //importante cerrar el archivo
+
+                reader.open("UserFiles/UserInfo.ser");
+                if (reader.read().getPassword().equals(pfPassword.getText())) {
+                    JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");
+                    Levels levels = new Levels(this, true);
+                    levels.setVisible(true);
+                    reader.close(); //importante cerrar el archivo
+                }else {
+                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
+                }
+            }else  {
+                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
+                }
+                System.out.println("Lectura exitosa bianria en reader");
+        } catch (IOException ex) {
+            System.err.println("error de archivo binario en reader");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("error de casteo de objeto del archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
         
-//        ReaderManagerBinary reader = new ReaderManagerBinary();
+        //Estructura Base
 //        try {
 //            reader.open("UserFiles/UserInfo.ser");
-//            for (int i = 0; i < User_Mananger.getLength(); i++) {
-//            User_Mananger.addUser(reader.read());
-//            }
-//            if (reader.read().getNickname() == tfUser.getText())  {
-//                JOptionPane.showMessageDialog(this, "Se Ha Logeado Con Exito");
+//            if (reader.read().getPassword().equals(pfPassword.getText())) {
+//                JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");
 //                Levels levels = new Levels(this, true);
 //                levels.setVisible(true);
-//            }else {
-//                JOptionPane.showMessageDialog(this, "Usuario O Constraseña Incorrectos");
-//            }
-//            reader.close();
-//        }catch (IOException ex) {
-//            System.err.println("error de archivo");
+//            }else  {
+//                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
+//                }
+//                reader.close(); //importante cerrar el archivo
+//                System.out.println("Lectura exitosa bianria en reader");
+//        } catch (IOException ex) {
+//            System.err.println("error de archivo binario en reader");
 //            System.err.println(ex.getMessage());
 //            //ex.printStackTrace();
 //        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(UserF.class.getName()).log(Level.SEVERE, null, ex);
+//            System.err.println("error de casteo de objeto del archivo");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
 //        }
-        //ex.printStackTrace(); 
+
     }//GEN-LAST:event_btLogInActionPerformed
 
     private void pfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfPasswordActionPerformed
@@ -203,17 +233,16 @@ public class UserF extends javax.swing.JDialog {
 
     private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
         
-        User newUser = new User(tfUser, pfPassword);
-        WriterManagerBinary writer = new WriterManagerBinary();
+        User newUser = new User(tfUser.getText(), pfPassword.getText());
         try {
             writer.open("UserFiles/UserInfo.ser");
             writer.write(newUser);
             writer.close();
-            System.err.println("Escritura Exitosa");
-        }catch (IOException ex) {
-            System.err.println("error de archivo");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();    
+            System.out.println("Escritura Exitosa binaria en writer");
+        }catch (Exception e) {
+            System.err.println("error de archivo binario en writer");
+            System.err.println(e.getMessage());
+            //ex.printStackTrace();
         }
     }//GEN-LAST:event_btSignInActionPerformed
 
