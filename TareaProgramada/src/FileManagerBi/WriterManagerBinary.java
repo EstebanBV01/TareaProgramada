@@ -25,8 +25,8 @@ public class WriterManagerBinary {
     }
     
     public void writeAll() throws IOException {
-        for (int i = 0; i < Main.User_Mananger.getLength() ; i++) {
-           write(Main.User_Mananger.getUser(i));
+        for (int i = 0; i < Main.User_Mananger.getLength()-1; i++) {
+            write(Main.User_Mananger.getUser(i));
         }
     }
     
