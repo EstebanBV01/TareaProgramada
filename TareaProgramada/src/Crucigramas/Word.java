@@ -11,6 +11,7 @@ import java.io.*;
  * @author juanka,fernanda,esteban
  */
 public class Word implements Serializable {
+    private int tama;
 ///////////////
     private int wordNumber;
     private String vertHoriz;
@@ -61,9 +62,8 @@ public class Word implements Serializable {
       * @param fiilaSalida
       * @param filaCol 
       */
-     public Word(int fiilaSalida,int filalleg){
-     this.filaSalida=filaSalida;
-     this.coluLlegada=filalleg;
+     public Word(int tamañ){
+     this.tama=tamañ;
      }
     /*
     constructor sin parametros
@@ -73,7 +73,7 @@ public class Word implements Serializable {
   }    
     @Override
     public String toString() {
-        return "Word{"+word + ", wordNumber=" + wordNumber + ", vertHoriz=" + vertHoriz + ", filaSalida=" + filaSalida + ", filaLLegada=" + filaLLegada + ", coluSalida=" + coluSalida + ", coluLlegada=" + coluLlegada+ '}';
+        return "Word{"+word +filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
     }
     public String toFileString(){
         return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;

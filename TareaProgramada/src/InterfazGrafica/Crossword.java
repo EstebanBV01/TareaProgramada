@@ -13,6 +13,7 @@ import java.awt.GridLayout;
 import java.io.*;
 import Game.Main;
 import java.awt.LayoutManager;
+import javafx.scene.control.TextField;
 /**
  *
  * @author usuario
@@ -30,7 +31,7 @@ WriterManager writerTxt = new WriterManager();
     public Crossword(javax.swing.JDialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(parent);
+        setLocationRelativeTo(parent);        
         initPanel();
     }
 
@@ -69,15 +70,19 @@ WriterManager writerTxt = new WriterManager();
 
         lbTitulo.setText("Nivel Fácil");
 
+        jpCross.setBackground(new java.awt.Color(153, 51, 255));
+        jpCross.setMinimumSize(new java.awt.Dimension(300, 150));
+        jpCross.setPreferredSize(new java.awt.Dimension(250, 150));
+
         javax.swing.GroupLayout jpCrossLayout = new javax.swing.GroupLayout(jpCross);
         jpCross.setLayout(jpCrossLayout);
         jpCrossLayout.setHorizontalGroup(
             jpCrossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 225, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jpCrossLayout.setVerticalGroup(
             jpCrossLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 247, Short.MAX_VALUE)
+            .addGap(0, 150, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,20 +90,20 @@ WriterManager writerTxt = new WriterManager();
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btClue)
-                        .addGap(79, 79, 79)
-                        .addComponent(lbTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jpCross, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btTesting)))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addComponent(btClue)
+                .addGap(106, 106, 106)
+                .addComponent(lbTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
+                .addComponent(btTesting)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(jpCross, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,13 +111,13 @@ WriterManager writerTxt = new WriterManager();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btClue)
                     .addComponent(lbTitulo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(4, 4, 4)
                 .addComponent(jpCross, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btBack)
                     .addComponent(btTesting))
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         pack();
@@ -141,15 +146,25 @@ WriterManager writerTxt = new WriterManager();
      * @return no retorna
      * @param sin parametros
      */
+    
     private void initPanel() {
-        int cols = 2;
-        int rows = (5);
+        Main.WORD_MANAGER.getWord(1);
+        int cols = 5;
+        int rows = 6;
         
-        GridLayout grid = new GridLayout(rows, cols);
+        GridLayout gridLayout = new GridLayout(rows, cols);
         //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
 
-        for (int i = 0; i < Main.WORD_MANAGER.getWordCount(); i++) {
-            GridField newGridField = new GridField(Main.WORD_MANAGER.getWord(i));
+            for (int f = 0; f < rows; f++) {
+                for (int j = 0; j < cols; j++) {
+                     GridField newTextField = new GridField(f,j,1,1);
+                    jpCross.setLayout(gridLayout);
+                    jpCross.add(newTextField);
+                    //gridLayout.addLayoutComponent("asd", newTextField);
+                    
+                }
+            }
+            
             //
  //           newGridField.addActionListener(new java.awt.event.ActionListener() {
 //                public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,61 +176,60 @@ WriterManager writerTxt = new WriterManager();
 //                    }
 //                }
 //            });
-        }
     }
     
     
-     /**
-      * metodo para leer palaras
-      * @param sin parametros
-      * @return no retorna
-      */
-    private void readWords(){
-            
-        //ReaderManager readerTxt = new ReaderManager();
-        try {
-            readerTxt.open("CrossWordFiles/Easy/1.txt");
-            //
-            System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
-            System.out.println(readerTxt.read());
-            System.out.println(readerTxt.read());
-            System.out.println(readerTxt.read());
-            //
-            readerTxt.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa de texto en reader");
-        } catch (IOException ex) {
-            System.err.println("error de archivo texto en reader");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        }
-    }
-    /**
-     * metodo para añadir palabras no retorna
-     */
-    public void writeWords(){
-            Word matrSize=new Word(5, 5);
-            Word w1=new Word(0,0, 0, "V", "la palabrea", "la descripcion");
-            Word w2=new Word(0,1,1,"V","otraPalabra","suDescipcion");
-            Main.WORD_MANAGER.addWord(matrSize);
-            Main.WORD_MANAGER.addWord(w1);
-            Main.WORD_MANAGER.addWord(w2);
-            //
-            System.out.println("counterWord="+Main.WORD_MANAGER.getLength());
-            System.out.println(Main.WORD_MANAGER.getListString());
-            //
-            
-        try {
-            writerTxt.open("CrossWordFiles/Easy/1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
-            writerTxt.writeAll();
-            writerTxt.close(); //importante cerrar el archivo 
-            System.out.println("Escritura exitosa texto en writer");
-        } catch (IOException ex) {
-            System.err.println("error de archivo texto en writer");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        }
-    
-    
-    
-    }
+//     /**
+//      * metodo para leer palaras
+//      * @param sin parametros
+//      * @return no retorna
+//      */
+//    private void readWords(){
+//            
+//        //ReaderManager readerTxt = new ReaderManager();
+//        try {
+//            readerTxt.open("CrossWordFiles/Easy/1.txt");
+//            //
+//            System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
+//            System.out.println(readerTxt.read());
+//            System.out.println(readerTxt.read());
+//            System.out.println(readerTxt.read());
+//            //
+//            readerTxt.close(); //importante cerrar el archivo
+//            System.out.println("Lectura exitosa de texto en reader");
+//        } catch (IOException ex) {
+//            System.err.println("error de archivo texto en reader");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        }
+//    }
+//    /**
+//     * metodo para añadir palabras no retorna
+//     */
+//    public void writeWords(){
+//            Word matrSize=new Word(5, 5);
+//            Word w1=new Word(0,0, 0, "V", "la palabrea", "la descripcion");
+//            Word w2=new Word(0,1,1,"V","otraPalabra","suDescipcion");
+//            Main.WORD_MANAGER.addWord(matrSize);
+//            Main.WORD_MANAGER.addWord(w1);
+//            Main.WORD_MANAGER.addWord(w2);
+//            //
+//            System.out.println("counterWord="+Main.WORD_MANAGER.getLength());
+//            System.out.println(Main.WORD_MANAGER.getListString());
+//            //
+//            
+//        try {
+//            writerTxt.open("CrossWordFiles/Easy/1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
+//            writerTxt.writeAll();
+//            writerTxt.close(); //importante cerrar el archivo 
+//            System.out.println("Escritura exitosa texto en writer");
+//        } catch (IOException ex) {
+//            System.err.println("error de archivo texto en writer");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        }
+//    
+//    
+//    
+//    }
 }
