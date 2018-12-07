@@ -79,28 +79,4 @@ public class UserList {
             count++;
         }
     } 
-    
-    
-//    private void crecimiento () {
-//       ZonasProtegidas[] zonaProtegida = new ZonasProtegidas[areas.length*2];
-//       System.arraycopy(areas, 0, zonaProtegida, 0, areas.length);
-//       areas = zonaProtegida;
-//        
-//    }
-    
-    
-//        public void agregar (ZonasProtegidas newOne) {
-//        if (areas.length == round){
-//            crecimiento();
-//            if (newOne != null) {
-//                areas[round] = newOne;
-//                round += 1;
-//            } 
-//        
-//        }else if (newOne != null) {
-//            System.out.println("uno");
-//            areas[round] = newOne;
-//                round += 1;
-//        }
-//    }
 }
