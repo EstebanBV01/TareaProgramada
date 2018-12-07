@@ -9,7 +9,8 @@ import java.io.*;
 import javax.swing.JOptionPane;
 /**
  *
- * @author Satellaizar
+ * @author juan carlos,fernanda, esteban
+ * @version 7/12/2018
  */
 public class Levels extends javax.swing.JDialog  {
 
@@ -156,7 +157,9 @@ public class Levels extends javax.swing.JDialog  {
     }//GEN-LAST:event_btEasyActionPerformed
 
     private void btMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMediumActionPerformed
-        // TODO add your handling code here:
+        Crossword easy=new Crossword(this,true);
+        //dispose();//creo que hace falta?
+        easy.setVisible(true);
     }//GEN-LAST:event_btMediumActionPerformed
 
     
