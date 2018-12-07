@@ -83,15 +83,15 @@ public static UserList User_Mananger = new UserList();//prueba el profe dijo que
         ////
         ///prueba de lectura escritura de TEXT
         ////
-        Word tama=new Word(4);
-        Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
-        Word w2=new Word(0, 0, 0, "H", "la palabrea", "la");
-        WORD_MANAGER.addWord(tama);
-        WORD_MANAGER.addWord(w2);
-        WORD_MANAGER.addWord(w1);
-        WORD_MANAGER.addWord(w1);
-        WORD_MANAGER.addWord(w1);
-        WORD_MANAGER.addWord(w1);
+//        Word tama=new Word(4);
+//        Word w1=new Word(0, 0, 0, "V", "la palabrea", "la descripcion");
+//        Word w2=new Word(0, 0, 0, "H", "la palabrea", "la");
+//        WORD_MANAGER.addWord(tama);
+//        WORD_MANAGER.addWord(w2);
+//        WORD_MANAGER.addWord(w1);
+//        WORD_MANAGER.addWord(w1);
+//        WORD_MANAGER.addWord(w1);
+//        WORD_MANAGER.addWord(w1);
         
       
         System.out.println("counterWord="+WORD_MANAGER.getLength());
@@ -106,24 +106,24 @@ public static UserList User_Mananger = new UserList();//prueba el profe dijo que
             System.out.println(readerTxt.read());
             System.out.println(readerTxt.read());
             readerTxt.close(); //importante cerrar el archivo
-            System.out.println("Lectura exitosa de texto en reader");
+            System.out.println("Lectura exitosa de TEXTO en reader");
         } catch (IOException ex) {
-            System.err.println("error de archivo texto en reader");
+            System.err.println("error de archivo TEXTO en reader");
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
 
-        WriterManager writerTxt = new WriterManager();
-        try {
-            writerTxt.open("CrossWordFiles/Easy/2.txt");  //probar el parametro apend en new FileWriter(fileName, true)
-            writerTxt.writeAll();
-            writerTxt.close(); //importante cerrar el archivo 
-            System.out.println("Escritura exitosa texto en writer");
-        } catch (IOException ex) {
-            System.err.println("error de archivo texto en writer");
-            System.err.println(ex.getMessage());
-            //ex.printStackTrace();
-        }
+//        WriterManager writerTxt = new WriterManager();
+//        try {
+//            writerTxt.open("CrossWordFiles/Easy/2.txt");  //probar el parametro apend en new FileWriter(fileName, true)
+//            writerTxt.writeAll();
+//            writerTxt.close(); //importante cerrar el archivo 
+//            System.out.println("Escritura exitosa texto en writer");
+//        } catch (IOException ex) {
+//            System.err.println("error de archivo texto en writer");
+//            System.err.println(ex.getMessage());
+//            //ex.printStackTrace();
+//        }
     }
 
 }

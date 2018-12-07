@@ -148,7 +148,7 @@ WriterManager writerTxt = new WriterManager();
      */
     
     private void initPanel() {
-        Main.WORD_MANAGER.getWord(1);
+        //Main.WORD_MANAGER.getWord(1);
         int cols = 5;
         int rows = 6;
         

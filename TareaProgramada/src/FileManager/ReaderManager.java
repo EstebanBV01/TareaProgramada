@@ -19,7 +19,29 @@ public class ReaderManager {
     public void open(String fileName) throws FileNotFoundException {
         reader = new BufferedReader(new FileReader(fileName));
     }
-
+    /**
+     * metodo para abrir el archivo texto
+     * @return 
+     */   
+    public String[] open2(String fileName,int arrLength)throws FileNotFoundException ,IOException{
+        String str;
+        int cont=0;
+        String[] array;
+        FileReader fileReader=new FileReader(fileName);
+        this.reader=new BufferedReader(fileReader);
+        array=new String[arrLength];
+        while((str=reader.readLine())!=null){
+            array[cont]=str;
+            cont++;
+        }
+        reader.close();
+        return array;
+    }
+    /**
+     * metodo para leer linea por linea
+     * @return retorna la palabra leída
+     * @throws IOException 
+     */
     public Word read() throws IOException {
         Word word1 = null;
         String line = reader.readLine(); //retorna null cuando no hay más registros
@@ -39,7 +61,6 @@ public class ReaderManager {
 //            read(Main.WORD_MANAGER.getWord(i));
 //        }
 //    }
-
     public void close() throws IOException {
         reader.close();
     }

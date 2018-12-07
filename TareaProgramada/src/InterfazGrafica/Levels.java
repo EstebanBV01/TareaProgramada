@@ -5,6 +5,7 @@
  */
 
 package InterfazGrafica;
+import Game.Main;
 import java.io.*;
 import javax.swing.JOptionPane;
 /**
@@ -151,15 +152,18 @@ public class Levels extends javax.swing.JDialog  {
     }//GEN-LAST:event_btHardActionPerformed
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
-        Crossword easy=new Crossword(this,true);
+        Crossword cross=new Crossword(this,true);
         //dispose();//creo que hace falta?
-        easy.setVisible(true);
+        cross.setVisible(true);
+        //cross.readerTxt.open(fileName);
     }//GEN-LAST:event_btEasyActionPerformed
 
     private void btMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMediumActionPerformed
-        Crossword easy=new Crossword(this,true);
+        Crossword cross=new Crossword(this,true);
         //dispose();//creo que hace falta?
-        easy.setVisible(true);
+        cross.setVisible(true);
+        
+        
     }//GEN-LAST:event_btMediumActionPerformed
 
     
