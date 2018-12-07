@@ -56,18 +56,16 @@ public class UserList {
     }
     
     public void bigger() {
-        User[] vec = new User[userlist.length*2];
-        for (int i = 0; i < vec.length; i++) {
-            vec[i] = userlist[i];
-        }
-        userlist = vec;
+        User[] temp = new User[userlist.length*2];
+        System.arraycopy(userlist, 0, temp, 0, userlist.length);
+        userlist = temp;
     }
     
     
     public void addNewUser (User newUser) {
-        if(newUser != null) {
-            if (userlist.length <= count) {
-                this.bigger();
+        if(userlist.length == count) {
+            bigger();
+            if (newUser != null) {
                 userlist[count] = newUser;
                 count++;
                 
@@ -76,9 +74,33 @@ public class UserList {
                 count++;
             }
             
-        }else {            
+        }else if (newUser != null){            
             userlist[count] = newUser;
             count++;
         }
     } 
+    
+    
+//    private void crecimiento () {
+//       ZonasProtegidas[] zonaProtegida = new ZonasProtegidas[areas.length*2];
+//       System.arraycopy(areas, 0, zonaProtegida, 0, areas.length);
+//       areas = zonaProtegida;
+//        
+//    }
+    
+    
+//        public void agregar (ZonasProtegidas newOne) {
+//        if (areas.length == round){
+//            crecimiento();
+//            if (newOne != null) {
+//                areas[round] = newOne;
+//                round += 1;
+//            } 
+//        
+//        }else if (newOne != null) {
+//            System.out.println("uno");
+//            areas[round] = newOne;
+//                round += 1;
+//        }
+//    }
 }
