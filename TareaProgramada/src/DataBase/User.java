@@ -13,14 +13,18 @@ import java.io.*;
 public class User implements Serializable { 
     private String nickname;
     private String password;
+    private int progress;
+    private boolean instructions;
 /**
  * 
  * @param nickname
  * @param password 
  */
-    public User(String nickname, String password) {
+    public User(String nickname, String password, int progress, boolean instructions) {
         this.nickname = nickname;
         this.password = password;
+        this.progress = progress;
+        this.instructions = instructions;
     }
 
     public String getNickname() {
@@ -38,15 +42,25 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-   
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public void setProgress(int progress) {
+        this.progress = progress;
+    }
+
+    public boolean isInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(boolean instructions) {
+        this.instructions = instructions;
+    }
+    
 
     public String toString() {
-        return "Nickname: " + nickname + ", Password: " + password;
-    }
-
-    public void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+        return "Nickname: " + nickname + ", Password: " + password + ", Progress: " + progress;
+    } 
 }

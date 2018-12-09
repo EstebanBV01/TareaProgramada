@@ -27,7 +27,7 @@ public class ReaderManagerBinary {
     }
     public void readAll()throws IOException,ClassNotFoundException{
         for (int i = 0; i < Main.User_Mananger.getLength() ; i++) {
-            read();
+            Main.User_Mananger.addNewUser(read());
         }
     }
     public void close() throws IOException {
