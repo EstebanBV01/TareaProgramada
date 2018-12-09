@@ -266,7 +266,7 @@ public class UserF extends javax.swing.JDialog {
     private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
         
         User newUser = new User(tfUser.getText(), pfPassword.getText(), 0, false);
-        
+//  
 //        try {
 //            reader.open("UserFiles/UserInfo.ser");
 //            reader.readAll();
