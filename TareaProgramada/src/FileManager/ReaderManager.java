@@ -7,11 +7,13 @@ package FileManager;
 
 import Crucigramas.Word;
 import Game.Main;
+import static Game.Main.WORD_MANAGER;
 import java.io.*;
 
 /**
  *
- * @author Johan
+ * @author juancarlos,fernanda,esteban
+ * @version 8/12/2018
  */
 public class ReaderManager {
         private BufferedReader reader;
@@ -20,47 +22,55 @@ public class ReaderManager {
         reader = new BufferedReader(new FileReader(fileName));
     }
     /**
-     * metodo para abrir el archivo texto
-     * @return 
-     */   
-    public String[] open2(String fileName,int arrLength)throws FileNotFoundException ,IOException{
-        String str;
-        int cont=0;
-        String[] array;
-        FileReader fileReader=new FileReader(fileName);
-        this.reader=new BufferedReader(fileReader);
-        array=new String[arrLength];
-        while((str=reader.readLine())!=null){
-            array[cont]=str;
-            cont++;
-        }
-        reader.close();
-        return array;
-    }
-    /**
      * metodo para leer linea por linea
      * @return retorna la palabra leída
      * @throws IOException 
      */
-    public Word read() throws IOException {
-        Word word1 = null;
+     private Word read() throws IOException {
+       Word word=null;
+      // Word word2=null;
         String line = reader.readLine(); //retorna null cuando no hay más registros
         String datos[];
         if (line != null) {
-           // word1 = new Word();
             datos = line.split("/");
-            //////
-            word1=new Word(Integer.parseInt(datos[0]),Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);
-            
-            ///
+            //word = new Word(
+              //      Character.getNumericValue(datos[0].charAt(0)), Character.getNumericValue(datos[0].charAt(2)),
+                //    Character.getDirectionality(datos[1].charAt(1)), datos[3], datos[4], datos[5]);
+                word=new Word(Integer.parseInt(datos[0]),
+                     Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);           
+            int n=Character.getNumericValue(datos[0].charAt(0));
         }
-        return word1;
+        return word;
     }
-//    public void readAll() throws IOException {
-//        for (int i = 0; i < Main.WORD_MANAGER.getLength(); i++) {
-//            read(Main.WORD_MANAGER.getWord(i));
-//        }
-//    }
+     public void readAll() throws IOException {
+        Word newWord;
+        while ((newWord = read()) != null) {
+            System.out.println("leyendo");
+            Main.WORD_MANAGER.addWord(newWord);
+        }
+        System.out.println("wlwmen"+WORD_MANAGER.getListString());
+    }
+/**
+ * metodo para sacar filas y columnas
+ * @throws IOException 
+ */
+     private int getRowCols() throws IOException {
+       Word word=null;
+       int rowCol=0;
+        String line = reader.readLine(); //retorna null cuando no hay más registros
+        String datos[];
+        if (line != null) {
+            datos = line.split("/");
+                word=new Word(Integer.parseInt(datos[0]),
+                    Integer.parseInt(datos[1]), Integer.parseInt(datos[2]),datos[3],datos[4], datos[5]);           
+             rowCol=Character.getNumericValue(datos[0].charAt(0));
+        }
+        return rowCol;
+    }
+     /**
+      * metodo para cerrar el archivo de texto
+      * @throws IOException 
+      */
     public void close() throws IOException {
         reader.close();
     }

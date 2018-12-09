@@ -23,7 +23,7 @@ import javafx.scene.control.TextField;
 public class Crossword extends javax.swing.JDialog {
     //una prueba de referencia a reader
 ReaderManager readerTxt = new ReaderManager();
-WriterManager writerTxt = new WriterManager();
+//WriterManager writerTxt = new WriterManager();
     /**
      * Creates new form Easy
      * constructor easy modificado con jaavax.swing
@@ -148,9 +148,10 @@ WriterManager writerTxt = new WriterManager();
      */
     
     private void initPanel() {
-        //Main.WORD_MANAGER.getWord(1);
+        ReaderManager reader=new ReaderManager();
         int cols = 5;
         int rows = 6;
+        this.readLines();
         
         GridLayout gridLayout = new GridLayout(rows, cols);
         //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
@@ -164,72 +165,22 @@ WriterManager writerTxt = new WriterManager();
                     
                 }
             }
-            
-            //
- //           newGridField.addActionListener(new java.awt.event.ActionListener() {
-//                public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                    if (evt.getSource() == newGridField) {
-////                        product = newGridButtom.getProduct();
-////                        Icon icon = new ImageIcon(getClass().getResource(
-////                                "/img/" + product.getImageName()));
-////                        lbImage.setIcon(icon);
-//                    }
-//                }
-//            });
     }
-    
-    
-//     /**
-//      * metodo para leer palaras
-//      * @param sin parametros
-//      * @return no retorna
-//      */
-//    private void readWords(){
-//            
-//        //ReaderManager readerTxt = new ReaderManager();
-//        try {
-//            readerTxt.open("CrossWordFiles/Easy/1.txt");
-//            //
-//            System.out.println(readerTxt.read());//creo que aqui va un while + arraycopy
-//            System.out.println(readerTxt.read());
-//            System.out.println(readerTxt.read());
-//            System.out.println(readerTxt.read());
-//            //
-//            readerTxt.close(); //importante cerrar el archivo
-//            System.out.println("Lectura exitosa de texto en reader");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo texto en reader");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
-//    }
-//    /**
-//     * metodo para añadir palabras no retorna
-//     */
-//    public void writeWords(){
-//            Word matrSize=new Word(5, 5);
-//            Word w1=new Word(0,0, 0, "V", "la palabrea", "la descripcion");
-//            Word w2=new Word(0,1,1,"V","otraPalabra","suDescipcion");
-//            Main.WORD_MANAGER.addWord(matrSize);
-//            Main.WORD_MANAGER.addWord(w1);
-//            Main.WORD_MANAGER.addWord(w2);
-//            //
-//            System.out.println("counterWord="+Main.WORD_MANAGER.getLength());
-//            System.out.println(Main.WORD_MANAGER.getListString());
-//            //
-//            
-//        try {
-//            writerTxt.open("CrossWordFiles/Easy/1.txt");  //probar el parametro apend en new FileWriter(fileName, true)
-//            writerTxt.writeAll();
-//            writerTxt.close(); //importante cerrar el archivo 
-//            System.out.println("Escritura exitosa texto en writer");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo texto en writer");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
-//    
-//    
-//    
-//    }
+        /**
+        * 
+        */
+    public void readLines(){
+        ReaderManager readerTxt = new ReaderManager();
+        try {
+            int var=1;
+            readerTxt.open("CrossWordFiles/Easy/1.txt");//carpeta easy debe ser variable
+            readerTxt.readAll();
+            readerTxt.close(); //importante cerrar el archivo
+            System.out.println("Lectura exitosa de TEXTO en reader");
+        } catch (IOException ex) {
+            System.err.println("error de archivo TEXTO en reader");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
+    }
 }
