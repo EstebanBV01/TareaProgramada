@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 public class UserF extends javax.swing.JDialog {
     ReaderManagerBinary reader = new ReaderManagerBinary();
     WriterManagerBinary writer = new WriterManagerBinary();
+    private static int count = 0;
     
     public UserF(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -167,17 +168,15 @@ public class UserF extends javax.swing.JDialog {
     }//GEN-LAST:event_btBackActionPerformed
 
     private void btNoSignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNoSignActionPerformed
-        Levels levels = new Levels(this, true);
+        Instructions instru = new Instructions(this,true);
         JOptionPane.showMessageDialog(this, "¡A Ingresado Sin Registrarse!");
-        JOptionPane.showMessageDialog(this, "Las Instruccion Son Las Siguientes:\n"
-                            + "Seguiendo las pistas debera de introducir la palabra donde se le asigna\n"
-                            + "Debera de Completar todas las palabras para comprobar y asi ver su resultado","Instrucciones\n"
-                                    + "Precione '?' para obtener una pista, (Estas tiene un limite dependiendo del nivel)", JOptionPane.INFORMATION_MESSAGE);
-        levels.setVisible(true);
+        instru.setVisible(true);
         
     }//GEN-LAST:event_btNoSignActionPerformed
 
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
+        
+        //Metodo para comprobar si desplegar las Instrucciones
         
 //                        try {                 
 //                            writer.open("UserFiles/UserInfo.ser");
@@ -191,72 +190,33 @@ public class UserF extends javax.swing.JDialog {
 //                        }
         
         //Metodo para logearse
-//
-//        try {
-//            reader.open("UserFiles/UserInfo.ser");
-//            if (reader.read().getNickname().equals(tfUser.getText())) {
-//                reader.close(); //importante cerrar el archivo
-//
-//                reader.open("UserFiles/UserInfo.ser");
-//                if (reader.read().getPassword().equals(pfPassword.getText())) {
-//                    reader.close(); 
-//                    JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");                 
-
-//                    //importante cerrar el archivo
-//                }else {
-//                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
-//                }
-//            }else  {
-//                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
-//                }
-//                System.out.println("Lectura exitosa bianria en reader");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo binario en reader");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        } catch (ClassNotFoundException ex) {
-//            System.err.println("error de casteo de objeto del archivo");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
         
-        //Estructura Base
-//        try {
-//            reader.open("UserFiles/UserInfo.ser");
-//            if (reader.read().getPassword().equals(pfPassword.getText())) {
-//                JOptionPane.showMessageDialog(this, "Logeado Con Exitoso");
-//                Levels levels = new Levels(this, true);
-//                levels.setVisible(true);
-//            }else  {
-//                JOptionPane.showMessageDialog(this, "Usuario O Contraseña Erroneos");
-//                }
-//                reader.close(); //importante cerrar el archivo
-//                System.out.println("Lectura exitosa bianria en reader");
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo binario en reader");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        } catch (ClassNotFoundException ex) {
-//            System.err.println("error de casteo de objeto del archivo");
-//            System.err.println(ex.getMessage());
-//            //ex.printStackTrace();
-//        }
-        for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
-            if (Main.User_Mananger.getUser(i).isInstructions() == false) {
-                        Levels levels = new Levels(this, true);
-        JOptionPane.showMessageDialog(this, "¡A Ingresado Sin Registrarse!");
-        JOptionPane.showMessageDialog(this, "Las Instruccion Son Las Siguientes:\n"
-                            + "Seguiendo las pistas debera de introducir la palabra donde se le asigna\n"
-                            + "Debera de Completar todas las palabras para comprobar y asi ver su resultado","Instrucciones\n"
-                                    + "Precione '?' para obtener una pista, (Estas tiene un limite dependiendo del nivel)", JOptionPane.INFORMATION_MESSAGE);
-        levels.setVisible(true);
-            } else{
-                Levels levels = new Levels(this, true);
-                levels.setVisible(true);
-            }
+        
+        try {
+            reader.open("UserFiles/UserInfo.ser");
+//            reader.readAll();
+            Main.User_Mananger  = reader.read();
+            reader.close();
+            
+          for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
+            if (tfUser.getText().equals(Main.User_Mananger.getUser(i).getNickname()) && pfPassword.getText().equals(Main.User_Mananger.getUser(i).getPassword())) {
+                JOptionPane.showMessageDialog(this, "Bienvenido " + tfUser.getText());
+                Instructions instruc = new Instructions(this, true);
+                instruc.setVisible(true);
+            }else {
+                JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrectos");
+            }            
         }
-
-
+                    
+        } catch (IOException ex) {
+            System.err.println("error de archivo binario en reader");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("error de casteo de objeto del archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
     }//GEN-LAST:event_btLogInActionPerformed
 
     private void pfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfPasswordActionPerformed
@@ -266,23 +226,23 @@ public class UserF extends javax.swing.JDialog {
     private void btSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSignInActionPerformed
         
         User newUser = new User(tfUser.getText(), pfPassword.getText(), 0, false);
-//  
-//        try {
-//            reader.open("UserFiles/UserInfo.ser");
-//            reader.readAll();
-//            reader.close();
-//        } catch (IOException ex) {
-//            System.err.println("error de archivo binario en reader");
-//            System.err.println(ex.getMessage());
-//            ex.printStackTrace();
-//        } catch (ClassNotFoundException ex) {
-//            System.err.println("error de casteo de objeto del archivo");
-//            System.err.println(ex.getMessage());
-//            ex.printStackTrace();
-//        }
         
-        if (tfUser.getText().length() >= 6 || tfUser.getText().length() <= 3){
-            JOptionPane.showMessageDialog(this, "Menor Al Minimo O Mayor Al Maximo");
+        try {
+            reader.open("UserFiles/UserInfo.ser");
+            Main.User_Mananger  = reader.read();
+            reader.close();
+        } catch (IOException ex) {
+            System.err.println("error de archivo binario en reader");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            System.err.println("error de casteo de objeto del archivo");
+            System.err.println(ex.getMessage());
+            //ex.printStackTrace();
+        }
+        
+        if (tfUser.getText().length() <= 4 || pfPassword.getText().length() <= 3){
+            JOptionPane.showMessageDialog(this, "Menor Al Minimo");
         }else {
             for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
                 if (Main.User_Mananger.getUser(i)!= null) {
@@ -292,53 +252,53 @@ public class UserF extends javax.swing.JDialog {
                         
                     }else { 
                         i = Main.User_Mananger.getLength();
-                        Main.User_Mananger.addNewUser(newUser);
+                        try {         
+                            Main.User_Mananger.addNewUser(newUser);
+                            
+                            writer.open("UserFiles/UserInfo.ser");
+                            writer.write(Main.User_Mananger);
+                            writer.close();
+                            System.out.println("Escritura Exitosa binaria en writer");
+                        }catch (IOException ex) {
+                            System.err.println("error de archivo binario en writer");
+                            System.err.println(ex.getMessage());
+//                          ex.printStackTrace();          
+                        }
                         Main.User_Mananger.vecString(); 
-                        
+                          
                     }
                 }else {
                     i = Main.User_Mananger.getLength();     
+                    try {         
                         Main.User_Mananger.addNewUser(newUser);
-                        Main.User_Mananger.vecString();               
+                            
+                        writer.open("UserFiles/UserInfo.ser");
+                        writer.write(Main.User_Mananger);
+                        writer.close();
+                        System.out.println("Escritura Exitosa binaria en writer");
+                    }catch (IOException ex) {
+                        System.err.println("error de archivo binario en writer");
+                        System.err.println(ex.getMessage());
+//                      ex.printStackTrace();          
+                        }                    
+                    Main.User_Mananger.vecString(); 
                 }
             }   
         }
         
-
-        
-        
-
-//         for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
-//         if (Main.User_Mananger.getUser(i)!= null) {
-//           
-//                if (Main.User_Mananger.getUser(i).getNickname().equals(tfUser.getText())) {
-//                    JOptionPane.showMessageDialog(this, "Nombre De Usuario Existente");
-//                    i = Main.User_Mananger.getLength();
-//                }else {
-//                    Main.User_Mananger.addNewUser(newUser);
-//                    Main.User_Mananger.vecString();            
-//                }
-//        }else {
-//                Main.User_Mananger.addNewUser(newUser);
-//                Main.User_Mananger.vecString();                 
-//            }
-//        }
-//        
-
-
-//                    try {
-//                        reader.open("UserFiles/UserInfo.ser");
-//                        reader.readAll();
-//                        reader.close();
-//                    } catch (IOException ex) {
-//                        System.err.println("error de archivo binario en reader");
+      
+//                            try {         
+//                        Main.User_Mananger.addNewUser(newUser);
+//                            
+//                        writer.open("UserFiles/UserInfo.ser");
+//                        writer.write(Main.User_Mananger);
+//                        writer.close();
+//                        System.out.println("Escritura Exitosa binaria en writer");
+//                    }catch (IOException ex) {
+//                        System.err.println("error de archivo binario en writer");
 //                        System.err.println(ex.getMessage());
-//                        //ex.printStackTrace();
-//                    } catch (ClassNotFoundException ex) {
-//                        System.err.println("error de casteo de objeto del archivo");
-//                        System.err.println(ex.getMessage());
-//                        //ex.printStackTrace();
-//                    }
+////                      ex.printStackTrace();          
+//                        }
 
     }//GEN-LAST:event_btSignInActionPerformed
 

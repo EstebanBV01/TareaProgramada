@@ -1,7 +1,7 @@
 
 package FileManagerBi;
 
-import DataBase.User;
+import DataBase.UserList;
 import Game.Main;
 import java.io.*;
 ;
@@ -22,14 +22,14 @@ public class ReaderManagerBinary {
     }
      
 
-    public User read() throws IOException, ClassNotFoundException {
-        return (User) reader.readObject();
+    public UserList read() throws IOException, ClassNotFoundException {
+        return (UserList) reader.readObject();
     }
-    public void readAll()throws IOException,ClassNotFoundException{
-        for (int i = 0; i < Main.User_Mananger.getLength() ; i++) {
-            Main.User_Mananger.addNewUser(read());
-        }
-    }
+//    public void readAll()throws IOException,ClassNotFoundException{
+////        for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
+//            Main.User_Mananger.addNewUser(read());
+////        }
+//    }
     public void close() throws IOException {
         reader.close();
     }

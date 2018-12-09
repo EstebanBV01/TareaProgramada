@@ -7,6 +7,8 @@
 package InterfazGrafica;
 import Game.Main;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 /**
  *
@@ -152,14 +154,24 @@ public class Levels extends javax.swing.JDialog  {
     }//GEN-LAST:event_btHardActionPerformed
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
-        Crossword cross=new Crossword(this,true);
+        Crossword cross = null;
+        try {
+            cross = new Crossword(this,true);
+        } catch (IOException ex) {
+            Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //dispose();//creo que hace falta?
         cross.setVisible(true);
         //cross.readerTxt.open(fileName);
     }//GEN-LAST:event_btEasyActionPerformed
 
     private void btMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMediumActionPerformed
-        Crossword cross=new Crossword(this,true);
+        Crossword cross = null;
+        try {
+            cross = new Crossword(this,true);
+        } catch (IOException ex) {
+            Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //dispose();//creo que hace falta?
         cross.setVisible(true);
         

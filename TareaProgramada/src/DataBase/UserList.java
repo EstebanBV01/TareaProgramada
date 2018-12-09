@@ -6,12 +6,13 @@
 package DataBase;
 import Crucigramas.Word;
 import DataBase.User;
+import java.io.Serializable;
 
 /**
  *
  * @author Johan
  */
-public class UserList {
+public class UserList implements Serializable{
     int count = 0;
     User[] userlist;
     static final int SIZE=4;

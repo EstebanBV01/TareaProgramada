@@ -28,11 +28,12 @@ ReaderManager readerTxt = new ReaderManager();
      * Creates new form Easy
      * constructor easy modificado con jaavax.swing
      */
-    public Crossword(javax.swing.JDialog parent, boolean modal) {
+    public Crossword(javax.swing.JDialog parent, boolean modal) throws IOException {
         super(parent, modal);
         initComponents();
-        setLocationRelativeTo(parent);        
-        initPanel();
+        setLocationRelativeTo(parent);    
+        CargarPantalla();
+//        initPanel();
     }
 
     /**
@@ -146,6 +147,34 @@ ReaderManager readerTxt = new ReaderManager();
      * @return no retorna
      * @param sin parametros
      */
+    
+    private void CargarPantalla() throws FileNotFoundException, IOException {
+FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProjects\\TareaProgramada\\TareaProgramada\\CrossWordFiles\\Easy\\11.txt"); 
+   int cols = 0;
+   int rows = 0;
+   Boolean Inicio = true;
+    int i; 
+    int Count = 0;
+    String caracter = "";
+    
+    while ((i=fr.read()) != -1) 
+        if((char) i == '\n'){
+           Inicio = false;
+           Count = 0;
+        }else {
+                if (Inicio){
+        cols = Integer.parseInt(String.valueOf((char) i));
+        rows = Integer.parseInt(String.valueOf((char) i+2));
+//    cols = (int)char i.charValue();
+        
+        
+    }
+    Count ++;
+  
+    }
+        }
+
+            
     
     private void initPanel() {
         ReaderManager reader=new ReaderManager();

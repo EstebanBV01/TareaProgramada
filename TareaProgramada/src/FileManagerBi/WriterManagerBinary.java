@@ -2,7 +2,7 @@
 package FileManagerBi;
 
 
-import DataBase.User;
+import DataBase.UserList;
 import Game.Main;
 import java.io.FileOutputStream;
 import java.io.*;
@@ -20,15 +20,15 @@ public class WriterManagerBinary {
         writer = new ObjectOutputStream(new FileOutputStream(fileName));
     }
     
-    public void write (User user) throws IOException {
-        writer.writeObject(user);
+    public void write (UserList _UserList) throws IOException {
+        writer.writeObject(_UserList);
     }
     
-    public void writeAll() throws IOException {
-        for (int i = 0; i < Main.User_Mananger.getLength()-1; i++) {
-            write(Main.User_Mananger.getUser(i));
-        }
-    }
+//    public void writeAll() throws IOException {
+//        for (int i = 0; i < Main.User_Mananger.getLength()-1; i++) {
+//            write(Main.User_Mananger.getUser(i));
+//        }
+//    }
     
     public void close() throws IOException {
         writer.close();
