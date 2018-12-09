@@ -158,13 +158,16 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
     String caracter = "";
     
     while ((i=fr.read()) != -1) 
+        
         if((char) i == '\n'){
            Inicio = false;
            Count = 0;
         }else {
                 if (Inicio){
-        cols = Integer.parseInt(String.valueOf((char) i));
-        rows = Integer.parseInt(String.valueOf((char) i+2));
+       caracter = String.valueOf((char) i);
+       if (Count == 0) cols = Integer.parseInt(caracter);
+       if (Count == 2) rows = Integer.parseInt(caracter);
+              
 //    cols = (int)char i.charValue();
         
         
