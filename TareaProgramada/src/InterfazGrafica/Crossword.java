@@ -196,7 +196,7 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
                     jpCross.add(newTextField);
-                    //gridLayout.addLayoutComponent("asd", newTextField);
+                    ///gridLayout.addLayoutComponent("asd", newTextField);
                     
                 }
             }
