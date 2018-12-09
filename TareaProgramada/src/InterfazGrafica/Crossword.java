@@ -13,6 +13,8 @@ import java.awt.GridLayout;
 import java.io.*;
 import Game.Main;
 import java.awt.LayoutManager;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.TextField;
 /**
  *
@@ -24,6 +26,8 @@ public class Crossword extends javax.swing.JDialog {
     //una prueba de referencia a reader
 ReaderManager readerTxt = new ReaderManager();
 //WriterManager writerTxt = new WriterManager();
+
+private static int filesCount = 1;
     /**
      * Creates new form Easy
      * constructor easy modificado con jaavax.swing
@@ -129,7 +133,16 @@ ReaderManager readerTxt = new ReaderManager();
     }//GEN-LAST:event_btBackActionPerformed
     ///private void 
     private void btTestingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestingActionPerformed
-        // TODO add your handling code here:
+        filesCount++;
+        
+    try {
+        initComponents();
+        CargarPantalla();
+    } catch (IOException ex) {
+        Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
+ 
     }//GEN-LAST:event_btTestingActionPerformed
 
 
@@ -149,7 +162,7 @@ ReaderManager readerTxt = new ReaderManager();
      */
     
     private void CargarPantalla() throws FileNotFoundException, IOException {
-FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProjects\\TareaProgramada\\TareaProgramada\\CrossWordFiles\\Easy\\11.txt"); 
+FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProjects\\TareaProgramada\\TareaProgramada\\CrossWordFiles\\Easy\\"+ filesCount +".txt"); 
    int cols = 0;
    int rows = 0;
    Boolean Inicio = true;
