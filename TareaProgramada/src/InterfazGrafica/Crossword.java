@@ -172,9 +172,21 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
         
         
     }
+    
     Count ++;
   
     }
+    
+    GridLayout gridLayout = new GridLayout(rows, cols);
+    for (int f = 0; f < rows; f++) {
+                for (int j = 0; j < cols; j++) {
+                     GridField newTextField = new GridField(f,j,1,1);
+                    jpCross.setLayout(gridLayout);
+                    jpCross.add(newTextField);
+                    //gridLayout.addLayoutComponent("asd", newTextField);
+                    
+                }
+            }
         }
 
             
