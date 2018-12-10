@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @version 7/12/2018
  */
 public class Levels extends javax.swing.JDialog  {
-
+private int lvlCount;
     /**
      * Creates new form Levels
      * @param parent
@@ -158,12 +158,14 @@ public class Levels extends javax.swing.JDialog  {
         } catch (IOException ex) {
             Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //dispose();//creo que hace falta?
+        
         cross.setVisible(true);
-        //cross.readerTxt.open(fileName);
+        this.setLvlCount(1);
+        
     }//GEN-LAST:event_btEasyActionPerformed
 
     private void btMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMediumActionPerformed
+        this.lvlCount=2;
         Crossword cross = null;
         try {
             cross = new Crossword(this,true);
@@ -175,6 +177,14 @@ public class Levels extends javax.swing.JDialog  {
         
         
     }//GEN-LAST:event_btMediumActionPerformed
+
+    public int getLvlCount() {
+        return lvlCount;
+    }
+
+    public void setLvlCount(int lvlCount) {
+        this.lvlCount = lvlCount;
+    }
 
     
 

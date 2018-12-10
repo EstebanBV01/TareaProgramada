@@ -21,7 +21,7 @@ public class Crossword extends javax.swing.JDialog {
     //una prueba de referencia a reader
 ReaderManager readerTxt = new ReaderManager();
 //WriterManager writerTxt = new WriterManager();
-
+ 
 private static int filesCount = 1;
     /**
      * Creates new form Easy
@@ -141,8 +141,31 @@ private static int filesCount = 1;
     private javax.swing.JPanel jpCross;
     private javax.swing.JLabel lbTitulo;
     // End of variables declaration//GEN-END:variables
-    
-    
+    /**
+     * metodo para escojer carpeta easy,med,hard..
+     * @return retorna la palabra
+     */
+    public String chooseLvl(){
+         Levels level=new Levels(this,true);
+       String dinamicFile="";
+        
+       switch(level.getLvlCount()){
+               
+               case 1:
+                   dinamicFile="Easy";
+               break;
+               case 2:
+                   dinamicFile="Medium";
+                   break;
+               case 3:
+                   dinamicFile="Hard";
+                   break;
+               case 4:
+                   dinamicFile="VHard";
+                   break;       
+       }
+       return dinamicFile;
+    }
     /**
      * metodo  generador dinamico de matrices
      * @return no retorna
@@ -150,6 +173,8 @@ private static int filesCount = 1;
      */
     
    private void CargarPantalla() throws FileNotFoundException, IOException {
+       
+         System.out.println("chooselvl..."+this.chooseLvl());     
    FileReader fr = new FileReader("CrossWordFiles/Easy/"+ filesCount +".txt"); 
    int cols = 0;
    int rows = 0;
@@ -183,31 +208,31 @@ private static int filesCount = 1;
             str[j]=Main.WORD_MANAGER.getWord(j).getTheWord();
         }
         
-//        GridLayout gridLayout = new GridLayout(rows, cols);
-//        
-//        for (int f = 0; f < rows; f++) {
-//                for (int j = 0; j < cols; j++) {
-//                     GridField newTextField = new GridField(f,j,1,1);
-//                    jpCross.setLayout(gridLayout);
-//                //    
-//                newTextField.setText(str[f]);
-//                //str[f]=newTextField.getText();
-//                gridLayout.setHgap(2);
-//                //
-//                    jpCross.add(newTextField);
-//                                        
-//                }
-//        }
-    GridLayout gridLayout = new GridLayout(rows, cols);
-        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
-
-            for (int f = 0; f < rows; f++) {
+        GridLayout gridLayout = new GridLayout(rows, cols);
+        
+        for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                        gridLayout.addLayoutComponent("" + caracter, newTextField);
+                //    
+                newTextField.setText(str[f]);
+                //str[f]=newTextField.getText();
+                gridLayout.setHgap(2);
+                //
+                    jpCross.add(newTextField);
+                                        
                 }
-            }
+        }
+//    GridLayout gridLayout = new GridLayout(rows, cols);
+//        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
+//
+//            for (int f = 0; f < rows; f++) {
+//                for (int j = 0; j < cols; j++) {
+//                     GridField newTextField = new GridField(f,j,1,1);
+//                    jpCross.setLayout(gridLayout);
+//                        gridLayout.addLayoutComponent("" + caracter, newTextField);
+//                }
+//            }
         System.out.println("UNa prueba...."+str[0]);
     }
 
@@ -247,7 +272,8 @@ private static int filesCount = 1;
         ReaderManager readerTxt = new ReaderManager();
         try {
             int var=1;
-            readerTxt.open("CrossWordFiles/Easy/" + filesCount + ".txt");//carpeta easy debe ser variable
+            String s="Easy";
+            readerTxt.open("CrossWordFiles/"+s+"/"+ filesCount +".txt");//carpeta easy debe ser variable
             readerTxt.readAll();
             readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de TEXTO en reader");
