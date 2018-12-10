@@ -235,7 +235,7 @@ public class UserF extends javax.swing.JDialog {
             //ex.printStackTrace();
         }
         
-        if (tfUser.getText().length() <= 4 || pfPassword.getText().length() <= 3){
+        if (tfUser.getText().length() < 4){
             JOptionPane.showMessageDialog(this, "Menor Al Minimo");
         }else {
             for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
