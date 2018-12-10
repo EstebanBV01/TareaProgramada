@@ -119,6 +119,7 @@ private static int filesCount = 1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
+        filesCount--;
         dispose();
     }//GEN-LAST:event_btBackActionPerformed
     ///private void 
