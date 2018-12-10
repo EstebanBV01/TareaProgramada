@@ -154,7 +154,7 @@ private int lvlCount;
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
         Crossword cross = null;
         try {
-            cross = new Crossword(this,true);
+            cross = new Crossword(this,true,"Easy");
         } catch (IOException ex) {
             Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -168,7 +168,7 @@ private int lvlCount;
         this.lvlCount=2;
         Crossword cross = null;
         try {
-            cross = new Crossword(this,true);
+            cross = new Crossword(this,true, "Medium");
         } catch (IOException ex) {
             Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
         }

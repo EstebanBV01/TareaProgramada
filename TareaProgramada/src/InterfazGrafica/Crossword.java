@@ -27,8 +27,11 @@ private static int filesCount = 1;
      * Creates new form Easy
      * constructor easy modificado con jaavax.swing
      */
-    public Crossword(javax.swing.JDialog parent, boolean modal) throws IOException {
+     String file;
+
+    public Crossword(javax.swing.JDialog parent, boolean modal, String file) throws IOException {    
         super(parent, modal);
+        this.file = file;
         initComponents();
         setLocationRelativeTo(parent);    
         CargarPantalla();
@@ -119,15 +122,19 @@ private static int filesCount = 1;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
+        if(filesCount == 1) {
+            dispose();
+        }else {
         filesCount--;
         dispose();
+        }
     }//GEN-LAST:event_btBackActionPerformed
     ///private void 
     private void btTestingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestingActionPerformed
         filesCount++;
         
     try {
-        Crossword cross = new Crossword(this, true);
+        Crossword cross = new Crossword(this, true, file);
         cross.setVisible(true);
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
@@ -176,7 +183,7 @@ private static int filesCount = 1;
    private void CargarPantalla() throws FileNotFoundException, IOException {
        
          System.out.println("chooselvl..."+this.chooseLvl());     
-   FileReader fr = new FileReader("CrossWordFiles/Easy/"+ filesCount +".txt"); 
+   FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt"); 
    int cols = 0;
    int rows = 0;
    Boolean Inicio = true;
@@ -274,7 +281,7 @@ private static int filesCount = 1;
         try {
             int var=1;
             String s="Easy";
-            readerTxt.open("CrossWordFiles/"+s+"/"+ filesCount +".txt");//carpeta easy debe ser variable
+            readerTxt.open("CrossWordFiles/"+file+"/"+ filesCount +".txt");//carpeta easy debe ser variable
             readerTxt.readAll();
             readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de TEXTO en reader");

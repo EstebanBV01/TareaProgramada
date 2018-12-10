@@ -120,6 +120,8 @@ public class Instructions extends javax.swing.JDialog {
         
         if (CbNoInstruc.isSelected()) {
             Main.User_Mananger.getUser(Main.User_Mananger.getCount()).setInstructions(false);
+        }else {
+            Main.User_Mananger.getUser(Main.User_Mananger.getCount()).setInstructions(true);
         }
     }//GEN-LAST:event_CbNoInstrucActionPerformed
 
