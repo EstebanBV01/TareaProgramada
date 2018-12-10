@@ -136,8 +136,8 @@ private static int filesCount = 1;
         filesCount++;
         
     try {
-        initComponents();
-        CargarPantalla();
+        Crossword cross = new Crossword(this, true);
+        cross.setVisible(true);
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -249,7 +249,7 @@ private static int filesCount = 1;
         ReaderManager readerTxt = new ReaderManager();
         try {
             int var=1;
-            readerTxt.open("CrossWordFiles/Easy/3.txt");//carpeta easy debe ser variable
+            readerTxt.open("CrossWordFiles/Easy/" + filesCount + ".txt");//carpeta easy debe ser variable
             readerTxt.readAll();
             readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de TEXTO en reader");
