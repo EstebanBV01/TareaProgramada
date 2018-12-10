@@ -144,11 +144,25 @@ private int lvlCount;
     }//GEN-LAST:event_btBackActionPerformed
 
     private void btVhardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVhardActionPerformed
-        // TODO add your handling code here:
+        Crossword cross = null;
+        try {
+            cross = new Crossword(this,true,"VHard");
+        } catch (IOException ex) {
+            Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        cross.setVisible(true);
     }//GEN-LAST:event_btVhardActionPerformed
 
     private void btHardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btHardActionPerformed
-        // TODO add your handling code here:
+        Crossword cross = null;
+        try {
+            cross = new Crossword(this,true,"Hard");
+        } catch (IOException ex) {
+            Logger.getLogger(Levels.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        cross.setVisible(true);
     }//GEN-LAST:event_btHardActionPerformed
 
     private void btEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEasyActionPerformed
