@@ -189,21 +189,24 @@ private static int filesCount = 1;
     Count ++;
   
     }
+    String[] str=new String[5];
     this.readLines();
-        System.out.println("aaa"+Main.WORD_MANAGER.getWord(4).getTheWord());
-   
+        System.out.println(Main.WORD_MANAGER.getWord(4).getTheWord());
+        str[0]=Main.WORD_MANAGER.getWord(4).getTheWord();
     GridLayout gridLayout = new GridLayout(rows, cols);
-    for (int f = 0; f < rows; f++) {
+        
+        for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                String[] str=new String[5];
-                //str[0]
+                    //newTextField.setText( char. str[f].charAt(f));
+                //str[f]=newTextField.getText();
+                
                     jpCross.add(newTextField);
-                    ///gridLayout.addLayoutComponent("asd", newTextField);
-                    
+                                        
                 }
-            }
+        }
+        System.out.println("UNa prueba...."+str[0]);
     }
 
             
