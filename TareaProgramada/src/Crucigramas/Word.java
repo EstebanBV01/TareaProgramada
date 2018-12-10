@@ -21,7 +21,7 @@ public class Word implements Serializable {
     private int coluLlegada;
     private String description;
     //
-    private String word;
+    private String theWord;
 /**
      * constructor con todos los atributos 
      * @param wordNumber
@@ -39,7 +39,7 @@ public class Word implements Serializable {
         this.filaLLegada = filaLlegada;
         this.coluSalida = coluSalida;
         this.coluLlegada = coluLlegada;
-        this.word=word;
+        this.theWord=word;
     }/**
      * constructor con menos atributos
      * @param wordNumber
@@ -55,7 +55,7 @@ public class Word implements Serializable {
         this.filaSalida = filaSalida;
         this.coluSalida = coluSalida;
         this.description=descri;
-        this.word=word;
+        this.theWord=word;
     }
      /**
       * 
@@ -73,10 +73,38 @@ public class Word implements Serializable {
   }    
     @Override
     public String toString() {
-        return "Word{"+word +filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
+        return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+theWord+"/"+description;
     }
     public String toFileString(){
-        return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+word+"/"+description;
+        return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+theWord+"/"+description;
     
     }
+    public int getTama() {
+        return tama;
+    }
+
+    public int getWordNumber() {
+        return wordNumber;
+    }
+
+    public String getVertHoriz() {
+        return vertHoriz;
+    }
+
+    public int getFilaSalida() {
+        return filaSalida;
+    }
+
+    public int getColuSalida() {
+        return coluSalida;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getTheWord() {
+        return theWord;
+    }
+    
 }

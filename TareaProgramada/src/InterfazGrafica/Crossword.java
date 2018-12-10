@@ -162,7 +162,7 @@ private static int filesCount = 1;
      */
     
     private void CargarPantalla() throws FileNotFoundException, IOException {
-FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProjects\\TareaProgramada\\TareaProgramada\\CrossWordFiles\\Easy\\"+ filesCount +".txt"); 
+   FileReader fr = new FileReader("CrossWordFiles/Easy/"+ filesCount +".txt"); 
    int cols = 0;
    int rows = 0;
    Boolean Inicio = true;
@@ -189,7 +189,7 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
     Count ++;
   
     }
-    
+   // Main.WORD_MANAGER.getWord(0).
     GridLayout gridLayout = new GridLayout(rows, cols);
     for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
@@ -200,10 +200,12 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
                     
                 }
             }
-        }
+    }
 
             
-    
+    /**
+     * metodo void prara inicia
+     */
     private void initPanel() {
         ReaderManager reader=new ReaderManager();
         int cols = 5;
@@ -223,6 +225,7 @@ FileReader fr = new FileReader("C:\\Users\\Satellaizar\\Documents\\NetBeansProje
                 }
             }
     }
+    
         /**
         * 
         */
