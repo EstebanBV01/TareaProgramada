@@ -191,10 +191,10 @@ public class UserF extends javax.swing.JDialog {
                 JOptionPane.showMessageDialog(this, "Bienvenido " + tfUser.getText());
                 Instructions instruc = new Instructions(this, true);
                 instruc.setVisible(true);
-                i=Main.User_Mananger.getLength();
+                //i=Main.User_Mananger.getLength();
             }else {
                 JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrectos");
-                i=Main.User_Mananger.getLength();
+                //i=Main.User_Mananger.getLength();
             }            
         }
                     
@@ -243,7 +243,6 @@ public class UserF extends javax.swing.JDialog {
                     if (Main.User_Mananger.getUser(i).getNickname().equals(tfUser.getText())) {
                         i = Main.User_Mananger.getLength();
                         JOptionPane.showMessageDialog(this, "Nombre De Usuario Existente");
-                        
                         
                     }else { 
                         i = Main.User_Mananger.getLength();
