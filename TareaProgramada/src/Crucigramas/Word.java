@@ -15,6 +15,7 @@ public class Word implements Serializable {
 ///////////////
     private int wordNumber;
     private String vertHoriz;
+    //
     private int filaSalida;
     private int filaLLegada;
     private int coluSalida;
