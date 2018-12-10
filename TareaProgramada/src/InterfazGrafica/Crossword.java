@@ -11,6 +11,7 @@ import java.io.*;
 import Game.Main;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author usuario
@@ -131,14 +132,22 @@ private static int filesCount = 1;
     }//GEN-LAST:event_btBackActionPerformed
     ///private void 
     private void btTestingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestingActionPerformed
-        filesCount++;
         
+        if( == null) {
+            JOptionPane.showMessageDialog(this, "Nuevos Niveles Proximamente");
+            Levels levels = new Levels(this, true);
+            levels.setVisible(true);
+            filesCount = 0;
+        }else{
+            filesCount++;    
     try {
         Crossword cross = new Crossword(this, true, file);
         cross.setVisible(true);
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
     }
+        }
+    
     }//GEN-LAST:event_btTestingActionPerformed
 
 
@@ -279,8 +288,6 @@ private static int filesCount = 1;
     public void readLines(){
         ReaderManager readerTxt = new ReaderManager();
         try {
-            int var=1;
-            String s="Easy";
             readerTxt.open("CrossWordFiles/"+file+"/"+ filesCount +".txt");//carpeta easy debe ser variable
             readerTxt.readAll();
             readerTxt.close(); //importante cerrar el archivo

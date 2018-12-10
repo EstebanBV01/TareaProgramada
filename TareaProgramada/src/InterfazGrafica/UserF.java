@@ -193,8 +193,8 @@ public class UserF extends javax.swing.JDialog {
                 instruc.setVisible(true);
                 i=Main.User_Mananger.getLength();
             }else {
-                JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrectos");
-                //i=Main.User_Mananger.getLength();
+                  JOptionPane.showMessageDialog(this, "Usuario o Contraseña Incorrectos");
+                //i=Main.User_Mananger.getLength();    
             }            
         }
                     
