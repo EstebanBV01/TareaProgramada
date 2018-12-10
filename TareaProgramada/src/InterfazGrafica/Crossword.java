@@ -199,9 +199,9 @@ private static int filesCount = 1;
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                    //newTextField.setText( char. str[f].charAt(f));
-                //str[f]=newTextField.getText();
-                
+                    newTextField.setText(str[f]);
+                str[f]=newTextField.getText();
+                gridLayout.setHgap(2);
                     jpCross.add(newTextField);
                                         
                 }
