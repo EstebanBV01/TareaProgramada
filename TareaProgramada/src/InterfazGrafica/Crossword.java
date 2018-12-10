@@ -189,7 +189,9 @@ private static int filesCount = 1;
     Count ++;
   
     }
-   // Main.WORD_MANAGER.getWord(0).
+    this.readLines();
+        System.out.println("aaa"+Main.WORD_MANAGER.getWord(4).getTheWord());
+   
     GridLayout gridLayout = new GridLayout(rows, cols);
     for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {

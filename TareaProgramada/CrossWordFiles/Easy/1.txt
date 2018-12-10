@@ -1,4 +1,4 @@
-5-5
+5/5/0/null/null/null
 0/0/0/V/cerdo/animal cochino
 2/0/0/H/rosa/flor
 4/0/0/H/oso/animal grande peludo

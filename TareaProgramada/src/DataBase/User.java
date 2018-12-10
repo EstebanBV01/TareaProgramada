@@ -8,7 +8,8 @@ import java.io.*;
 
 /**
  *
- * @author Johan
+ * @author juancarlos, fernanda ,esteban
+ * @version 9/12/2018
  */
 public class User implements Serializable { 
     private String nickname;
