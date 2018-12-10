@@ -78,6 +78,10 @@ public class UserList implements Serializable{
         return text;
     }
     
+    public int getCount() {
+        return count;
+    }
+    
     /**
      * Metodo para agrandar el vector
      */
@@ -108,4 +112,6 @@ public class UserList implements Serializable{
             count++;
         }
     } 
+    
+
 }

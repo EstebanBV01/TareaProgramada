@@ -189,21 +189,31 @@ private static int filesCount = 1;
             str[j]=Main.WORD_MANAGER.getWord(j).getTheWord();
         }
         
-        GridLayout gridLayout = new GridLayout(rows, cols);
-        
-        for (int f = 0; f < rows; f++) {
+//        GridLayout gridLayout = new GridLayout(rows, cols);
+//        
+//        for (int f = 0; f < rows; f++) {
+//                for (int j = 0; j < cols; j++) {
+//                     GridField newTextField = new GridField(f,j,1,1);
+//                    jpCross.setLayout(gridLayout);
+//                //    
+//                newTextField.setText(str[f]);
+//                //str[f]=newTextField.getText();
+//                gridLayout.setHgap(2);
+//                //
+//                    jpCross.add(newTextField);
+//                                        
+//                }
+//        }
+    GridLayout gridLayout = new GridLayout(rows, cols);
+        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
+
+            for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                //    
-                newTextField.setText(str[f]);
-                //str[f]=newTextField.getText();
-                gridLayout.setHgap(2);
-                //
-                    jpCross.add(newTextField);
-                                        
+                        gridLayout.addLayoutComponent("" + caracter, this);
                 }
-        }
+            }
         System.out.println("UNa prueba...."+str[0]);
     }
 
@@ -224,7 +234,12 @@ private static int filesCount = 1;
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                    jpCross.add(newTextField);
+                    for (int i = 0; i < gridLayout.getColumns(); i++) {
+                        gridLayout.addLayoutComponent("", this);
+                    }
+                        
+                    
+//                    jpCross.add(newTextField);
                     //gridLayout.addLayoutComponent("asd", newTextField);
                     
                 }

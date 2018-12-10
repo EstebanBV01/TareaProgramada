@@ -118,8 +118,8 @@ public class Instructions extends javax.swing.JDialog {
 
     private void CbNoInstrucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CbNoInstrucActionPerformed
         
-        for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
-            Main.User_Mananger.getUser(i).setInstructions(true);
+        if (CbNoInstruc.isSelected()) {
+            Main.User_Mananger.getUser(Main.User_Mananger.getCount()).setInstructions(false);
         }
     }//GEN-LAST:event_CbNoInstrucActionPerformed
 
