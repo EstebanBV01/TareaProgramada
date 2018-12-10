@@ -176,7 +176,7 @@ private static int filesCount = 1;
            Inicio = false;
            Count = 0;
         }else {
-                if (Inicio){
+           if (Inicio){
        caracter = String.valueOf((char) i);
        if (Count == 0) cols = Integer.parseInt(caracter);
        if (Count == 2) rows = Integer.parseInt(caracter);
