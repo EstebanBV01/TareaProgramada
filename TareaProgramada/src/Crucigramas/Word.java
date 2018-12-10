@@ -80,30 +80,59 @@ public class Word implements Serializable {
         return filaSalida+"/"+coluSalida+"/"+wordNumber+"/"+vertHoriz+"/"+theWord+"/"+description;
     
     }
+    
+    /**
+     * Metodo para obtener el tamaño del vector
+     * @return int tamaño
+     */
     public int getTama() {
         return tama;
     }
 
+    /**
+     * Metodo para obtener un int aparir de las letras
+     * @return letras
+     */
     public int getWordNumber() {
         return wordNumber;
     }
 
+    /**
+     * Metodo para obtener un String vertical
+     * @return Un String
+     */
     public String getVertHoriz() {
         return vertHoriz;
     }
-
+    
+    /**
+     * Metodo para obtener el numero de fila
+     * @return Un int
+     */
     public int getFilaSalida() {
         return filaSalida;
     }
 
+    /**
+     * Mtdoo para obtener una columna
+     * @return Un int
+     */
     public int getColuSalida() {
         return coluSalida;
     }
 
+    /**
+     * Metodo para obtener Las pistas
+     * @return Un String
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Metodo para obtener la palabra
+     * @return Un String
+     */
     public String getTheWord() {
         return theWord;
     }

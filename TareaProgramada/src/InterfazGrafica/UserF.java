@@ -175,26 +175,14 @@ public class UserF extends javax.swing.JDialog {
     }//GEN-LAST:event_btNoSignActionPerformed
 
     private void btLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLogInActionPerformed
-        
-        //Metodo para comprobar si desplegar las Instrucciones
-        
-//                        try {                 
-//                            writer.open("UserFiles/UserInfo.ser");
-//                            writer.writeAll();
-//                            writer.close();
-//                            System.out.println("Escritura Exitosa binaria en writer");
-//                        }catch (IOException ex) {
-//                            System.err.println("error de archivo binario en writer");
-//                            System.err.println(ex.getMessage());
-////                          ex.printStackTrace();          
-//                        }
-        
+
         //Metodo para logearse
         
-        
+        /**
+         * Metodo para comprobar la existencia de usuarios y comprar para iniciar
+         */
         try {
             reader.open("UserFiles/UserInfo.ser");
-//            reader.readAll();
             Main.User_Mananger  = reader.read();
             reader.close();
             
@@ -227,6 +215,10 @@ public class UserF extends javax.swing.JDialog {
         
         User newUser = new User(tfUser.getText(), pfPassword.getText(), 0, false);
         
+        /**
+         * Metodo para la escritura de nuevos usuarios en el archivo binarios
+         * Comprobando similitudes y paametros a seguir
+         */
         try {
             reader.open("UserFiles/UserInfo.ser");
             Main.User_Mananger  = reader.read();
@@ -285,20 +277,7 @@ public class UserF extends javax.swing.JDialog {
                 }
             }   
         }
-        
-      
-//                            try {         
-//                        Main.User_Mananger.addNewUser(newUser);
-//                            
-//                        writer.open("UserFiles/UserInfo.ser");
-//                        writer.write(Main.User_Mananger);
-//                        writer.close();
-//                        System.out.println("Escritura Exitosa binaria en writer");
-//                    }catch (IOException ex) {
-//                        System.err.println("error de archivo binario en writer");
-//                        System.err.println(ex.getMessage());
-////                      ex.printStackTrace();          
-//                        }
+
 
     }//GEN-LAST:event_btSignInActionPerformed
 
