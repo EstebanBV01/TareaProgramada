@@ -239,8 +239,9 @@ public class UserF extends javax.swing.JDialog {
             for (int i = 0; i < Main.User_Mananger.getLength(); i++) {
                 if (Main.User_Mananger.getUser(i)!= null) {
                     if (Main.User_Mananger.getUser(i).getNickname().equals(tfUser.getText())) {
-                        JOptionPane.showMessageDialog(this, "Nombre De Usuario Existente");
                         i = Main.User_Mananger.getLength();
+                        JOptionPane.showMessageDialog(this, "Nombre De Usuario Existente");
+                        
                         
                     }else { 
                         i = Main.User_Mananger.getLength();
