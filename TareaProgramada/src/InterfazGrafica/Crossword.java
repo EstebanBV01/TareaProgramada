@@ -5,10 +5,7 @@
  */
 package InterfazGrafica;
 import Crucigramas.GridField;
-import Crucigramas.Word;
-import Crucigramas.WordList;//talvez no sea necesatrio
 import FileManager.ReaderManager;
-import FileManager.WriterManager;
 import java.awt.GridLayout;
 import java.io.*;
 import Game.Main;
@@ -152,7 +149,7 @@ private static int filesCount = 1;
      * @param sin parametros
      */
     
-    private void CargarPantalla() throws FileNotFoundException, IOException {
+   private void CargarPantalla() throws FileNotFoundException, IOException {
    FileReader fr = new FileReader("CrossWordFiles/Easy/"+ filesCount +".txt"); 
    int cols = 0;
    int rows = 0;
@@ -172,12 +169,9 @@ private static int filesCount = 1;
        if (Count == 0) cols = Integer.parseInt(caracter);
        if (Count == 2) rows = Integer.parseInt(caracter);
 //     cols = (int)char i.charValue();    
-
-        
-        
     }
-    
     Count ++;
+
   
     }
     this.readLines();
@@ -211,13 +205,13 @@ private static int filesCount = 1;
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                        gridLayout.addLayoutComponent("" + caracter, this);
+                        gridLayout.addLayoutComponent("" + caracter, newTextField);
                 }
             }
         System.out.println("UNa prueba...."+str[0]);
     }
 
-            
+    
     /**
      * metodo void para iniciar
      */
