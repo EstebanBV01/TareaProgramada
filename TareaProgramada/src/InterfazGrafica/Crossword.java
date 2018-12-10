@@ -249,7 +249,7 @@ private static int filesCount = 1;
         ReaderManager readerTxt = new ReaderManager();
         try {
             int var=1;
-            readerTxt.open("CrossWordFiles/Easy/1.txt");//carpeta easy debe ser variable
+            readerTxt.open("CrossWordFiles/Easy/3.txt");//carpeta easy debe ser variable
             readerTxt.readAll();
             readerTxt.close(); //importante cerrar el archivo
             System.out.println("Lectura exitosa de TEXTO en reader");
