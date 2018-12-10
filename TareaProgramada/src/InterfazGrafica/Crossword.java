@@ -141,8 +141,6 @@ private static int filesCount = 1;
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
     }
-        
- 
     }//GEN-LAST:event_btTestingActionPerformed
 
 
