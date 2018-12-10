@@ -189,19 +189,28 @@ private static int filesCount = 1;
     Count ++;
   
     }
-    String[] str=new String[5];
     this.readLines();
+    String[] str=new String[Main.WORD_MANAGER.getLength()];
+    
         System.out.println(Main.WORD_MANAGER.getWord(4).getTheWord());
-        str[0]=Main.WORD_MANAGER.getWord(4).getTheWord();
-    GridLayout gridLayout = new GridLayout(rows, cols);
+        for (int j = 0; j < str.length; j++) {
+            String string = str[j];
+            str[j]=Main.WORD_MANAGER.getWord(j).getTheWord();
+        }
+        
+        
+        
+        GridLayout gridLayout = new GridLayout(rows, cols);
         
         for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
                      GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
-                    newTextField.setText(str[f]);
-                str[f]=newTextField.getText();
+                //    
+                newTextField.setText(str[f]);
+                //str[f]=newTextField.getText();
                 gridLayout.setHgap(2);
+                //
                     jpCross.add(newTextField);
                                         
                 }
@@ -249,5 +258,12 @@ private static int filesCount = 1;
             System.err.println(ex.getMessage());
             //ex.printStackTrace();
         }
+    }
+    /**
+     * metodo para convertir a String
+     */
+    public void s(){
+    
+    
     }
 }
