@@ -1,0 +1,15 @@
+21-21
+0/0/1/H/quimica/aluimia
+2/0/2/V/arandano/fruta
+12/0/3/H/tornado/desastre
+16/8/4/H/hortaliza/raiz
+12/3/5/V/amigo/friend
+4/5/6/V/botella/contani
+2/0/7/V/durazno/fruta dura
+17/10/8/H/risa/jaja
+2/3/9/H/ingles/idioma
+4/3/10/V/sismo/temblor
+5/5/11/V/oreja/oido
+2/0/12/H/ayuda/help
+10/10/13/H/naranja/orange
+20/14/14/H/orquidea/florLila
