@@ -13,6 +13,7 @@ import javax.swing.JTextField;
  */
 public class GridField extends JTextField{
      private Word word;
+     private JTextField[][] cross;
      public GridField(){
          
      }
@@ -21,10 +22,10 @@ public class GridField extends JTextField{
       * Asignar un una palabra al field
       * @param word1 recibe una palabra por parametros 
       */
-    public GridField(Word word1) {
-        super(word1.toString());
-        this.word = word1;
-    }
+//    public GridField(Word word1) {
+//        super(word1.toString());
+//        this.word = word1;
+//    }
     
     /**
      * 
@@ -33,11 +34,6 @@ public class GridField extends JTextField{
      * @param ancho recibe un int 
      * @param alto recibe un int 
      */
-    public GridField(int x, int y ,int ancho,int alto){
-        //setText((x)+"-"+(y));
-        setText("       ");
-        this.action();
-    }
     
     /**
      * Metodo para colocarle un color blanco a los field

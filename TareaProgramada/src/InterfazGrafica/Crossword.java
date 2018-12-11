@@ -133,10 +133,24 @@ private static int filesCount = 1;
     ///private void 
     private void btTestingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestingActionPerformed
 
-        filesCount++;
     try {
+        filesCount++;
+        
         Crossword cross = new Crossword(this, true, file);
         cross.setVisible(true);
+        
+//        if( == null) {
+//            try {
+//                Crossword cross = new Crossword(this, true, file);
+//                cross.setVisible(true);
+//            } catch (IOException ex) {
+//                Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }else {
+//            filesCount = 1;
+//            Levels level = new Levels(this, true);
+//            level.setVisible(true);
+//        }
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -183,55 +197,72 @@ private static int filesCount = 1;
     
    private void CargarPantalla() throws FileNotFoundException, IOException {
        
-         System.out.println("chooselvl..."+this.chooseLvl());     
-   FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt"); 
+//   System.out.println("chooselvl..."+this.chooseLvl());     
+//   FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt");
+FileReader fr = new FileReader("CrossWordFiles/"+file+"/22.txt");
    int cols = 0;
    int rows = 0;
+   String valor;
    Boolean Inicio = true;
     int i; 
-    int Count = 0;
+    int count = 0;
     String caracter = "";
     
     while ((i=fr.read()) != -1) 
         
+        caracter = String.valueOf((char) i);
         if((char) i == '\n'){
            Inicio = false;
-           Count = 0;
+           count = 0;
         }else {
            if (Inicio){
-       caracter = String.valueOf((char) i);
-       if (Count == 0) cols = Integer.parseInt(caracter);
-       if (Count == 2) rows = Integer.parseInt(caracter);
-//     cols = (int)char i.charValue();    
-    }
-    Count ++;
+                if (count == 0) cols = Integer.parseInt(caracter);
+                if (count == 2)rows = Integer.parseInt(caracter);                       
+                    GridLayout gridLayout = new GridLayout(rows, cols);
+                    GridField newTextField = new GridField();
+                    newTextField.setColorBlack();
+//                  for (int f = 0; f < rows; f++) {
+//                  for (int j = 0; j < cols; j++) {                                 
+//                  }
+//             }
+                   
+            }else {
+                if (count == 7 && caracter.equals("V")) {
 
-  
-    }
-    this.readLines();
-    String[] str=new String[Main.WORD_MANAGER.getLength()];
-    
-        System.out.println(Main.WORD_MANAGER.getWord(4).getTheWord());
-        for (int j = 0; j < str.length; j++) {
-            String string = str[j];
-            str[j]=Main.WORD_MANAGER.getWord(j).getTheWord();
+               }else if(count == 7 && caracter.equals("H")) {
+                   
+            }
+
+           }
+               
+            count ++;
         }
+ 
+//    }
+//    this.readLines();
+//    String[] str=new String[Main.WORD_MANAGER.getLength()];
+//    
+//        System.out.println(Main.WORD_MANAGER.getWord(4).getTheWord());
+//        for (int j = 0; j < str.length; j++) {
+//            String string = str[j];
+//            str[j]=Main.WORD_MANAGER.getWord(j).getTheWord();
+//        }
+//        
+//        GridLayout gridLayout = new GridLayout(rows, cols);
+//        
+//        for (int f = 0; f < rows; f++) {
+//                for (int j = 0; j < cols; j++) {
+//                     GridField newTextField = new GridField(f,j,1,1);
+//                    jpCross.setLayout(gridLayout);
+//                //    
+//                newTextField.setText(str[f]);
+//                //str[f]=newTextField.getText();
+//                gridLayout.setHgap(2);
+//                //
+//                    jpCross.add(newTextField);
+//                                        
+//                }
         
-        GridLayout gridLayout = new GridLayout(rows, cols);
-        
-        for (int f = 0; f < rows; f++) {
-                for (int j = 0; j < cols; j++) {
-                     GridField newTextField = new GridField(f,j,1,1);
-                    jpCross.setLayout(gridLayout);
-                //    
-                newTextField.setText(str[f]);
-                //str[f]=newTextField.getText();
-                gridLayout.setHgap(2);
-                //
-                    jpCross.add(newTextField);
-                                        
-                }
-        }
 //    GridLayout gridLayout = new GridLayout(rows, cols);
 //        //panelGlayout.setLayout(grid);//esto lo substituye el gridLayout??
 //
@@ -242,8 +273,8 @@ private static int filesCount = 1;
 //                        gridLayout.addLayoutComponent("" + caracter, newTextField);
 //                }
 //            }
-        System.out.println("UNa prueba...."+str[0]);
-    }
+//        System.out.println("UNa prueba...."+str[0]);
+ }
 
     
     /**
@@ -260,7 +291,7 @@ private static int filesCount = 1;
 
             for (int f = 0; f < rows; f++) {
                 for (int j = 0; j < cols; j++) {
-                     GridField newTextField = new GridField(f,j,1,1);
+//                     GridField newTextField = new GridField(f,j,1,1);
                     jpCross.setLayout(gridLayout);
                     for (int i = 0; i < gridLayout.getColumns(); i++) {
                         gridLayout.addLayoutComponent("", this);
@@ -293,8 +324,40 @@ private static int filesCount = 1;
     /**
      * metodo para convertir a String
      */
-    public void s(){
-    
-    
+    public void load() throws IOException{
+   
+   
+   String cols;
+   String rows;
+   Boolean Inicio = true;
+   String i; 
+   int Count = 0;
+   String inicio;
+   String element;
+   
+   
+        try {
+            File cross;
+            FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt"); 
+            BufferedReader br = null;
+            String[] lectura;
+            String caracter = "";
+            while((caracter = br.readLine())!= null) {
+                lectura = caracter.split("/");
+                inicio = lectura[3];
+                element = lectura[4];
+                rows = lectura[1];
+                cols = lectura[0];
+                
+                if(inicio.equals("H")) {
+                    
+                }
+                
+                if(inicio.equals("V")) {
+                    
+                }
+            }
+        } catch (Exception e) {
+        }
     }
 }
