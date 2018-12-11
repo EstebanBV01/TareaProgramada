@@ -1,6 +1,12 @@
-8/8/0/V/corrrer/accionde desplazarse
-0/2/0/V/la palabrea/la descripcion
-0/0/0/V/la palabrea/la descripcion
-0/0/0/V/la palabrea/la descripcion
-0/0/0/V/la palabrea/la descripcion
-0/0/0/V/la palabrea/la descripcion
+16-13
+0-4/1/V/blusa/vestimenta
+1-6/2/V/beso/demostracion de amor haia un ser amado
+4-0/3/H/Trabajo/actividad cotidiana renumerada
+4-2/4/V/Arete/lenceria de mujer para la oreja
+7-1/5/H/Italia/pais donde esta la torre de piza
+7-4/6/V/Lima/Capital de Peru
+6-6/7/V/Zapato/Accesorio usado en los pies
+9-6/8/H/Araña/Insecto de ocho patas
+9-8/9/V/Arco/Usado para lanzar flechas
+11-8/10/H/Cazar/Matar animales con arma
+11-12/11/V/Rezar/Tradicion religioso catolica
