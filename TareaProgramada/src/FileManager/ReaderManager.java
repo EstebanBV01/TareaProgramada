@@ -26,7 +26,7 @@ public class ReaderManager {
      * @return retorna la palabra leída
      * @throws IOException 
      */
-     private Word read() throws IOException {
+     public Word read() throws IOException {
        Word word=null;
       // Word word2=null;
         String line = reader.readLine(); //retorna null cuando no hay más registros
@@ -54,7 +54,7 @@ public class ReaderManager {
  * metodo para sacar filas y columnas
  * @throws IOException 
  */
-     private int getRowCols() throws IOException {
+     public int getRowCols() throws IOException {
        Word word=null;
        int rowCol=0;
         String line = reader.readLine(); //retorna null cuando no hay más registros

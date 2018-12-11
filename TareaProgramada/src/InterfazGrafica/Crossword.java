@@ -132,22 +132,14 @@ private static int filesCount = 1;
     }//GEN-LAST:event_btBackActionPerformed
     ///private void 
     private void btTestingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btTestingActionPerformed
-        
-        if( == null) {
-            JOptionPane.showMessageDialog(this, "Nuevos Niveles Proximamente");
-            Levels levels = new Levels(this, true);
-            levels.setVisible(true);
-            filesCount = 0;
-        }else{
-            filesCount++;    
+
+        filesCount++;
     try {
         Crossword cross = new Crossword(this, true, file);
         cross.setVisible(true);
     } catch (IOException ex) {
         Logger.getLogger(Crossword.class.getName()).log(Level.SEVERE, null, ex);
     }
-        }
-    
     }//GEN-LAST:event_btTestingActionPerformed
 
 
