@@ -1,6 +1,6 @@
-5/5/0/null/null/null
-0/0/0/V/cerdo/animal cochino
-2/0/0/H/rosa/flor
-4/0/0/H/oso/animal grande peludo
-2/3/0/V/azul/color
-4/3/0/H/uva/fruta
+5-5
+0-0/1/V/cerdo/animal cochino
+2-0/2/H/rosa/flor
+4-0/3/H/oso/animal grande peludo
+2-3/4/V/azul/color
+4-3/5/H/uva/fruta

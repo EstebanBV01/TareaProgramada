@@ -5,6 +5,7 @@
  */
 package Crucigramas;
 import java.awt.Color;
+import java.awt.Dimension;
 import javafx.scene.layout.Background;
 import javax.swing.JTextField;
 /**
@@ -13,33 +14,17 @@ import javax.swing.JTextField;
  */
 public class GridField extends JTextField{
      private Word word;
-     private JTextField[][] cross;
-     public GridField(){
-         
-     }
+     private JTextField cross;
      
-     /**
-      * Asignar un una palabra al field
-      * @param word1 recibe una palabra por parametros 
-      */
-//    public GridField(Word word1) {
-//        super(word1.toString());
-//        this.word = word1;
-//    }
-    
-    /**
-     * 
-     * @param x recibe un int 
-     * @param y recibe un int 
-     * @param ancho recibe un int 
-     * @param alto recibe un int 
-     */
-    
+    public GridField(){
+        
+    }
+
     /**
      * Metodo para colocarle un color blanco a los field
      */
-    public void action(){
-        setBackground(Color.white);
+    public void setWhite(){
+        setBackground(Color.WHITE);
     }
     
     /**
@@ -53,10 +38,17 @@ public class GridField extends JTextField{
     /**
      * Metodo para asignarle un color negro a los field vacios
      */
-    public void setColorBlack(){
+    public void setBlack(){
         setBackground(Color.BLACK);
     }
     
+    public void setposition(int X,int Y) {
+         Dimension Tamano = this.getSize();
+         X = X * Tamano.height;
+         Y = Y * Tamano.width;
+        this.setAlignmentX( X);
+        this.setAlignmentY(Y);
+    }    
     /**
      * Metodo para validar la letra
      */

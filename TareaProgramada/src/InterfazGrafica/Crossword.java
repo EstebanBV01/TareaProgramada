@@ -199,45 +199,43 @@ private static int filesCount = 1;
        
 //   System.out.println("chooselvl..."+this.chooseLvl());     
 //   FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt");
-FileReader fr = new FileReader("CrossWordFiles/"+file+"/22.txt");
+FileReader fr = new FileReader("CrossWordFiles/"+file+"/"+ filesCount +".txt");
    int cols = 0;
    int rows = 0;
    String valor;
    Boolean Inicio = true;
     int i; 
-    int count = 0;
+    int Count = 0;
     String caracter = "";
     
-    while ((i=fr.read()) != -1) 
-        
+    while ((i=fr.read()) != -1) {
         caracter = String.valueOf((char) i);
         if((char) i == '\n'){
            Inicio = false;
-           count = 0;
+           Count = 0;
         }else {
            if (Inicio){
-                if (count == 0) cols = Integer.parseInt(caracter);
-                if (count == 2)rows = Integer.parseInt(caracter);                       
-                    GridLayout gridLayout = new GridLayout(rows, cols);
-                    GridField newTextField = new GridField();
-                    newTextField.setColorBlack();
-//                  for (int f = 0; f < rows; f++) {
-//                  for (int j = 0; j < cols; j++) {                                 
-//                  }
-//             }
-                   
-            }else {
-                if (count == 7 && caracter.equals("V")) {
-
-               }else if(count == 7 && caracter.equals("H")) {
-                   
-            }
-
-           }
-               
-            count ++;
+                if (Count == 0) cols = Integer.parseInt(caracter);
+                if (Count == 2) rows = Integer.parseInt(caracter);
+                for (int f = 0; f < rows; f++) {
+                    for (int j = 0; j < cols; j++) {  
+                        GridLayout gridLayout = new GridLayout(rows, cols);
+                        GridField newTextField = new GridField();
+                        newTextField.setposition(f, j);
+                        gridLayout.setColumns(i);
+                        newTextField.setBlack();
+                        gridLayout.layoutContainer(newTextField);
+                    }
+                }
+        }     
+//        }else if(Count == 7 && caracter.equals("V")) {
+//                  
+//        }else if (Count == 7 && caracter.equals("H")) {
+//
+//        }
+        Count ++;
         }
- 
+    }
 //    }
 //    this.readLines();
 //    String[] str=new String[Main.WORD_MANAGER.getLength()];
